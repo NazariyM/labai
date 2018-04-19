@@ -240,6 +240,7 @@
                         +arr(15, 7, #106654, b)
                         
                   > li
+                     position: relative
                      padding: 0 29px 0 36px
                      +sm
                         padding: 0
@@ -247,6 +248,9 @@
                         padding-top: 17px
                         +sm
                            padding-top: 0
+                           
+                        > ul
+                           top: 0
                      &:not(:last-child)
                         margin-bottom: 8px
                      > a
@@ -271,7 +275,7 @@
                         box-shadow: 0 0 15px rgba(#106654, .8)
                         
                      > ul
-                        top: 0
+                        top: -17px
                         left: 100%
                         overflow: hidden
                         transform: translateX(-10%)
@@ -284,7 +288,7 @@
                            background: #fafafa
                            box-shadow: 0 0 15px rgba(16, 102, 84, 0.8)
                         &::after
-                           top: 10px
+                           top: 22px
                            left: 0
                            +arr(7, 12, #106654, r)
                            content: ''
