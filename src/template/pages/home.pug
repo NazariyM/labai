@@ -8,7 +8,7 @@ block main
 	main.content
 
 		//begin screen
-		+b.SECTION.screen(style='background-image: url(static/img/bg/screen-bg.jpg)')
+		+b.SECTION.screen
 			+e.container.container
 				+e.slider
 					+e.slider-for(data-anim='fade-x' data-anim-delay='.5')
@@ -68,10 +68,10 @@ block main
 							+e.item-nav-bg(style='background-image: url(static/img/bg/screen-item_4-active.png)')
 
 
-			+e.bg.is-active
-			+e.bg
-			+e.bg
-			+e.bg
+			+e.bg.is-active(style='background-image: url(static/img/bg/screen-bg.jpg)')
+			+e.bg(style='background-image: url(https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2018/01/15/104946645-2018_Honda_Accord_Touring_2.0T_031.1910x1000.jpg)')
+			+e.bg(style='background-image: url(static/img/bg/screen-bg.jpg)')
+			+e.bg(style='background-image: url(https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2018/01/15/104946645-2018_Honda_Accord_Touring_2.0T_031.1910x1000.jpg)')
 			+b.BUTTON.anim-mouse.screen__anim-mouse(type='button' data-anim='fade-y' data-anim-delay='.1' data-anim-duration='.3')
 				+e.point
 

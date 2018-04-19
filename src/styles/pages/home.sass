@@ -18,7 +18,19 @@
    &::before
       background: rgba(#147c66, .1)
    &::after
-      background: rgba(#001512, .2)
+      background: rgba(#001512, .8)
+      
+   &__bg
+      pointer-events: none
+      z-index: -1
+      +coverdiv
+      +cover
+      opacity: 0
+      transform: scale(1.2)
+      transition: opacity .5s ease-in-out, transform .4s ease-in-out
+      &.is-active
+         opacity: 1
+         transform: scale(1)
       
    &__container
       position: relative
@@ -174,7 +186,7 @@
          background-repeat: no-repeat
          background-size: cover
          background-position: 50% 50%
-         transition: transform .5s ease-in-out
+         transition: transform .4s .4s ease-in-out
          transform-origin: 100% 100%
          transform: scaleX(0)
          +xs

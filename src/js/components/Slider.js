@@ -88,7 +88,7 @@ class Slider {
       infinite: true,
       prevArrow: `<button type="button" class="screen__slider-btn screen__slider-btn_prev">${arrLeft}</button>`,
       nextArrow: `<button type="button" class="screen__slider-btn screen__slider-btn_next">${arrRight}</button>`,
-      speed: 500
+      speed: 700
     });
 
     this.$screenSldNav.slick({
@@ -101,7 +101,8 @@ class Slider {
       focusOnSelect: true,
       rows: 0,
       accessibility: false,
-      infinite: false
+      infinite: false,
+      speed: 700
     });
 
     this.$screenSldFor.on('init afterChange reInit', (event, slick, currentSlide) => {
