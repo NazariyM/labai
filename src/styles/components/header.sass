@@ -8,20 +8,23 @@
    padding: 32px 0 0
    color: #fff
    +f('cal-300', 18, 22)
-   transition: transform .2s ease-in-out, background 1s ease-in-out
+   transition: transform .2s ease-in-out, padding .2s ease-in-out, background 1s ease-in-out
    +md
-      padding: 20px 0 0
+      padding: 15px 0 0
    +xs
       padding: 5px 0 0
    &.no-transition
       transform: translateY(-100%)
       transition: none!important
    &.is-fixed
+      padding: 15px 0 0
       transform: translateY(calc(-100% + 60px))
       background: rgba(0, 21, 18, 0.9)
       +sm
          transform: translateY(0)
-      
+      +xs
+         padding: 5px 0 0
+   
    &.scrolled-top
       transform: translateY(0)
    
@@ -30,15 +33,22 @@
       align-items: flex-start
       max-width: 1170px
       padding: 0 15px 40px
+      transition: padding .2s ease-in-out
       +md
-         padding: 0 0 25px 25px
+         padding: 0 25px 18px 25px
       +sm
          align-items: center
          padding: 0 25px 25px 25px
       +xs
          flex-direction: column
          align-items: flex-start
-         padding: 0 15px 37px
+         padding: 0 15px 33px
+      #{$parent}.is-fixed &
+         padding: 0 15px 18px
+         +md
+            padding: 0 25px 18px 25px
+         +xs
+            padding: 0 15px 33px
    
    &__col
       padding: 0 15px
@@ -52,7 +62,7 @@
          padding-left: 0
          +xs
             flex: 0 1 auto
-            margin-bottom: 10px
+            margin-bottom: 5px
       &:nth-child(2)
          flex-basis: 346px
          +md
@@ -78,9 +88,11 @@
          
    &__logo
       +xs
-         font-size: 14px
-         line-height: 18px
+         font-size: 12px
+         line-height: 16px
          svg
+            flex: 0 0 60px
+            height: 60px
             margin-right: 10px
    
    &__info-item
@@ -98,19 +110,24 @@
             transform: translateX(-50%)
             white-space: nowrap
             margin-bottom: 0
-      &.info-item_tel a
-         +xs
-            font-size: 17px
+      &.info-item_tel
+         svg
+            +xs
+               width: 24px
+               height: 27px
+         a
+            +xs
+               font-size: 16px
             
    &__nav
       background-color: #027d65
       transition: .2s ease-in-out
       +sm
          display: none
-         height: calc(100vh - 113px)
+         height: calc(100vh - 101px)
          transition: none
       +xs
-         height: calc(100vh - 115px)
+         height: calc(100vh - 98px)
       #{$parent}.is-fixed &
          box-shadow: 0 2px 10px rgba(#027d65, .8)
       > ul
@@ -158,7 +175,7 @@
                > a
                   background: #106654
                   
-               ul
+               > ul
                   pointer-events: auto
                   opacity: 1
                   transform: translateY(0)
@@ -211,6 +228,7 @@
                      top: -1px
                      left: 50%
                      +arr(15, 7, #106654, b)
+                     
                > li
                   &:not(:last-child)
                      margin-bottom: 8px
@@ -222,6 +240,25 @@
                      +trs
                      .no-touch &:hover
                         color: $color1
+                        
+                  &:hover > ul
+                     pointer-events: auto
+                     opacity: 1
+                     transform: translateX(0)
+                     background: #fafafa
+                     z-index: 99
+                     box-shadow: 0 0 15px rgba(#106654, .8)
+                        
+                  > ul
+                     top: 0
+                     left: 100%
+                     overflow: hidden
+                     transform: translateX(-10%)
+                     &::after
+                        top: 10px
+                        left: 0
+                        +arr(7, 12, #106654, r)
+                        content: ''
    
 .logo
    display: flex
@@ -247,7 +284,7 @@
       display: block
    +xs
       position: absolute
-      top: 7px
+      top: 2px
       right: 15px
       margin: 0
       
@@ -265,12 +302,18 @@
       width: 50px
       height: 40px
       cursor: pointer
+      +xs
+         width: 45px
    &__lines
       width: 50px
       height: 4px
+      +xs
+         width: 45px
       &:after, &:before
          width: 50px
          height: 4px
+         +xs
+            width: 45px
       position: relative
       transform: translateY(25px)
       background: white

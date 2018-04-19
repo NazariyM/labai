@@ -21,7 +21,6 @@ class Header {
 
 		if (!Resp.isDesk) {
       this.toggleNav();
-      this.onResize();
     }
 	}
 
@@ -55,7 +54,7 @@ class Header {
 	}
 
 	showHeaderOnScrollTop() {
-    window.onscroll = function(e) {
+    window.onscroll = function() {
       if (this.oldScroll > this.scrollY) {
         $header.addClass('scrolled-top');
       } else {
@@ -70,14 +69,6 @@ class Header {
     this.$navBtn.on('click tap', function () {
       $(this).toggleClass(css.active);
       _this.$nav.slideToggle();
-    });
-  }
-
-  onResize() {
-    $window.on('resize', () => {
-      this.$nav.removeAttr('style');
-      this.$navBtn.removeClass(css.active);
-      $body.removeClass(css.locked);
     });
   }
 
