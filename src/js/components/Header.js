@@ -28,7 +28,7 @@ class Header {
     this.initFix();
 		this.show();
 
-		if (!Resp.isMobiles) this.showHeaderOnScrollTop();
+    if (Resp.isMobiles) this.toggleDropDown();
 	}
 
 	show() {
@@ -53,22 +53,20 @@ class Header {
 		window.addEventListener('scroll', toggleHeaderScroll);
 	}
 
-	showHeaderOnScrollTop() {
-    window.onscroll = function() {
-      if (this.oldScroll > this.scrollY) {
-        $header.addClass('scrolled-top');
-      } else {
-        $header.removeClass('scrolled-top');
-      }
-      this.oldScroll = this.scrollY;
-    }
-	}
-
   toggleNav() {
 	  const _this = this;
     this.$navBtn.on('click tap', function () {
       $(this).toggleClass(css.active);
       _this.$nav.slideToggle();
+    });
+  }
+
+  toggleDropDown() {
+    const $btn = this.$nav.find('.has-dropdown');
+
+    $btn.on('click tap', function(e) {
+
+      $(this).next().slideToggle(0);
     });
   }
 

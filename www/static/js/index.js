@@ -37488,7 +37488,7 @@ var Header = function () {
 						this.initFix();
 						this.show();
 
-						if (!_helpers.Resp.isMobiles) this.showHeaderOnScrollTop();
+						if (_helpers.Resp.isMobiles) this.toggleDropDown();
 				}
 		}, {
 				key: 'show',
@@ -37515,24 +37515,22 @@ var Header = function () {
 						window.addEventListener('scroll', toggleHeaderScroll);
 				}
 		}, {
-				key: 'showHeaderOnScrollTop',
-				value: function showHeaderOnScrollTop() {
-						window.onscroll = function () {
-								if (this.oldScroll > this.scrollY) {
-										_helpers.$header.addClass('scrolled-top');
-								} else {
-										_helpers.$header.removeClass('scrolled-top');
-								}
-								this.oldScroll = this.scrollY;
-						};
-				}
-		}, {
 				key: 'toggleNav',
 				value: function toggleNav() {
 						var _this = this;
 						this.$navBtn.on('click tap', function () {
 								$(this).toggleClass(_helpers.css.active);
 								_this.$nav.slideToggle();
+						});
+				}
+		}, {
+				key: 'toggleDropDown',
+				value: function toggleDropDown() {
+						var $btn = this.$nav.find('.has-dropdown');
+
+						$btn.on('click tap', function (e) {
+
+								$(this).next().slideToggle(0);
 						});
 				}
 		}]);
