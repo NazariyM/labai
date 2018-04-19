@@ -1,3 +1,4 @@
+import { css } from '../modules/dev/_helpers';
 import ScrollAnim from '../modules/dev/animation/scrollAnim';
 import { TweenMax, TimelineMax } from 'gsap';
 import $ from 'jquery';
@@ -8,8 +9,6 @@ class Slider {
   constructor () {
     this.$slider = $('.slider');
     this.$mobSlider = $('.mob-slider');
-    this.$viewFor = $('.screen__slider-for');
-    this.$viewNav = $('.screen__slider-nav');
 
     this.arrLeft = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">
     <defs>
@@ -44,6 +43,9 @@ class Slider {
   }
 
   screenSlider() {
+    this.$screenSldFor = $('.screen__slider-for');
+    this.$screenSldNav = $('.screen__slider-nav');
+
     const arrLeft = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="95"
      viewBox="0 0 35 95">
     <defs>
@@ -76,7 +78,7 @@ class Slider {
     </g>
   </svg>`;
 
-    this.$viewFor.slick({
+    this.$screenSldFor.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
@@ -89,7 +91,7 @@ class Slider {
       speed: 500
     });
 
-    this.$viewNav.slick({
+    this.$screenSldNav.slick({
       vertical: true,
       slidesToShow: 4,
       slidesToScroll: 1,
@@ -100,6 +102,14 @@ class Slider {
       rows: 0,
       accessibility: false,
       infinite: false
+    });
+
+    this.$screenSldFor.on('init afterChange reInit', (event, slick, currentSlide) => {
+      const activeIdx = $('.slick-active').data('slick-index');
+      const $screenBg = $('.screen__bg');
+
+      $screenBg.siblings().removeClass(css.active);
+      $screenBg.eq(activeIdx).addClass(css.active);
     });
 
   }

@@ -37556,6 +37556,8 @@ exports.sliderAPI = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _helpers = __webpack_require__(42);
+
 var _scrollAnim = __webpack_require__(93);
 
 var _scrollAnim2 = _interopRequireDefault(_scrollAnim);
@@ -37578,8 +37580,6 @@ var Slider = function () {
 
     this.$slider = (0, _jquery2.default)('.slider');
     this.$mobSlider = (0, _jquery2.default)('.mob-slider');
-    this.$viewFor = (0, _jquery2.default)('.screen__slider-for');
-    this.$viewNav = (0, _jquery2.default)('.screen__slider-nav');
 
     this.arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n    <defs>\n        <path id="i6tca"\n              d="M196.72 2737l17.95-18.07c.44-.44.44-1.15 0-1.6a1.12 1.12 0 0 0-1.6 0l-18.74 18.87a1.13 1.13 0 0 0 0 1.6l18.75 18.86a1.1 1.1 0 0 0 1.58 0c.44-.44.44-1.15 0-1.6z"/>\n    </defs>\n    <g>\n        <g transform="translate(-192 -2715)">\n            <use xlink:href="#i6tca"/>\n        </g>\n    </g>\n</svg>';
     this.arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n        <defs>\n            <path id="vmhva"\n                  d="M1403.28 2737l-17.92-18.07a1.13 1.13 0 0 1 0-1.6 1.11 1.11 0 0 1 1.59 0l18.72 18.87c.44.45.44 1.16 0 1.6l-18.72 18.86a1.1 1.1 0 0 1-1.58 0 1.13 1.13 0 0 1 0-1.6z"/>\n        </defs>\n        <g>\n            <g transform="translate(-1383 -2715)">\n                <use xlink:href="#vmhva"/>\n            </g>\n        </g>\n    </svg>';
@@ -37597,11 +37597,14 @@ var Slider = function () {
   }, {
     key: 'screenSlider',
     value: function screenSlider() {
+      this.$screenSldFor = (0, _jquery2.default)('.screen__slider-for');
+      this.$screenSldNav = (0, _jquery2.default)('.screen__slider-nav');
+
       var arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="95"\n     viewBox="0 0 35 95">\n    <defs>\n        <path id="62cia" d="M215.15 395l-30.16 45 30.16 46"/>\n        <clipPath id="62cib">\n            <use fill="#fff" xlink:href="#62cia"/>\n        </clipPath>\n    </defs>\n    <g>\n        <g transform="translate(-182 -393)">\n            <use fill="#fff" fill-opacity="0" stroke="#fff" stroke-miterlimit="50" stroke-width="2"\n                 clip-path="url(&quot;#62cib&quot;)" xlink:href="#62cia"/>\n        </g>\n    </g>\n    </svg>';
 
       var arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33" height="94"\n     viewBox="0 0 33 94">\n    <defs>\n        <path id="mieia" d="M1386 394.56l29.82 44.96-29.82 45.95"/>\n        <clipPath id="mieib">\n            <use fill="#fff" xlink:href="#mieia"/>\n        </clipPath>\n    </defs>\n    <g>\n        <g transform="translate(-1384 -393)">\n            <use fill="#fff" fill-opacity="0" stroke="#fff" stroke-miterlimit="50" stroke-width="2"\n                 clip-path="url(&quot;#mieib&quot;)" xlink:href="#mieia"/>\n        </g>\n    </g>\n  </svg>';
 
-      this.$viewFor.slick({
+      this.$screenSldFor.slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: true,
@@ -37614,7 +37617,7 @@ var Slider = function () {
         speed: 500
       });
 
-      this.$viewNav.slick({
+      this.$screenSldNav.slick({
         vertical: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -37625,6 +37628,14 @@ var Slider = function () {
         rows: 0,
         accessibility: false,
         infinite: false
+      });
+
+      this.$screenSldFor.on('init afterChange reInit', function (event, slick, currentSlide) {
+        var activeIdx = (0, _jquery2.default)('.slick-active').data('slick-index');
+        var $screenBg = (0, _jquery2.default)('.screen__bg');
+
+        $screenBg.siblings().removeClass(_helpers.css.active);
+        $screenBg.eq(activeIdx).addClass(_helpers.css.active);
       });
     }
   }, {
