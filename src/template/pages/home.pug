@@ -1,0 +1,450 @@
+extends ../extend/default
+
+block variables
+	- var title = 'Home page';
+	- var contactMap = true;
+
+block main
+	main.content
+
+		//begin screen
+		+b.SECTION.screen(style='background-image: url(static/img/bg/screen-bg.jpg)')
+			+e.container.container
+				+e.slider
+					+e.slider-for(data-anim='fade-x' data-anim-delay='.5')
+						-n = 0
+						while n < 4
+							+e.item-for
+								+e.H2.title Банкротство юридических лиц
+
+								+e.UL.list
+									-
+										screenList = [
+										'ликвидация организации на абсолютно легальных и законных основаниях',
+										'списание финансовых обязательств',
+										'улучшение финансового положения путем выделения прибыльных направлений бизнеса  '
+										]
+
+									for screenListText in screenList
+										li
+											svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='27', height='27', viewbox='0 0 27 27')
+												defs
+													path#hpssa(d='M362.34 433.34a12.41 12.41 0 0 1-8.84 3.66c-3.34 0-6.48-1.3-8.84-3.66a12.41 12.41 0 0 1-3.66-8.84c0-3.34 1.3-6.48 3.66-8.84a12.41 12.41 0 0 1 8.84-3.66c3.34 0 6.48 1.3 8.84 3.66a12.41 12.41 0 0 1 3.66 8.84c0 3.34-1.3 6.48-3.66 8.84zm2.24-8.84a11 11 0 0 0-3.25-7.84 11.1 11.1 0 0 0-15.67 15.67 11.1 11.1 0 0 0 18.91-7.83zm-11.55 5.47l-1-1-4.5-4.51a.7.7 0 0 1 0-1 .7.7 0 0 1 1 0l4.5 4.5 6.5-7.5a.7.7 0 0 1 1 0 .7.7 0 0 1 0 1l-6.5 7.5')
+													lineargradient#hpssb(x1='356', x2='351', y1='437', y2='412', gradientunits='userSpaceOnUse')
+														stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+														stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+												g
+													g(transform='translate(-340 -411)')
+														use(fill='#e5aa46', xlink:href='#hpssa')
+														use(fill='url(#hpssb)', xlink:href='#hpssa')
+
+											span= screenListText
+
+								+e.A.link.btn._transp(href='#!')
+									span Подробнее
+								-n++
+
+					+e.slider-nav(data-anim='fade-x' data-anim-delay='.5')
+						+e.item-nav(style='background-image: url(static/img/bg/screen-item_1.jpg)')
+							p Представление интересов
+								br
+								= ' '
+								| при субсидиарной ответственности
+							+e.item-nav-bg(style='background-image: url(static/img/bg/screen-item_1-active.png)')
+
+						+e.item-nav(style='background-image: url(static/img/bg/screen-item_2.jpg)')
+							p Банкротство юридических лиц
+							+e.item-nav-bg(style='background-image: url(static/img/bg/screen-item_2-active.png)')
+
+						+e.item-nav(style='background-image: url(static/img/bg/screen-item_3.jpg)')
+							p Оспаривание подозрительных сделок должника
+							+e.item-nav-bg(style='background-image: url(static/img/bg/screen-item_3-active.png)')
+
+						+e.item-nav(style='background-image: url(static/img/bg/screen-item_4.jpg)')
+							p Защита бизнеса
+								br
+								= ' '
+								| от действий кредиторов
+							+e.item-nav-bg(style='background-image: url(static/img/bg/screen-item_4-active.png)')
+
+			+b.BUTTON.anim-mouse.screen__anim-mouse(type='button' data-anim='fade-y' data-anim-delay='.1' data-anim-duration='.3')
+				+e.point
+
+		//end screen
+
+		//begin why-us
+		+b.SECTION.why-us
+			+e.container.container
+				+e.H2.title.title-md(data-anim='fade-y') Почему выбирают нас
+
+				+e.inner(data-anim-stagger='fade-y')
+					-
+						whyItemList = [
+						'Работаем для вас с 2 000 года',
+						'Гарантия конфиденциальности всех сделок',
+						'Команда арбитражных управляющих с совокупным опытом от 551 процедур',
+						'Оперативное разрешение кризисных ситуаций от 8 месяцев']
+
+					for whyItemText in whyItemList
+						+e.item
+							+e.item-pic
+							+e.P.item-text= whyItemText
+		//end why-us
+
+		//begin bankruptcy
+		+b.SECTION.bankruptcy(style='background-image: url(static/img/bg/bankruptcy_bg.jpg)')
+			+e.container.container
+				+e.H2.title.title-md(data-anim='fade-y') Мы осуществляем банкротство
+
+				+e.row(data-anim-stagger='fade-y' data-stagger-delay='.2')
+					-
+						bankList = [
+						'Юридических лиц',
+						'Финансовых компаний',
+						'Физических лиц и ИП']
+
+					for bankItem in bankList
+						+e.item(onclick='')
+							+e.H4.item-title= bankItem
+							+e.A.item-link.btn._transp(href='#!')
+								span Подробнее
+
+				+e.H3.sub-title.title-md(data-anim='fade-y') а также проводим процедуры
+				+e.row(data-anim-stagger='fade-y' data-stagger-delay='.2')
+					-
+						bankList = [
+						'Ликвидации компаний',
+						'Взыскания долгов',
+						'Антикризисного управления',
+						'Правовой защиты']
+
+					for bankItem in bankList
+						+e.item._sm(onclick='')
+							+e.H4.item-title= bankItem
+							+e.A.item-link.btn._transp(href='#!')
+								span Подробнее
+		//end bankruptcy
+
+		//begin in-numbers
+		+b.SECTION.in-numbers
+			+e.container.container
+				+e.H2.title.title-sm Мы в цифрах
+
+				+e.inner
+					+e.item
+						+e.SPAN.item-back-numb 1 139
+						+e.item-numb
+							span 1139
+						+e.P.item-text реализанных проектов
+
+					+e.item
+						+e.SPAN.item-back-numb 5000
+						+e.item-numb
+							span 5000
+						+e.P.item-text выигранных судебных дел
+
+					+e.item
+						+e.SPAN.item-back-numb
+							span 1
+							= ' '
+							| млрд.
+						+e.item-numb
+							span 1 млн.
+						+e.P.item-text рублей взысканных долгов
+
+					+e.item
+						+e.SPAN.item-back-numb
+							span 10
+							= ' '
+							| млрд.
+						+e.item-numb
+							span 10 млн.
+						+e.P.item-text рублей погашенных задолжностей
+		//end in-numbers
+
+		//begin realized
+		+b.SECTION.realized
+			+e.container.container(data-anim-stagger='fade-y')
+				+e.H2.title.title-sm Реализованные проекты
+
+				+e.block-wrap
+					+e.block.slider
+						-i = 0
+						while i < 2
+							+e.item
+								+e.images
+									+e.images-item.is-active
+										+e.IMG(src='static/img/content/realized_img.jpg' alt='image')
+									+e.images-item
+										+e.A(href='static/img/content/realized_img-doc.jpg' data-fancybox='realized-img')
+											+e.IMG(src='static/img/content/realized_img-doc.jpg' alt='image')
+
+								+e.content
+									+e.actions
+										+e.BUTTON.actions-btn.is-active(type='button')
+											svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='36', viewbox='0 0 35 36')
+												defs
+													path#1mt5a(d='M732.88 2629.53c-.21-.66.01-1.38.56-1.8l14.02-10.56a.89.89 0 0 1 1.08 0l14.02 10.57c.55.41.77 1.13.56 1.79-.21.66-.82 1.1-1.5 1.1h-.72v14.58h.5c.5 0 .9.42.9.92 0 .51-.4.92-.9.92h-26.8c-.5 0-.9-.4-.9-.92 0-.5.4-.92.9-.92h.5v-14.46-.12h-.72c-.69 0-1.29-.44-1.5-1.1zm15.93 15.68v-14.46-.12h-1.63v14.58zm-6.86-14.46l.01-.12h-1.64l.01.12v14.46h1.62zm-3.43 14.46v-13.54h-1.62v13.54zm6.86 0v-13.54h-1.62v13.54zm6.86 0v-13.54h-1.62v13.54zm6.86 0v-13.54h-1.62v13.54zm-3.42-14.58h-1.64v14.58h1.63v-14.46-.12zm-20.6-1.84h25.84l-12.92-9.74zm28.92 20.29c0 .5-.4.92-.9.92h-30.2c-.5 0-.9-.41-.9-.92 0-.5.4-.92.9-.92h30.2c.5 0 .9.41.9.92z')
+												g
+													g(transform='translate(-730 -2615)')
+														use(xlink:href='#1mt5a')
+
+										+e.BUTTON.actions-btn(type='button')
+											svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewbox='0 0 511 511', style='enable-background:new 0 0 511 511;', xml:space='preserve')
+												g
+													path(d='M415.5,40H351v-0.5c0-8.547-6.953-15.5-15.5-15.5H295v-0.5C295,10.542,284.458,0,271.5,0h-32\
+													C226.542,0,216,10.542,216,23.5V24h-40.5c-8.547,0-15.5,6.953-15.5,15.5V40H95.5C73.72,40,56,57.72,56,79.5v392\
+													c0,21.78,17.72,39.5,39.5,39.5h320c21.78,0,39.5-17.72,39.5-39.5v-392C455,57.72,437.28,40,415.5,40z M343.498,87H407.5\
+													c0.276,0,0.5,0.224,0.5,0.5v376c0,0.276-0.224,0.5-0.5,0.5h-304c-0.276,0-0.5-0.224-0.5-0.5v-376c0-0.276,0.224-0.5,0.5-0.5h64.001\
+													c0.089,0,0.175-0.01,0.263-0.013C174.967,96.695,186.51,103,199.5,103h112c12.99,0,24.533-6.305,31.736-16.013\
+													C343.324,86.99,343.41,87,343.498,87z M231,23.5c0-4.687,3.813-8.5,8.5-8.5h32c4.687,0,8.5,3.813,8.5,8.5V24h-49V23.5z M175,39.5\
+													c0-0.276,0.224-0.5,0.5-0.5h160c0.276,0,0.5,0.224,0.5,0.5v7.942c0,0.02-0.003,0.039-0.003,0.058S336,47.539,336,47.558V63.5\
+													c0,13.509-10.991,24.5-24.5,24.5h-112C185.991,88,175,77.009,175,63.5V39.5z M440,471.5c0,13.509-10.991,24.5-24.5,24.5h-320\
+													C81.991,496,71,485.009,71,471.5v-392C71,65.991,81.991,55,95.5,55H160v8.5c0,2.918,0.328,5.76,0.931,8.5H103.5\
+													C94.953,72,88,78.953,88,87.5v376c0,8.547,6.953,15.5,15.5,15.5h304c8.547,0,15.5-6.953,15.5-15.5v-376\
+													c0-8.547-6.953-15.5-15.5-15.5h-57.431c0.604-2.74,0.931-5.582,0.931-8.5V55h64.5c13.509,0,24.5,10.991,24.5,24.5V471.5z')
+													path(d='M144.5,215h62c4.687,0,8.5-3.813,8.5-8.5v-62c0-4.687-3.813-8.5-8.5-8.5h-62c-4.687,0-8.5,3.813-8.5,8.5v62\
+													C136,211.187,139.813,215,144.5,215z M151,151h49v49h-49V151z')
+													path(d='M206.5,344h-62c-4.687,0-8.5,3.813-8.5,8.5v62c0,4.687,3.813,8.5,8.5,8.5h62c4.687,0,8.5-3.813,8.5-8.5v-62\
+													C215,347.813,211.187,344,206.5,344z M200,408h-49v-49h49V408z')
+													path(d='M218.197,242.197l-5.392,5.392c-2.707-4.535-7.65-7.589-13.305-7.589h-48c-8.547,0-15.5,6.953-15.5,15.5v48\
+													c0,8.547,6.953,15.5,15.5,15.5h48c8.547,0,15.5-6.953,15.5-15.5v-8c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v8\
+													c0,0.276-0.224,0.5-0.5,0.5h-48c-0.276,0-0.5-0.224-0.5-0.5v-48c0-0.276,0.224-0.5,0.5-0.5h48c0.276,0,0.5,0.224,0.5,0.5v4.894\
+													l-16.5,16.5l-10.697-10.697c-2.929-2.929-7.678-2.929-10.606,0c-2.929,2.929-2.929,7.677,0,10.606l16,16\
+													c1.464,1.465,3.384,2.197,5.303,2.197s3.839-0.732,5.303-2.197l23.999-23.999c0.001-0.001,0.002-0.002,0.002-0.002l15.999-15.999\
+													c2.929-2.929,2.929-7.677,0-10.606C225.875,239.268,221.125,239.268,218.197,242.197z')
+													path(d='M239.5,159h24c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5h-24c-4.142,0-7.5,3.358-7.5,7.5S235.358,159,239.5,159z')
+													path(d='M232,183.5c0,4.142,3.358,7.5,7.5,7.5h120c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5h-120\
+													C235.358,176,232,179.358,232,183.5z')
+													path(d='M239.5,271h80c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5h-80c-4.142,0-7.5,3.358-7.5,7.5S235.358,271,239.5,271z')
+													path(d='M359.5,288h-120c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h120c4.142,0,7.5-3.358,7.5-7.5S363.642,288,359.5,288z')
+													path(d='M239.5,375h32c4.142,0,7.5-3.358,7.5-7.5s-3.358-7.5-7.5-7.5h-32c-4.142,0-7.5,3.358-7.5,7.5S235.358,375,239.5,375z')
+													path(d='M359.5,392h-120c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5,7.5,7.5h120c4.142,0,7.5-3.358,7.5-7.5S363.642,392,359.5,392z')
+
+									+e.text
+										+e.H6.text-title Банкротство ООО НПО "Мостовик"
+
+										+e.P Крупнейшее строительное предприятие, построившее значительное количество объектов к Олимпиаде в г. Сочи (в том числе бобслейную трассу), мост на остров Русский в г. Владивосток. Крупнейшее строительное предприятие, построившее значительное количество объектов к Олимпиаде в г. Сочи (в том числе бобслейную трассу), мост на остров Русский в г. Владивосток.
+										+e.P Год: 2015
+
+								-i++
+
+				+e.more
+					+e.A.more-btn.btn._grey(href='#!')
+						span Смотреть все проекты
+				//end realized
+
+		//begin banks
+		+b.SECTION.banks
+			+e.container.container
+				+e.H2.title.title-md(data-anim='fade-x') СРО арбитражных управляющих с которыми мы сотрудничаем аккредитованы
+
+				+e.inner(data-anim-stagger='fade-x')
+					+e.A.logo(href='#!')
+						+e.IMG(src='static/img/content/bank-1.png' alt='image')
+						+e.IMG(src='static/img/content/bank-1_hover.png' alt='image')
+
+					+e.A.logo(href='#!')
+						+e.IMG(src='static/img/content/bank-2.png' alt='image')
+						+e.IMG(src='static/img/content/bank-2_hover.png' alt='image')
+
+					+e.A.logo(href='#!')
+						+e.IMG(src='static/img/content/bank-3.png' alt='image')
+						+e.IMG(src='static/img/content/bank-3_hover.png' alt='image')
+		//end banks
+
+		//begin consult
+		+b.SECTION.consult(style='background-image: url(static/img/bg/consult_bg.jpg)')
+			+e.container.container
+				+e.H2.title(data-anim='fade-y') Получите консультацию профессионального юриста
+
+				+e.form-wrap(data-anim='fade-y')
+					+e.FORM(action='#!' method='POST')
+						+e.form-field
+							+e.INPUT(type='text' placeholder='Имя' name='' required)
+
+						+e.form-field
+							+e.INPUT(type='text' placeholder='Телефон' name='' required)
+
+						+e.form-field
+							+e.INPUT(type='text' placeholder='Email' name='' required)
+
+						+e.form-field
+							+e.INPUT(type='text' placeholder='Комментарий' name='' required)
+
+						+e.form-submit
+							+b.LABEL.btn._grey.consult__form-submit-btn
+								span оставить заявку
+								+e.INPUT(type='submit' value='')
+
+						+e.P Нажимая на кнопку  "Получить консультацию", вы даете согласие на обработку персональных данных
+							br
+							= ' '
+							| и соглашаетесь c
+							+b.A.link-decor(href='#!') политикой конфиденциальности.
+		//end consult
+
+		//begin latest-events
+		+b.SECTION.latest-events
+			+e.container.container
+				+e.top(data-anim='fade-y')
+					+e.H2.title.title-sm Последние события
+
+					+e.A.more-btn.btn._grey(href='#!')
+						span Все события
+
+				+e.inner.mob-slider(data-anim-stagger='fade-y' data-stagger-delay='.2')
+					+e.item
+						+e.img(style='background-image: url(static/img/content/latest-events_img-1.jpg)' onclick='')
+							+e.text._hidden
+								span 22.03.2018
+
+								p От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+
+								a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+						+e.text
+							p От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+							span 22.03.2018
+
+							a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+					+e.item
+						+e.img(style='background-image: url(static/img/content/latest-events_img-1.jpg)' onclick='')
+							+e.text._hidden
+								span 22.03.2018
+
+								p От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+
+								a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+						+e.text
+							p От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+							span 22.03.2018
+
+							a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+					+e.item
+						+e.img(style='background-image: url(static/img/content/latest-events_img-1.jpg)' onclick='')
+							+e.text._hidden
+								span 22.03.2018
+
+								p От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+
+								a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+						+e.text
+							p От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+							span 22.03.2018
+
+							a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+				+b.SECTION.seo-text(data-anim-stagger='fade-y' data-stagger-delay='.2')
+					+e.H3.title.title-md Банкротство юридических и физических лиц в Москве и Московской области
+
+					p В конце декабря ушедшего года в очередной раз были изменены правила банкротства юридических лиц (Федеральный закон от 29 декабря 2014 г. № 482-ФЗ; далее – Закон). Новые нормы действуют чуть больше месяца – они вступили в силу 29 января. Практика по ним пока не накоплена, однако некоторые из новелл вызывают вопросы. Рассмотрим, в чем заключаются основные нововведения.
+					p Условно поправки можно разделить на две части: к
+						a.link-decor(href='#!') первой относятся изменения
+						| , направленные на ужесточение условий для должников и сокращение возможностей для злоупотреблений с их стороны. Ко второй – поправки, уточняющие правила саморегулирования в сфере банкротства.
+
+		//end latest-events
+
+		//begin contacts
+		+b.SECTION.contacts
+			+e.content(style='background-image: url(static/img/bg/contacts_bg.jpg)' data-anim='fade-x')
+				+e.content-inner(data-anim-stagger='fade-x' data-stagger-delay='.2')
+					+e.info-item.info-item
+						.info-item__icon
+							svg.icon-loc(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='22', height='28', viewbox='0 0 22 28')
+								defs
+									path#ktdsa(d='M585 43.02a10.86 10.86 0 0 1-.87 4.2c-1.02 2.54-3.28 6.44-8.2 10.62a.65.65 0 0 1-.84 0c-4.95-4.18-7.2-8.08-8.22-10.63a10.26 10.26 0 0 1-.87-4.19c0-5.52 4.26-10.02 9.5-10.02 5.23 0 9.49 4.5 9.5 10.02zm-1.35 0c0-4.75-3.66-8.61-8.16-8.61-4.49 0-8.15 3.86-8.15 8.6 0 .56.05 1.1.15 1.64v.04l.05.22v.01c.13.59.31 1.17.55 1.71l.01.02c.93 2.32 2.97 5.87 7.4 9.73 4.42-3.86 6.46-7.4 7.39-9.73v-.02c.25-.55.44-1.12.56-1.7v-.02l.05-.22v-.03a9 9 0 0 0 .15-1.64zm-2.13.11c0 3.5-2.7 6.36-6.03 6.36-3.32 0-6.02-2.85-6.02-6.36 0-3.5 2.7-6.36 6.02-6.36 3.33 0 6.03 2.85 6.03 6.36zm-1.34 0c0-2.72-2.1-4.95-4.69-4.95a4.83 4.83 0 0 0-4.68 4.95c0 2.73 2.1 4.95 4.68 4.95a4.83 4.83 0 0 0 4.7-4.95z')
+									lineargradient#ktdsb(x1='578', x2='573', y1='58', y2='33', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-564 -31)')
+										use(fill='#e4aa46', xlink:href='#ktdsa')
+										use(fill='url(#ktdsb)', xlink:href='#ktdsa')
+
+						.info-item__text
+							p г. Москва, Большой Головин переулок, д.3, стр.2
+
+					+e.info-item.info-item
+						.info-item__icon
+							svg.icon-tel(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='29', height='28', viewbox='0 0 29 28')
+								defs
+									path#5fp4a(d='M935.67 54.4c.53.52.81 1.15.81 1.8 0 .65-.27 1.29-.8 1.83-.22.24-.45.46-.68.68-.33.32-.65.62-.93.95 0 .02-.01.02-.02.03a3.98 3.98 0 0 1-3.38 1.3c-1.81-.12-3.43-.8-4.65-1.37a24.86 24.86 0 0 1-8.28-6.48 22.7 22.7 0 0 1-4.04-6.73 9.24 9.24 0 0 1-.68-3.91c.09-.96.47-1.78 1.15-2.46l1.8-1.8v-.02c.53-.5 1.16-.77 1.8-.77.65 0 1.26.26 1.77.77.35.32.68.66 1 .98.15.17.32.34.49.5l1.44 1.44c1.1 1.11 1.1 2.55 0 3.66l-.44.44c-.4.4-.8.81-1.23 1.2.32.72.77 1.42 1.43 2.26a18.13 18.13 0 0 0 4.34 3.95c.16.1.34.19.53.28l.4.21 1.67-1.66a2.55 2.55 0 0 1 1.81-.81c.66 0 1.28.28 1.79.82zm-1.02 1l-2.9-2.92h-.02c-.16-.19-.43-.4-.76-.4s-.62.22-.8.4l-1.8 1.8c-.1.1-.37.37-.8.37-.18 0-.35-.04-.53-.13l-.06-.04c-.16-.1-.34-.18-.53-.28-.2-.1-.43-.21-.65-.35a19.39 19.39 0 0 1-4.69-4.26 11.56 11.56 0 0 1-1.73-2.84c-.1-.3-.18-.74.28-1.2l.02-.02c.46-.41.89-.83 1.33-1.29l.46-.45c.56-.56.56-1.08 0-1.64l-1.45-1.44-.5-.51c-.32-.33-.63-.64-.95-.94l-.02-.02a1.13 1.13 0 0 0-.77-.37c-.27 0-.54.13-.8.38l-1.8 1.8c-.44.43-.68.94-.73 1.56-.08.97.1 2 .59 3.3.8 2.16 2 4.16 3.8 6.33 2.19 2.6 4.81 4.65 7.8 6.1a11.48 11.48 0 0 0 4.37 1.24c.82 0 1.45-.27 1.99-.84.32-.38.67-.73 1.02-1.05l.64-.65c.54-.56.54-1.11 0-1.65zm-8.71-14.28a.72.72 0 0 1 .82-.58 8.15 8.15 0 0 1 6.7 6.7c.06.38-.2.75-.59.82h-.12a.7.7 0 0 1-.7-.58 6.72 6.72 0 0 0-1.9-3.64 6.7 6.7 0 0 0-3.64-1.9.7.7 0 0 1-.57-.82zm11.47 6.72l-.12.01a.7.7 0 0 1-.7-.59 11.95 11.95 0 0 0-3.37-6.48 12.01 12.01 0 0 0-6.5-3.37.71.71 0 1 1 .23-1.4c2.76.47 5.27 1.77 7.27 3.76 2 2 3.3 4.5 3.77 7.26a.7.7 0 0 1-.58.81z')
+									lineargradient#5fp4b(x1='928', x2='923', y1='61', y2='36', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-911 -34)')
+										use(fill='#e4aa46', xlink:href='#5fp4a')
+										use(fill='url(#5fp4b)', xlink:href='#5fp4a')
+
+						+e.A(href='tel:+74956264131') +7 (495) 626 41 31
+
+					+e.info-item.info-item
+						.info-item__icon
+							svg.icon-mail(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='29', height='22', viewbox='0 0 29 22')
+								defs
+									path#8ju0a(d='M938 80.06v12.89a3.06 3.06 0 0 1-3.06 3.05h-18.88a3.06 3.06 0 0 1-3.06-3.05v-12.9a3.06 3.06 0 0 1 3.06-3.05h18.89a3.05 3.05 0 0 1 3.05 3.06zm-1.4 12.89v-12.9c0-.9-.74-1.65-1.66-1.65h-18.88c-.92 0-1.66.74-1.66 1.66v12.89c0 .91.74 1.65 1.66 1.65h18.89c.91 0 1.66-.74 1.66-1.65zm-1.7-.79a.7.7 0 0 1-.96 1.01l-6.21-5.9-1.75 1.56a.7.7 0 0 1-.93.01l-1.7-1.51-6.25 5.84a.7.7 0 0 1-.96-1.02l6.17-5.76-6.2-5.53a.7.7 0 1 1 .93-1.04l6.7 5.98a.98.98 0 0 1 .13.12l1.64 1.46 8.43-7.55a.7.7 0 0 1 .94 1.04l-6.11 5.47z')
+									lineargradient#8ju0b(x1='927', x2='924', y1='96', y2='77', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-911 -75)')
+										use(fill='#e4aa46', xlink:href='#8ju0a')
+										use(fill='url(#8ju0b)', xlink:href='#8ju0a')
+
+						+b.A.link-decor(href='mailto:labai@labai.ru') labai@labai.ru
+
+					+e.info-item.info-item
+						.info-item__icon
+							svg.icon-clock(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='27', height='27', viewbox='0 0 27 27')
+								defs
+									path#rfjia(d='M1209.34 74.34a12.41 12.41 0 0 1-8.84 3.66c-3.34 0-6.48-1.3-8.84-3.66a12.41 12.41 0 0 1-3.66-8.84c0-3.34 1.3-6.48 3.66-8.84a12.41 12.41 0 0 1 8.84-3.66c3.34 0 6.48 1.3 8.84 3.66a12.41 12.41 0 0 1 3.66 8.84c0 3.34-1.3 6.48-3.66 8.84zm2.24-8.84a11 11 0 0 0-3.25-7.83 11.1 11.1 0 0 0-15.67 15.67 11.1 11.1 0 0 0 18.91-7.83zm-12.06 1.83v-7.79c0-.4.32-.7.72-.71.4 0 .7.32.7.71v6.37l5.67.3c.4 0 .7.3.7.7a.7.7 0 0 1-.7.71l-5.66-.29')
+									lineargradient#rfjib(x1='1203', x2='1198', y1='78', y2='53', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-1187 -52)')
+										use(fill='#e5aa46', xlink:href='#rfjia')
+										use(fill='url(#rfjib)', xlink:href='#rfjia')
+						+e.P Пн-пт: 9.00-18.00
+
+					+e.info-item.info-item
+						.info-item__icon
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='38', height='33', viewbox='0 0 38 33')
+								defs
+									path#s4o0a(d='M280 5500.9v12.83c0 1.93-1.3 3.27-3.17 3.27h-.9c-1.92 0-3.22-1.34-3.22-3.27v-1.85h-20.42v1.85c0 1.93-1.3 3.27-3.17 3.27h-.9c-1.92 0-3.22-1.34-3.22-3.27v-12.83c0-1.09 1.1-2.2 2.19-2.2h.18l2.76-9.7c.38-1.1 1.7-2 2.9-2h18.95c1.19 0 2.5.9 2.87 1.95l2.78 9.76h.18a2.31 2.31 0 0 1 2.19 2.2zm-31.12-2.2h27.24l-2.66-9.3c-.15-.44-.92-.94-1.48-.94h-18.96c-.56 0-1.33.5-1.5.98zm1.95 15.03v-1.85h-3.81c-.19 0-.38-.03-.56-.07v1.92c0 .87.45 1.8 1.71 1.8h.9c1.31 0 1.76-.93 1.76-1.8zm17.5-3.32v-2.92h-11.66v2.92zm10.21 3.32v-1.92c-.18.04-.37.07-.56.07h-3.81v1.85c0 .87.45 1.8 1.71 1.8h.89c1.32 0 1.77-.93 1.77-1.8zm0-3.62v-9.2c0-.33-.4-.74-.73-.74H247.2c-.31 0-.73.47-.73.73v9.21c0 .29.47.3.56.3h8.19v-3.65c0-.4.32-.74.73-.74h13.12c.4 0 .73.33.73.74v3.65h8.19c.1 0 .56-.01.56-.3zm-24.06-5.18a3.29 3.29 0 1 1-6.57 0 3.29 3.29 0 0 1 6.57 0zm-1.46 0a1.83 1.83 0 1 0-3.65-.01 1.83 1.83 0 0 0 3.65 0zm24.06 0a3.29 3.29 0 1 1-6.57 0 3.29 3.29 0 0 1 6.57 0zm-1.46 0a1.83 1.83 0 1 0-3.65-.01 1.83 1.83 0 0 0 3.65 0z')
+									lineargradient#s4o0b(x1='265', x2='260', y1='5517', y2='5487', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-243 -5485)')
+										use(fill='#e5aa46', xlink:href='#s4o0a')
+										use(fill='url(#s4o0b)', xlink:href='#s4o0a')
+
+						span Бесплатная парковка
+
+					+e.info-item.info-item
+						.info-item__icon
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='32', height='38', viewbox='0 0 32 38')
+								defs
+									path#i6zza(d='M257.4 5555.65c-2.72-3.15-2.27-8.54-2.22-9.05.18-3.9 1.99-5.75 3.47-6.6 1.47-.87 3.01-1 3.8-1h.11c1.43.03 2.7.38 3.8 1.02 1.47.86 3.25 2.71 3.42 6.58.05.51.5 5.9-2.21 9.05a6.43 6.43 0 0 1-4.98 2.2H262.37a6.4 6.4 0 0 1-4.97-2.2zm1.42-1.3a4.55 4.55 0 0 0 3.62 1.55h.07a4.56 4.56 0 0 0 3.64-1.55c2.24-2.6 1.75-7.52 1.74-7.57v-.06c-.22-4.92-3.46-5.71-5.37-5.76h-.08c-1.54 0-5.13.56-5.36 5.76l-.01.06c0 .04-.49 5 1.75 7.57zm17.82 15.73a.97.97 0 0 1-.37.46c-.2.13-5.28 3.46-13.77 3.46-8.49 0-13.56-3.32-13.77-3.46a.93.93 0 0 1-.37-.46 11.4 11.4 0 0 1-.36-3.28v-.03-.18c.05-1.43.14-4.78 3.2-5.86l.08-.02c3.2-.84 5.82-2.72 5.85-2.74a.94.94 0 0 1 1.33.24 1 1 0 0 1-.23 1.36c-.12.08-2.93 2.1-6.45 3.02-1.64.6-1.82 2.4-1.87 4.06l-.01.18c-.01.65.04 1.66.15 2.24 1.15.67 5.66 2.98 12.44 2.98 6.82 0 11.3-2.3 12.44-2.97.12-.58.16-1.59.15-2.24v-.18c-.06-1.65-.24-3.46-1.88-4.06a21.73 21.73 0 0 1-6.45-3.02 1 1 0 0 1-.23-1.37c.3-.44.9-.55 1.33-.24.03.03 2.67 1.91 5.85 2.74l.07.03c3.07 1.07 3.16 4.42 3.2 5.86V5566.8c.02.38.02 2.31-.33 3.28z')
+									lineargradient#i6zzb(x1='265.98', x2='259', y1='5574', y2='5539', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-246 -5537)')
+										use(fill='#e5aa46', xlink:href='#i6zza')
+										use(fill='url(#i6zzb)', xlink:href='#i6zza')
+
+
+						+b.A.link-decor(href='#!') Задать вопрос юристу
+
+			+e.map-wrap(data-anim='fade-x')
+				+e.map
+
+		//end contacts

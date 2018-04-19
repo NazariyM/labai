@@ -1,0 +1,52 @@
+.info-item
+   display: flex
+   align-items: flex-start
+   
+   svg
+      flex-shrink: 0
+      margin-right: 8px
+      
+   &__icon
+      flex: 0 0 35px
+      width: 35px
+      margin-right: 25px
+      +xs
+         margin-right: 15px
+   
+   &_tel
+      a
+         +f('cal-700', 20, 28)
+   &_icon-bottom
+      align-items: flex-end
+      
+.anim-mouse
+   width: 32px
+   height: 47px
+   border: 2px solid rgba(255, 255, 255, .6)
+   background-image: linear-gradient(-182deg, rgba(135, 135, 135, 0) 0%, rgba(135, 135, 135, 0.75) 100%)
+   background-position: 100% -100%
+   background-size: 100% 200%
+   background-repeat: no-repeat
+   border-radius: 14px
+   cursor: pointer
+   z-index: 10
+   transition: .7s ease-in-out
+   
+   &:hover
+      background-position: 100% 100%
+      background-size: 100% 100%
+   &__point
+      position: absolute
+      width: 6px
+      height: 6px
+      border-radius: 100%
+      background: rgba(255, 255, 255, .9)
+      left: 50%
+      top: 70%
+      transform: translate(-50%, 0)
+      animation-name: mousePoint
+      animation-duration: 2.3s
+      animation-iteration-count: infinite
+      animation-direction: reverse
+      animation-timing-function: linear
+      animation-fill-mode: backwards

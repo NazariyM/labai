@@ -1,0 +1,105 @@
+.footer
+   padding: 40px 0 60px
+   transform: translateY(-100px)
+   +xs
+      padding: 40px 0
+   &__container
+   
+   &__row
+      display: flex
+      margin: 0 -15px
+      +md
+         justify-content: space-around
+      +xs
+         flex-direction: column
+   
+   &__col
+      padding: 0 15px
+      flex-grow: 0
+      flex-shrink: 0
+      +md
+         flex-shrink: 1
+      +xs
+         text-align: center
+         
+      &:not(:last-child)
+         +xs
+            margin-bottom: 20px
+         
+      &:nth-child(1)
+         position: relative
+         flex-basis: 360px
+         +xs
+            flex: 0 1 auto
+            
+         &::before
+            position: absolute
+            top: -40px
+            left: -75px
+            z-index: -1
+            width: 233px
+            height: 246px
+            background: url("../img/bg/footer_pattern.png") no-repeat 50% 50% / cover
+            content: ''
+            +xs
+               display: none
+            
+      &:nth-child(2)
+         flex-basis: 250px
+         +xs
+            display: none
+      &:nth-child(3)
+         flex-basis: 340px
+         +md
+            display: none
+      
+   &__logo
+      margin-left: -8px
+      margin-bottom: 17px
+      svg
+         margin-right: 11px
+      +xs
+         margin: 0 auto 15px
+   
+   &__copyright
+      font-size: 14px
+      line-height: 20px
+      
+   &__info-item
+      color: #000
+      line-height: 22px
+      margin-bottom: 5px
+      &:nth-child(2)
+         margin-bottom: 16px
+      &:last-child
+         margin-bottom: 0
+      &.info-item_tel a
+         margin-top: -3px
+         margin-left: 3px
+      .info-item__icon
+         flex: 0 0 25px
+         width: 25px
+         margin-right: 14px
+         
+      a:not(.link-decor)
+         +trs
+         .no-touch &:hover
+            color: $color1
+      
+   &__socials
+      margin: 5px 0 35px
+      +xs
+         margin: 5px 0 25px
+         
+   &__dev
+      letter-spacing: 0
+      a
+         color: #28b298
+      
+   ul
+      li
+         a
+            +trs
+            +f('cal-700', 18, 30)
+            .no-touch &:hover
+               color: $color1

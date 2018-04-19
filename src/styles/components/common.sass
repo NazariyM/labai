@@ -1,0 +1,136 @@
+// basic styles
+body
+  min-width: 320px
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  +f('cal-300', 18, 20, 25)
+  color: $color2
+  &.is-locked
+    overflow: hidden
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 100%
+    
+.container
+  position: relative
+  max-width: 1140px
+  padding: 0 15px
+  margin: 0 auto
+  
+.link-decor
+  border-bottom: 1px solid currentColor
+  +trs
+  .no-touch &:hover
+    border-bottom-color: transparent
+    
+.title-md
+  +f('cal-400', 42, 48)
+  letter-spacing: 0.06em
+  text-align: center
+  text-transform: uppercase
+  +xs
+    font-size: 28px
+    line-height: 30px
+  
+.title-sm
+  +f('cal-700', 35, 39)
+  letter-spacing: 0.06em
+  +xs
+    font-size: 28px
+    line-height: 30px
+
+.btn
+  position: relative
+  display: inline-block
+  text-transform: uppercase
+  text-align: center
+  outline: 0
+  cursor: pointer
+  
+  &:hover::after
+    background-position: 99% 50%
+  
+  &::after
+    content: ''
+    display: inline-block
+    width: 100%
+    height: 100%
+    background: #fff
+    z-index: 0
+    position: absolute
+    top: 0
+    left: 0
+    background: linear-gradient(270deg, rgba(188, 183, 175, 0.8), rgb(121, 118, 112), rgba(34,34,34,0), rgba(34,34,34,0))
+    background-position: 1% 50%
+    background-size: 300% 300%
+    transition: all 0.8s ease-out
+    
+  span
+    position: relative
+    transition: color 0.8s ease-out
+    z-index: 2
+    color: #fff
+  
+  &_grey
+    min-width: 275px
+    padding: 15px 20px
+    border: 0
+    background-color: #c5c5c5
+    transition: all 0.6s ease-out
+    .no-touch &:hover::after
+      background-position: 99% 50%
+    &::after
+      background: linear-gradient(270deg, rgba(135, 135, 135, 0.75), rgb(121, 118, 112), rgba(34,34,34,0), rgba(34,34,34,0))
+      background-position: 50% 50%
+      background-size: 300% 300%
+    span
+      +f('cal-700', 16, 21)
+  
+  &_transp
+    padding: 14px 32px
+    background: transparent
+    border: 1px solid rgb(188, 183, 175)
+    .no-touch &:hover
+      background: rgba(255,255,255,.9)
+      transition: background 2s ease-out
+    span
+      color: #c5c5c5
+      +f('cal-300', 15, 21)
+    &:hover span
+      color: #fff
+      
+  input
+    display: none
+    
+.slider
+  display: none
+  &.slick-initialized
+    display: block
+    
+  &__btn
+    position: absolute
+    top: 50%
+    z-index: 1
+    margin-top: -20px
+    outline: 0
+    border: 0
+    padding: 0
+    .no-touch &:hover svg
+      fill: $color1
+    &.slick-disabled
+      svg
+        fill: #c5c5c5
+      .no-touch &:hover svg
+        fill: #c5c5c5
+      
+    svg
+      width: 21px
+      height: 40px
+      fill: #000
+      +trs
+    &_prev
+      left: 0
+    &_next
+      right: 0

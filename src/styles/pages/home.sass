@@ -1,0 +1,986 @@
+// begin screen //
+.screen
+   position: relative
+   min-height: 738px
+   padding-top: 200px
+   overflow: hidden
+   +cover
+   +sm
+      padding-top: 80px
+      height: 100vh
+   +xs
+      height: auto
+      min-height: 0
+   &::before, &::after
+      pointer-events: none
+      +coverdiv
+      content: ''
+   &::before
+      background: rgba(#147c66, .1)
+   &::after
+      background: rgba(#001512, .2)
+      
+   &__container
+      position: relative
+      z-index: 1
+      max-width: 940px
+      padding: 60px 15px 50px
+      color: #fff
+      
+   &__title
+      margin-bottom: 25px
+      font-size: 40px
+      line-height: 40px
+      text-transform: uppercase
+      letter-spacing: 0.065em
+      +sm
+         text-align: center
+         margin-bottom: 40px
+      +xs
+         font-size: 30px
+         line-height: 36px
+   
+   &__slider
+      display: flex
+      align-items: center
+      width: 100%
+      justify-content: space-between
+      font-size: 0
+      letter-spacing: 0
+      +sm
+         flex-direction: column
+      &-for
+         display: none
+         vertical-align: middle
+         margin-top: -15px
+         margin-left: -5px
+         width: 435px
+         text-align: left
+         font-size: 18px
+         padding-right: 15px
+         opacity: 0
+         transform: translateX(-60px)
+         +sm
+            margin: 0
+            width: 500px
+            padding: 0 15px 30px
+            text-align: center
+         +xs
+            padding: 0 0 30px
+            width: 100%
+         &.slick-initialized
+            display: inline-block
+         
+      &-nav
+         display: none
+         vertical-align: middle
+         margin-right: -5px
+         width: 385px
+         opacity: 0
+         transform: translateX(60px)
+         +xs
+            width: 100%
+         &.slick-initialized
+            display: inline-block
+   
+      &-btn
+         position: absolute
+         top: 41%
+         margin-top: -45px
+         z-index: 1
+         padding: 0
+         outline: 0
+         border: 0
+         +md
+            display: none
+         +sm
+            display: block
+            top: 100%
+         +xs
+            display: none
+         .no-touch &:hover svg
+            opacity: 1
+         &_prev
+            left: -36.5%
+            +sm
+               left: -20%
+         &_next
+            right: -147.5%
+            +sm
+               right: -20%
+            
+         svg
+            +trs
+            opacity: .3
+            +sm
+               opacity: 1
+            
+         
+   &__item-for
+   &__item-nav
+      position: relative
+      height: 100px!important
+      border: 0!important
+      +vertical
+      background-repeat: no-repeat
+      background-position: 100% 50%
+      background-size: 350px 100px
+      cursor: pointer
+      +xs
+         height: 80px !important
+         background-size: cover
+      &:not(:last-child)
+         margin-bottom: 7px
+      &::after
+         position: absolute
+         top: 0
+         right: 0
+         bottom: 0
+         left: 35px
+         background: rgba(#000, .85)
+         content: ''
+         transition: .5s ease-in-out
+         +xs
+            left: 0
+            
+      &.slick-current
+         pointer-events: none
+         &::after
+            +xs
+               background: rgba(#092a24, .75)
+         
+         .screen__item-nav-bg
+            transform: scaleX(1)
+      
+      p
+         position: relative
+         z-index: 3
+         display: inline-block
+         vertical-align: middle
+         max-width: 300px
+         margin: 0 auto
+         padding-left: 30px
+         font-size: 18px
+         +xs
+            font-size: 17px
+            padding: 0 10px
+   
+      &-bg
+         position: absolute
+         z-index: 2
+         top: -6px
+         left: 7px
+         width: 390px
+         height: 118px
+         background-repeat: no-repeat
+         background-size: cover
+         background-position: 50% 50%
+         transition: transform .5s ease-in-out
+         transform-origin: 100% 100%
+         transform: scaleX(0)
+         +xs
+            display: none
+      
+   &__list
+      margin-bottom: 25px
+      line-height: 21px
+      +sm
+         text-align: left
+      li
+         display: flex
+         align-items: flex-start
+         &:not(:last-child)
+            margin-bottom: 15px
+         svg
+            flex: 0 0 25px
+            height: 25px
+            margin-right: 8px
+            
+   &__link
+      min-width: 147px
+      padding: 14px
+      
+   &__anim-mouse
+      position: absolute
+      bottom: 40px
+      left: calc(49.5% - 8px)
+      opacity: 0
+      transform: translateY(-40px)
+      +sm
+         bottom: 20px
+      +xs
+         display: none
+
+// end screen //
+
+// begin why-us //
+.why-us
+   padding: 70px 0 85px
+   +xs
+      padding: 50px 0
+   
+   &__container
+      +md
+         max-width: 700px
+      
+   &__title
+      margin-bottom: 40px
+      letter-spacing: 0.035em
+      +md
+         margin-bottom: 60px
+   
+   &__inner
+      display: flex
+      margin: 0 -30px
+      +md
+         flex-wrap: wrap
+         justify-content: center
+      +xs
+         margin: 0 -15px
+   
+   &__item
+      flex: 0 1 25%
+      padding: 0 30px
+      text-align: center
+      +md
+         flex: 0 1 50%
+         min-width: 292px
+         padding: 0 30px 50px
+      +xs
+         padding: 0 15px 30px
+   
+      &-pic
+         position: relative
+         margin: 0 auto 15px
+         height: 170px
+         &::before
+            position: absolute
+            top: 0
+            left: 48%
+            margin-left: -65px
+            z-index: -1
+            width: 130px
+            height: 149px
+            background: url('../img/sprites/why-us_sprite.png') -5px -601px
+            content: ''
+         &::after
+            position: absolute
+            top: 25px
+            left: 47%
+            transform: translateX(-50%)
+            background-image: url('../img/sprites/why-us_sprite.png')
+            content: ''
+            
+      &-text
+         margin: 0 auto
+         +f('cal-400')
+      
+   &__item:nth-child(1) &__item-pic::after
+      width: 116px
+      height: 142px
+      background-position: -5px -143px
+      
+   &__item:nth-child(2) &__item-pic::after
+      top: 40px
+      width: 88px
+      height: 128px
+      background-position: -5px -5px
+      
+   &__item:nth-child(3) &__item-pic::after
+      width: 104px
+      height: 144px
+      background-position: -5px -447px
+   
+   &__item:nth-child(4) &__item-pic::after
+      width: 123px
+      height: 142px
+      background-position: -5px -295px
+      
+   &__item:nth-child(1) &__item-text
+      max-width: 150px
+   &__item:nth-child(2) &__item-text
+      max-width: 200px
+   &__item:nth-child(3) &__item-text
+      max-width: 220px
+      
+   &__item:nth-child(4) &__item-text
+      max-width: 200px
+
+// end why-us //
+
+// begin bankruptcy //
+.bankruptcy
+   position: relative
+   padding: 100px 0 110px
+   color: #fff
+   +cover
+   +xs
+      padding: 70px 0
+   &::after
+      +coverdiv
+      background: rgba(#001512, .8)
+      content: ''
+   
+   &__container
+      position: relative
+      z-index: 1
+      
+   &__title
+      margin-bottom: 40px
+      
+   &__sub-title
+      margin-bottom: 20px
+      font-size: 30px
+      +xs
+         font-size: 24px
+   
+   &__row
+      display: flex
+      margin: 0 -15px
+      +md
+         margin: 0 -10px
+      +xs
+         margin: 0
+         flex-wrap: wrap
+         justify-content: center
+      &:not(:last-child)
+         margin-bottom: 45px
+         +xs
+            margin-bottom: 15px
+   
+   &__item
+      position: relative
+      display: flex
+      flex-direction: column
+      justify-content: center
+      flex: 0 1 33.333333%
+      margin: 0 15px
+      height: 200px
+      cursor: default
+      text-align: center
+      +md
+         margin: 0 10px
+         cursor: pointer
+      +xs
+         flex: 1 0 auto
+         width: 100%
+         margin: 0 15px 30px
+      &:hover
+         &::before
+            border-color: transparent
+            box-shadow: 0 0 0 2px #e5aa46, 3px 4px 10px rgba(0, 0, 0, 0.5)
+            
+         &::after
+            transform: scale(1)
+            
+         .bankruptcy__item-title
+            transform: scale(1.3) translateY(-30px)
+            color: #e5aa46
+            +md
+               transform: scale(1.05) translateY(-30px)
+            +xs
+               transform: scale(1.2) translateY(-30px)
+         .bankruptcy__item-link
+            opacity: 1
+            transform: translateX(-50%) scale(1)
+            
+      &::before
+         +coverdiv
+         border: 1px solid rgba(#fff, .3)
+         transition: .3s ease-in-out
+         content: ''
+      &::after
+         +coverdiv
+         background: #000d0a
+         transform: scale(0)
+         border: 1px solid transparent
+         transition: transform .3s ease-in-out
+         content: ''
+      
+      &-title
+         position: relative
+         z-index: 1
+         align-self: center
+         +f('cal-700', 17, 22)
+         text-transform: uppercase
+         transition: .3s ease-in-out
+         +gpu
+         
+      &-link
+         position: absolute
+         z-index: 1
+         left: 50%
+         bottom: 50px
+         transform: translateX(-50%) scale(.5)
+         opacity: 0
+         align-self: center
+         transition: .3s ease-in-out
+         
+      &_sm
+         flex: 0 1 calc(25% - 30px)
+         height: 170px
+         +md
+            flex: 0 1 calc(25% - 20px)
+         .bankruptcy__item-title
+            max-width: 160px
+            margin: 0 auto
+         .bankruptcy__item-link
+            bottom: 30px
+            padding: 10px 32px
+            span
+               font-size: 14px
+            
+// end bankruptcy //
+
+
+// begin in-numbers //
+.in-numbers
+   padding: 102px 0 50px
+   +xs
+      padding: 50px 0
+   &__title
+      margin-bottom: 25px
+      color: #000
+      font-size: 42px
+      text-align: center
+      text-transform: uppercase
+      opacity: 0
+      transform: translateY(60px)
+      +md
+         margin-bottom: 40px
+   &__container
+      +md
+         max-width: 700px
+      
+   &__inner
+      display: flex
+      margin: 0 -15px
+      +md
+         flex-wrap: wrap
+         justify-content: center
+   &__item
+      position: relative
+      flex: 0 0 25%
+      min-width: 285px
+      padding: 0 15px
+      text-align: center
+      +md
+         flex: 0 0 50%
+         padding: 0 15px 30px
+      &-back-numb
+         display: block
+         position: absolute
+         left: 50%
+         transform: translateX(-50%) translateY(100px)
+         top: 0
+         +f('ms-black', 60, 60)
+         color: rgba(#000, .15)
+         white-space: nowrap
+         opacity: 0
+         span
+            font-size: 72px
+            line-height: 72px
+         
+      &-numb
+         position: relative
+         display: flex
+         align-items: center
+         justify-content: center
+         width: 125px
+         height: 129px
+         margin: 40px auto 8px
+         color: #000
+         +f('cal-700', 25, 25, -30)
+         background: url("../img/other/green-circle.png") no-repeat 50% 50% / cover
+         opacity: 0
+         transform: rotate(180deg)
+         span
+            opacity: 0
+            padding-left: 4px
+            max-width: 60px
+            transform: scale(.5)
+            
+      &-text
+         max-width: 170px
+         margin: 0 auto
+         opacity: 0
+         transform: translateY(-100px)
+         +f('cal-400')
+         
+// end in-numbers //
+
+// begin realized //
+.realized
+   padding: 68px 0 100px
+   +xs
+      padding: 50px 0
+   
+   &__container
+      max-width: 1240px
+   
+   &__title
+      margin-bottom: 43px
+      text-transform: uppercase
+      color: #18222d
+      font-size: 35px
+      text-align: center
+   
+   &__block
+      padding: 0 50px
+      +xs
+         padding: 0
+      &-wrap
+         max-width: 1210px
+         margin-bottom: 37px
+         
+      .slider__btn
+         +xs
+            top: 300px
+   
+   &__item
+      margin: 0 -15px
+      +clr
+      +xs
+         margin: 0
+      
+   &__images
+      position: relative
+      float: left
+      margin: 0 15px
+      width: percentage(445 / 1140)
+      height: 254px
+      +cover-img
+      overflow: hidden
+      +md
+         width: 67%
+         float: none
+         margin: 0 auto 20px
+      +xs
+         width: 100%
+         
+      &-item
+         +coverdiv
+         pointer-events: none
+         opacity: 0
+         transform: scale(.5)
+         transition: .5s ease
+         &.is-active
+            pointer-events: auto
+            opacity: 1
+            transform: scale(1)
+            .no-touch &:hover img
+               transform: scale(1.15)
+         img
+            transition: .8s ease
+            +gpu
+            
+   &__content
+      float: left
+      width: percentage(635 / 1140)
+      margin: 0 15px
+      +md
+         width: 75%
+         float: none
+         margin: 0 auto
+      +xs
+         width: 100%
+      
+   &__actions
+      display: flex
+      margin-bottom: 27px
+      +md
+         justify-content: center
+      &-btn
+         height: 52px
+         flex: 0 0 55px
+         padding: 0
+         outline: 0
+         border: 0
+         border-bottom: 1px solid rgba(#cccccc, .5)
+         font-size: 0
+         +trs
+         &:not(:last-child)
+            margin-right: 10px
+            
+         .no-touch &:hover
+            border-bottom-color: #e5aa46
+         &.is-active
+            pointer-events: none
+            border-bottom-color: #e5aa46
+            svg
+               fill: #e5aa46
+            
+         svg
+            fill: #cccccc
+            width: 32px
+            height: 34px
+            +trs
+      
+   &__text
+      &-title
+         margin-bottom: 10px
+         +f('cal-700', 18, 21)
+         letter-spacing: 0.055em
+         text-transform: uppercase
+      p
+         font-size: 17px
+         line-height: 25px
+         color: #61656b
+         letter-spacing: 0.023em
+         &:last-child
+            color: #18222d
+   
+   &__more
+      text-align: center
+// end realized //
+
+// begin banks //
+.banks
+   padding: 84px 0 53px
+   background-color: rgba(#f6f6f6, .5)
+   +xs
+      padding: 50px 0
+   &__container
+      max-width: 900px
+   &__title
+      margin-bottom: 50px
+      text-transform: none
+      letter-spacing: 0.025em
+      line-height: 42px
+      opacity: 0
+      transform: translateX(-50px)
+      +xs
+         margin-bottom: 25px
+   
+   &__inner
+      display: flex
+      align-items: center
+      margin: 0 -25px
+      +md
+         flex-wrap: wrap
+         justify-content: center
+         margin: 0 -15px
+   
+   &__logo
+      position: relative
+      flex-shrink: 0
+      margin: 0 25px 25px
+      +md
+         margin: 0 15px 20px
+      &:hover img:nth-child(2)
+         opacity: 1
+      img
+         &:nth-child(2)
+            +coverdiv
+            opacity: 0
+            transition: opacity .5s ease-in-out
+            +gpu
+   
+// end banks //
+
+// begin consult //
+.consult
+   position: relative
+   padding: 70px 0 90px
+   +cover
+   +xs
+      padding: 50px 0 70px
+   &::after
+      +coverdiv
+      content: ''
+      background: rgba(#001512, .7)
+      
+   &__container
+      position: relative
+      z-index: 1
+      max-width: 500px
+      
+   &__title
+      margin-bottom: 30px
+      text-align: center
+      +f('cal-700', 35, 35)
+      letter-spacing: 0.025em
+      color: #fff
+      +xs
+         font-size: 25px
+         line-height: 30px
+      
+   &__form-wrap
+      position: relative
+      padding: 38px 60px 56px
+      text-align: center
+      background: #fff
+      +xs
+         padding: 35px 30px 45px
+      &::after
+         position: absolute
+         top: 40px
+         bottom: -10px
+         left: -10px
+         right: -10px
+         z-index: -1
+         background-color: rgba(#fff, .8)
+         content: ''
+         
+      p
+         color: #18222d
+         font-size: 12px
+         line-height: 1.2
+         letter-spacing: 0.025em
+         a
+            display: inline-block
+            color: #28b298
+   &__form-field
+      &:not(:last-child)
+         margin-bottom: 15px
+      input
+         display: block
+         width: 100%
+         height: 35px
+         padding: 0
+         outline: 0
+         border: 0
+         +f('cal-400', 16, 35, 25)
+         color: #18222d
+         border-bottom: 1px solid rgba(#cccccc, .5)
+         background: transparent
+         +placeholder-color(#18222d)
+         
+   &__form-submit
+      margin: 30px 0 10px
+      &-btn
+         +xs
+            min-width: 0
+            width: 100%
+
+// end consult //
+
+// begin latest-events //
+.latest-events
+   padding: 80px 0 60px
+   +xs
+      padding: 50px 0
+   &__top
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 35px
+      +xs
+         flex-direction: column
+         margin-bottom: 25px
+   
+   &__title
+      text-transform: uppercase
+      +xs
+         margin-bottom: 15px
+         text-align: center
+      
+   &__more-btn
+      min-width: 170px
+      
+   &__inner
+      display: flex
+      margin: 0 -15px
+      +sm
+         max-width: 540px
+         padding: 0 60px
+         margin: 0 auto
+      +xs
+         padding: 0 0 18px
+   
+      .slider__btn
+         opacity: 1
+         transform: none!important
+         +xs
+            top: auto
+            bottom: 0
+            
+   &__item
+      flex: 0 1 33.333333%
+      margin: 0 15px
+      height: 410px
+      position: relative
+      overflow: hidden
+      +sm
+         margin: 0
+   
+   &__img
+      position: absolute
+      +cover
+      +coverdiv
+      height: 215px
+      z-index: 2
+      transition: height .4s ease-in-out
+      will-change: height
+      &::after
+         pointer-events: none
+         +coverdiv
+         transition: .4s ease-in-out
+         content: ''
+      &:hover
+         height: 100%
+         &::after
+            background: rgba(#001512, .7)
+         .latest-events__text_hidden
+            opacity: 1
+            transform: translateY(0)
+         
+   &__text
+      margin-top: 228px
+      +xs
+         text-align: center
+      p
+         margin-bottom: 5px
+         max-height: 120px
+         padding-right: 10px
+         color: #18222d
+         +f('cal-400', 20, 30)
+         letter-spacing: 0
+      span
+         display: block
+         margin-bottom: 15px
+         font-size: 16px
+         color: #e5aa46
+      a
+         font-size: 15px
+         text-transform: uppercase
+         letter-spacing: 0.07em
+   
+      &_hidden
+         pointer-events: none
+         +coverdiv
+         z-index: 3
+         display: flex
+         flex-direction: column
+         justify-content: center
+         opacity: 0
+         margin: 0
+         padding: 0 30px 20px
+         transform: translateY(100%)
+         transition: .4s ease-in-out
+         color: #fff
+         p
+            padding: 0
+            margin: 0 0 20px
+            max-height: 180px
+            font-size: 24px
+            color: #fff
+         a
+            pointer-events: auto
+            align-self: flex-start
+      
+// end latest-events //
+
+// begin seo-text //
+.seo-text
+   padding: 70px 0 40px
+   +xs
+      padding: 50px 0 20px
+   &__title
+      max-width: 860px
+      margin: 0 auto 30px
+      text-transform: none
+      letter-spacing: 0.025em
+      line-height: 42px
+   p
+      color: #18222d
+      letter-spacing: 0
+      line-height: 30px
+      &:not(:last-child)
+         margin-bottom: 30px
+      a
+         color: #e5aa46
+// end seo-text //
+
+// begin contacts //
+.contacts
+   position: relative
+   z-index: 2
+   display: flex
+   overflow: hidden
+   +sm
+      flex-direction: column
+   &__content
+      position: relative
+      display: flex
+      align-items: flex-start
+      justify-content: flex-end
+      flex: 1 1 percentage(720 / 1600)
+      padding: 60px 140px 20px 50px
+      +cover
+      opacity: 0
+      transform: translateX(-100px)
+      +md
+         padding: 60px 50px 20px 50px
+      +sm
+         order: 1
+         justify-content: center
+         padding: 50px 50px 30px 50px
+      +xs
+         padding: 40px 15px 30px
+   
+      &::after
+         +coverdiv
+         background: rgba(#001512, .7)
+         content: ''
+      &-inner
+         position: relative
+         z-index: 1
+         flex: 0 0 335px
+         +xs
+            flex: 0 1 auto
+         
+   &__info-item
+      align-items: center
+      color: #fff
+      font-size: 22px
+      line-height: 26px
+      +sm
+         font-size: 20px
+         line-height: 22px
+      +xs
+         font-size: 18px
+         line-height: 20px
+         
+      &:first-child
+         align-items: flex-start
+         
+      &:not(:last-child)
+         margin-bottom: 15px
+         
+      p
+         line-height: 30px
+         
+      a:not(.link-decor)
+         +trs
+         .no-touch &:hover
+            color: #e5aa46
+         
+      .link-decor
+         color: $color3
+      .icon-loc
+         width: 30px
+         height: 38px
+      .icon-clock,
+      .icon-tel
+         width: 35px
+         height: 35px
+      .icon-mail
+         width: 38px
+         height: 30px
+      
+   &__map-wrap
+      position: relative
+      flex: 1 1 percentage(880 / 1600)
+      height: 470px
+      opacity: 0
+      transform: translateX(100px)
+      +xs
+         height: 300px
+   &__map
+      +coverdiv
+      
+      .gmnoprint
+         pointer-events: none
+      
+// end contacts //

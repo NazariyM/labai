@@ -1,0 +1,304 @@
+.header
+   $parent: &
+   position: fixed
+   top: 0
+   left: 0
+   right: 0
+   z-index: 100
+   padding: 32px 0 0
+   color: #fff
+   +f('cal-300', 18, 22)
+   transition: transform .2s ease-in-out, background 1s ease-in-out
+   +md
+      padding: 20px 0 0
+   +xs
+      padding: 5px 0 0
+   &.no-transition
+      transform: translateY(-100%)
+      transition: none!important
+   &.is-fixed
+      transform: translateY(calc(-100% + 60px))
+      background: rgba(0, 21, 18, 0.9)
+      +sm
+         transform: translateY(0)
+      
+   &.scrolled-top
+      transform: translateY(0)
+   
+   &__container
+      display: flex
+      align-items: flex-start
+      max-width: 1170px
+      padding: 0 15px 40px
+      +md
+         padding: 0 0 25px 25px
+      +sm
+         align-items: center
+         padding: 0 25px 25px 25px
+      +xs
+         flex-direction: column
+         align-items: flex-start
+         padding: 0 15px 37px
+   
+   &__col
+      padding: 0 15px
+      flex-grow: 0
+      flex-shrink: 0
+      +md
+         flex-shrink: 1
+         
+      &:nth-child(1)
+         flex-basis: 320px
+         padding-left: 0
+         +xs
+            flex: 0 1 auto
+            margin-bottom: 10px
+      &:nth-child(2)
+         flex-basis: 346px
+         +md
+            margin-left: auto
+         +sm
+            display: none
+      &:nth-child(3)
+         flex-basis: 276px
+         +md
+            flex-basis: 240px
+         +sm
+            margin-left: auto
+         +xs
+            flex: 0 1 auto
+            margin-left: 0
+            padding: 0
+   
+      &:nth-child(4)
+         padding-right: 0
+         flex-basis: 190px
+         +md
+            display: none
+         
+   &__logo
+      +xs
+         font-size: 14px
+         line-height: 18px
+         svg
+            margin-right: 10px
+   
+   &__info-item
+      +xs
+         display: none
+      &:not(:last-child)
+         margin-bottom: 15px
+         +sm
+            margin-bottom: 10px
+      &.info-item_tel
+         +xs
+            display: flex
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            white-space: nowrap
+            margin-bottom: 0
+      &.info-item_tel a
+         +xs
+            font-size: 17px
+            
+   &__nav
+      background-color: #027d65
+      transition: .2s ease-in-out
+      +sm
+         display: none
+         height: calc(100vh - 113px)
+         transition: none
+      +xs
+         height: calc(100vh - 115px)
+      #{$parent}.is-fixed &
+         box-shadow: 0 2px 10px rgba(#027d65, .8)
+      > ul
+         display: flex
+         max-width: 1140px
+         padding: 0 15px
+         margin: 0 auto
+         +md
+            padding: 0
+         +sm
+            height: 100%
+            justify-content: center
+            flex-direction: column
+         > li
+            position: relative
+            flex: 1 1 auto
+            +sm
+               flex: 0 1 auto
+               border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+            &:first-child::before
+               position: absolute
+               left: 0
+               top: 0
+               height: 100%
+               width: 1px
+               background: #1c8a75
+               transition: .4s ease
+               content: ''
+               +sm
+                  display: none
+            &::after
+               position: absolute
+               right: 0
+               top: 0
+               height: 100%
+               width: 1px
+               background: #1c8a75
+               transition: .4s ease
+               content: ''
+               +sm
+                  display: none
+            &:hover
+               &::after, &::before
+                  background: #106654
+               > a
+                  background: #106654
+                  
+               ul
+                  pointer-events: auto
+                  opacity: 1
+                  transform: translateY(0)
+                  background: #fafafa
+                  z-index: 99
+                  box-shadow: 0 0 15px rgba(#106654, .8)
+            > a
+               display: flex
+               align-items: center
+               justify-content: center
+               padding: 22px 10px
+               +f('cal-700', 16, 16)
+               text-transform: uppercase
+               transition: .4s ease
+               
+               svg
+                  position: absolute
+                  top: 50%
+                  margin-top: -4px
+                  right: 11px
+                  +sm
+                     display: none
+            ul
+               pointer-events: none
+               position: absolute
+               top: 100%
+               left: 0
+               z-index: 1
+               padding: 17px 29px 17px 36px
+               background: #fff
+               text-align: left
+               opacity: 0
+               transform: translateY(15%)
+               transition: .4s ease
+               +sm
+                  display: none
+                  position: relative
+                  top: auto
+                  left: auto
+                  opacity: 1
+                  text-align: center
+                  transform: none
+               &::after
+                  position: absolute
+                  top: 0
+                  left: 38px
+                  +arr(9, 5, #106654, b)
+                  content: ''
+                  +sm
+                     top: -1px
+                     left: 50%
+                     +arr(15, 7, #106654, b)
+               > li
+                  &:not(:last-child)
+                     margin-bottom: 8px
+                  > a
+                     white-space: nowrap
+                     color: #000
+                     font-size: 18px
+                     letter-spacing: 0
+                     +trs
+                     .no-touch &:hover
+                        color: $color1
+   
+.logo
+   display: flex
+   align-items: center
+   flex: 0 0 234px
+   width: 234px
+   text-transform: uppercase
+   +f('cal-700', 17, 21)
+   letter-spacing: 0.055em
+   svg
+      flex: 0 0 72px
+      height: 68px
+      margin-right: 22px
+      
+.nav-btn
+   display: none
+   $parent: &
+   border: 0
+   outline: 0
+   padding: 0
+   margin-left: 10px
+   +sm
+      display: block
+   +xs
+      position: absolute
+      top: 7px
+      right: 15px
+      margin: 0
+      
+   &.is-active span
+      color: #e5aa46
+   span
+      +f('cal-700', 18, 18)
+      transition: all .3s
+      color: #fff
+      +xs
+         display: none
+      
+   &__burger
+      margin: auto
+      width: 50px
+      height: 40px
+      cursor: pointer
+   &__lines
+      width: 50px
+      height: 4px
+      &:after, &:before
+         width: 50px
+         height: 4px
+      position: relative
+      transform: translateY(25px)
+      background: white
+      transition: all .3s
+      #{$parent}.is-active &
+         background: rgba(255, 255, 255, 0)
+      &:before
+         content: ""
+         position: absolute
+         left: 0
+         bottom: 12px
+         background: white
+         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+      &:after
+         content: ""
+         position: absolute
+         left: 0
+         top: 12px
+         background: white
+         transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+      #{$parent}.is-active &
+         &:after
+            background: #e5aa46
+            top: 0
+            transform: rotate(45deg)
+            transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+         &:before
+            background: #e5aa46
+            bottom: 0
+            transform: rotate(-45deg)
+            transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
