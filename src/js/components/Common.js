@@ -5,6 +5,7 @@ import './NoTouch';
 import './Anims';
 import './Header';
 import './Slider';
+import './CTabs';
 import './InNumbers';
 import './Realized';
 import './Dot';

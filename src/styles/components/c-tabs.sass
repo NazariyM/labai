@@ -1,0 +1,41 @@
+.c-tabs
+	$parent: &
+	&__nav
+		position: relative
+		display: flex
+		justify-content: center
+		z-index: 1
+		margin-bottom: 30px
+		
+	&__for
+		position: relative
+	&__btn
+		position: relative
+		width: 230px
+		padding: 5px 15px 5px
+		+f('cal-700', 16, 16, 25)
+		text-transform: uppercase
+		text-align: center
+		cursor: pointer
+		border: 2px solid #c4c4c4
+		background-color: #fff
+		+trs
+		&.is-active
+			pointer-events: none
+			background-color: #e4a13a
+			border-color: transparent
+			color: #fff
+		&.is-disabled
+			pointer-events: none
+			opacity: 0.5
+			background-color: $white
+		.no-touch &:hover
+		
+		&:not(:last-child)
+			margin-right: 1px
+	
+	&__tab
+		display: none
+		
+		&:first-child
+			display: block

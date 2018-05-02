@@ -1,0 +1,66 @@
+// begin stages //
+.stages
+   padding: 60px 0
+   
+   &__title
+      margin-bottom: 30px
+      text-align: center
+      
+   &__inner
+      position: relative
+      display: flex
+      flex-wrap: wrap
+      margin: 0 -35px
+      &::after
+         position: absolute
+         top: 0
+         left: 50%
+         margin-left: -62.5px
+         width: 125px
+         height: 511px
+         background: url("../img/other/stages_dots.png") no-repeat center / cover
+         content: ''
+      
+   &__item
+      $parent: &
+      display: flex
+      align-items: flex-start
+      flex: 0 1 50%
+      padding: 0 35px
+      &_left
+         text-align: right
+      &_right
+         text-align: left
+         
+      &-text
+         #{$parent}_left &
+            padding-right: 40px
+         #{$parent}_right &
+            padding-left: 40px
+         
+      &-title
+         margin-bottom: 10px
+         +f('cal-700', 20, 21, 0)
+      &-descr
+         margin-bottom: 10px
+      &-term
+         display: flex
+         align-items: center
+         +f('cal-700', 12)
+         font-style: italic
+         text-transform: uppercase
+         #{$parent}_left &
+            justify-content: flex-end
+         
+         svg
+            margin-right: 10px
+            width: 17px
+            height: 17px
+            
+      &-addition
+         font-size: 13px
+         line-height: 14px
+         font-style: italic
+         color: #61656b
+      
+// end stages //

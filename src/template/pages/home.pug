@@ -283,11 +283,17 @@ block main
 								span оставить заявку
 								+e.INPUT(type='submit' value='')
 
-						+e.P Нажимая на кнопку  "Получить консультацию", вы даете согласие на обработку персональных данных
+						+e.P Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
 							br
 							= ' '
 							| и соглашаетесь c
 							+b.A.link-decor(href='#!') политикой конфиденциальности.
+
+					script.
+						function showMessageOnSucces () {
+							$.fancybox.open('<div class="success-message"><p>Письмо успешно отправлено</p></div>');
+						}
+
 		//end consult
 
 		//begin latest-events

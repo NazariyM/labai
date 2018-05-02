@@ -1,0 +1,69 @@
+.hover-tabs
+   $parent: &
+   &__container
+      display: flex
+   
+   &__text
+      display: flex
+      flex-direction: column
+      justify-content: center
+      min-height: 330px
+      padding: 20px 10px
+      
+   &__title
+      margin-bottom: 20px
+      color: #18222d
+      text-align: left
+      
+   &__descr
+      font-size: 17px
+      line-height: 25px
+      color: #61656b
+      
+   &__actions
+      display: flex
+      flex: 0 0 540px
+      &-btn
+         position: relative
+         display: flex
+         flex-direction: column
+         align-items: center
+         justify-content: center
+         flex: 0 0 181px
+         padding: 30px 20px
+         border-right: 1px solid #e5e5e5
+         text-align: center
+         &:hover #{$parent}__actions-btn-bg
+            height: 100%
+         &:hover
+            svg
+               fill: #fff
+            h4
+               color: #fff
+            
+         &-bg
+            height: 6px
+            +coverdiv
+            +cover
+            z-index: -1
+            transition: height .5s ease
+            
+            &::after
+               +coverdiv
+               background: rgba(#e2a14c, .8)
+               content: ''
+         
+         svg
+            width: 38px
+            height: 41px
+            margin-bottom: 20px
+            fill: #e5aa46
+            transition: .5s ease
+            
+            
+         h4
+            +f('cal-700', 16, 21, 25)
+            text-transform: uppercase
+            color: #18222d
+            transition: .5s ease
+            

@@ -1,0 +1,48 @@
+.expand-text
+   padding: 60px 0
+   line-height: 30px
+   
+   &__descr
+      margin-bottom: 30px
+   
+   &__title
+      margin-bottom: 30px
+      
+   &__list
+      position: relative
+      &::after
+         pointer-events: none
+         position: absolute
+         left: 0
+         right: 0
+         bottom: 0
+         background-image: linear-gradient(to top, #fff, transparent)
+         height: 200px
+         content: ''
+      &-title
+         margin-bottom: 10px
+         +f('cal-700', 18, 30)
+         
+      > ul
+         counter-reset: expand-list-counter
+         > li
+            position: relative
+            &::before
+               display: inline
+               counter-increment: expand-list-counter
+               content: counter(expand-list-counter, decimal) '.'
+            
+            p
+               &:first-of-type
+                  display: inline
+               
+            > ul
+               margin-top: 20px
+               > li
+                  &:not(:last-child)
+                     margin-bottom: 10px
+   
+   &__btn
+      display: block
+      margin: 0 auto
+      min-width: 250px
