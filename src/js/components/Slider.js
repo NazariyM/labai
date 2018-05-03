@@ -1,5 +1,4 @@
 import { css } from '../modules/dev/_helpers';
-import ScrollAnim from '../modules/dev/animation/scrollAnim';
 import { TweenMax, TimelineMax } from 'gsap';
 import $ from 'jquery';
 import 'slick-carousel';
@@ -144,6 +143,8 @@ class Slider {
 
   createSlider () {
 
+    const $specSlider = $('.spec__slider');
+
     const defaultOptions = {
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -168,6 +169,10 @@ class Slider {
         adaptiveHeight: true
       }));
     });
+
+    $specSlider.slick($.extend({}, defaultOptions, {
+      infinite: true
+    }));
   }
 }
 

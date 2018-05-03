@@ -1,4 +1,5 @@
 .screen
+   $parent: &
    position: relative
    min-height: 738px
    padding-top: 200px
@@ -9,6 +10,13 @@
    +xs
       height: auto
       min-height: 0
+      
+   &_bankrupt
+      &::before
+         display: none
+      &::after
+         background: rgba(#001512, .8)
+      
    &::before, &::after
       pointer-events: none
       +coverdiv
@@ -34,18 +42,26 @@
       max-width: 850px
       margin: 0 auto
       text-align: center
-   
+      #{$parent}_bankrupt &
+         max-width: 870px
+         padding: 20px 0 0
+         
    &__container
       position: relative
       z-index: 1
       max-width: 940px
       padding: 60px 15px 50px
       color: #fff
-      
+      #{$parent}_bankrupt &
+         max-width: 1140px
+         padding: 47px 15px 50px
+   
    &__main-title
       color: #e5aa46
       +f('cal-700', 40, 50)
+      letter-spacing: 0.03em
       text-transform: uppercase
+      
    &__title
       margin-bottom: 25px
       font-size: 40px
@@ -58,6 +74,11 @@
       +xs
          font-size: 30px
          line-height: 36px
+         
+      #{$parent}_bankrupt &
+         margin-bottom: 45px
+         font-size: 35px
+         letter-spacing: 0.09em
    
    &__slider
       display: flex
@@ -233,16 +254,15 @@
       margin-bottom: 50px
       
    &__form
-      margin-top: 40px
       &-wrap
          max-width: 740px
          margin: 0 auto
       &-row
          display: flex
-         margin: 0 -5px
+         margin: 0 -5px 13px
       &-field
          flex: 0 1 33.33333%
-         margin: 0 5px 20px
+         margin: 0 5px
       &-input
          width: 100%
          height: 50px
@@ -256,15 +276,18 @@
             text-transform: uppercase
             
       &-submit-btn
+         height: 50px
          min-width: 0
          width: 100%
          
       a
+         display: block
          max-width: 640px
          margin: 0 auto
          color: #808080
          font-size: 14px
          line-height: 18px
+         letter-spacing: 0.025em
          
    &__parallax-bg
       +coverdiv

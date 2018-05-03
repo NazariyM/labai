@@ -9,8 +9,12 @@ import './CTabs';
 import './InNumbers';
 import './Realized';
 import './Dot';
+import './HoverTabs';
+import './ExpandText';
+import './Faq';
 import './ContactMap';
 import './scrolls';
+import './initChangeText';
 
 export class Common {
   /**

@@ -1,15 +1,28 @@
 .expand-text
-   padding: 60px 0
+   padding: 90px 0
    line-height: 30px
-   
-   &__descr
-      margin-bottom: 30px
+   letter-spacing: 0
    
    &__title
+      margin-bottom: 16px
+      text-align: center
+      letter-spacing: 0.06em
+      
+   &__descr
       margin-bottom: 30px
       
-   &__list
+   &__content
       position: relative
+      height: 275px
+      overflow: hidden
+      
+      &.is-active
+         &::after
+            opacity: 0
+            
+         + .expand-text__btn
+            transform: translateY(30px)
+      
       &::after
          pointer-events: none
          position: absolute
@@ -19,30 +32,39 @@
          background-image: linear-gradient(to top, #fff, transparent)
          height: 200px
          content: ''
+         transition: opacity .3s ease
+         
+         
+      &-item
+         &:not(:last-child)
+            margin-bottom: 10px
+            
+         > ul
+            counter-reset: expand-list-counter
+            > li
+               position: relative
+               &::before
+                  display: inline
+                  counter-increment: expand-list-counter
+                  content: counter(expand-list-counter, decimal) '.'
+         
+               p
+                  &:first-of-type
+                     display: inline
+         
+               > ul
+                  margin-top: 10px
+                  > li
+                     &:not(:last-child)
+                        margin-bottom: 10px
+         
       &-title
-         margin-bottom: 10px
+         margin-bottom: 5px
          +f('cal-700', 18, 30)
          
-      > ul
-         counter-reset: expand-list-counter
-         > li
-            position: relative
-            &::before
-               display: inline
-               counter-increment: expand-list-counter
-               content: counter(expand-list-counter, decimal) '.'
-            
-            p
-               &:first-of-type
-                  display: inline
-               
-            > ul
-               margin-top: 20px
-               > li
-                  &:not(:last-child)
-                     margin-bottom: 10px
-   
    &__btn
       display: block
       margin: 0 auto
       min-width: 250px
+      transition: transform .3s ease
+      

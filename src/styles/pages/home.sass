@@ -301,6 +301,13 @@
    padding: 68px 0 100px
    +xs
       padding: 50px 0
+      
+   &_bankrupt
+      padding: 82px 0 45px
+      
+      .realized__title
+         margin-bottom: 2px
+         letter-spacing: 0.055em
    
    &__container
       max-width: 1240px
@@ -310,6 +317,13 @@
       text-transform: uppercase
       color: #18222d
       font-size: 35px
+      text-align: center
+      
+   &__sub-title
+      margin-bottom: 30px
+      +f('cal-300', 25, 35)
+      letter-spacing: 0.06em
+      text-transform: uppercase
       text-align: center
    
    &__block
@@ -474,11 +488,17 @@
 
 // begin consult //
 .consult
+   $parent: &
    position: relative
    padding: 70px 0 90px
    +cover
    +xs
       padding: 50px 0 70px
+      
+   &_docs
+      padding: 70px 0 67px
+   &_bankrupt
+   
    &::after
       +coverdiv
       content: ''
@@ -488,6 +508,10 @@
       position: relative
       z-index: 1
       max-width: 500px
+      #{$parent}_docs &
+         max-width: 940px
+      #{$parent}_bankrupt &
+         max-width: 940px
       
    &__title
       margin-bottom: 30px
@@ -498,6 +522,25 @@
       +xs
          font-size: 25px
          line-height: 30px
+      #{$parent}_docs &
+         margin-bottom: 12px
+      #{$parent}_bankrupt &
+         margin-bottom: 5px
+         
+         
+   &__sub-title
+      margin-bottom: 30px
+      +f('cal-400', 35, 37)
+      text-align: center
+      color: #fff
+         
+   &__descr
+      max-width: 610px
+      margin: 0 auto 50px
+      color: #fff
+      font-size: 24px
+      line-height: 35px
+      text-align: center
       
    &__form-wrap
       position: relative
@@ -506,6 +549,15 @@
       background: #fff
       +xs
          padding: 35px 30px 45px
+      
+      #{$parent}_docs &
+         padding: 55px 60px 40px
+         max-width: 470px
+         margin: 0 auto
+      #{$parent}_bankrupt &
+         max-width: 470px
+         margin: 0 auto
+         
       &::after
          position: absolute
          top: 40px
@@ -516,12 +568,12 @@
          background-color: rgba(#fff, .8)
          content: ''
          
-      p
+      a
          color: #18222d
          font-size: 12px
          line-height: 1.2
          letter-spacing: 0.025em
-         a
+         .link-decor
             display: inline-block
             color: #28b298
    &__form-field
@@ -684,6 +736,11 @@
          margin-bottom: 30px
       a
          color: #e5aa46
+         
+   &__more-btn
+      display: block
+      width: 250px
+      margin: 0 auto
 // end seo-text //
 
 // begin contacts //
@@ -777,5 +834,4 @@
       
       .gmnoprint
          pointer-events: none
-      
 // end contacts //

@@ -238,12 +238,13 @@ block main
 				+e.more
 					+e.A.more-btn.btn._grey(href='#!')
 						span Смотреть все проекты
-				//end realized
+		//end realized
 
 		//begin banks
 		+b.SECTION.banks
 			+e.container.container
-				+e.H2.title.title-md(data-anim='fade-x') СРО арбитражных управляющих с которыми мы сотрудничаем аккредитованы
+				+e.title.title-md(data-anim='fade-x')
+					h2 СРО арбитражных управляющих с которыми мы сотрудничаем аккредитованы
 
 				+e.inner(data-anim-stagger='fade-x')
 					+e.A.logo(href='#!')
@@ -262,7 +263,8 @@ block main
 		//begin consult
 		+b.SECTION.consult(style='background-image: url(static/img/bg/consult_bg.jpg)')
 			+e.container.container
-				+e.H2.title(data-anim='fade-y') Получите консультацию профессионального юриста
+				+e.title(data-anim='fade-y')
+					h2 Получите консультацию профессионального юриста
 
 				+e.form-wrap(data-anim='fade-y')
 					+e.FORM(action='#!' method='POST')
@@ -283,17 +285,16 @@ block main
 								span оставить заявку
 								+e.INPUT(type='submit' value='')
 
-						+e.P Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+						+e.A(href='#!') Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
 							br
 							= ' '
 							| и соглашаетесь c
-							+b.A.link-decor(href='#!') политикой конфиденциальности.
+							+b.SPAN.link-decor политикой конфиденциальности.
 
 					script.
 						function showMessageOnSucces () {
 							$.fancybox.open('<div class="success-message"><p>Письмо успешно отправлено</p></div>');
 						}
-
 		//end consult
 
 		//begin latest-events

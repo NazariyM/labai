@@ -4,7 +4,7 @@ import ScrollAnim from '../modules/dev/animation/scrollAnim';
 
 class CTabs {
   constructor(el) {
-    this.$block = $('.c-tabs');
+    this.$block = el;
     this.$tabNav = el.find('.c-tabs__nav').find('.c-tabs__btn');
     this.$tabItemContainer = el.find('.c-tabs__for');
     this.$tabItem = this.$tabItemContainer.find('.c-tabs__tab');
