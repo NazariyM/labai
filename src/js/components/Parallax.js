@@ -1,53 +1,28 @@
-import ScrollMagic from 'ScrollMagic';
-// import 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
-import { TimelineMax, TweenMax } from 'gsap';
-import { Resp } from '../modules/dev/_helpers';
+import { $window, Resp } from '../modules/dev/_helpers';
 
 class Parallax {
-	/**
-	 * @param {string|*} el - target element
-	 */
-	constructor(el = document) {
-		this.$el = $(el);
+  constructor () {
+    this.items = document.querySelectorAll('.parallax-bg');
 
-		this.init();
-	}
+    if (!Resp.isDesk) this.init();
 
-	init() {
-		// check if element exists, dekstop screen
-		if (!this.$el || !Resp.isDesk) return;
+  }
 
-		this.createController();
-		this.$el.each((index, el) => {
-			this.createScene(el);
-		});
-	}
+  init() {
+    window.addEventListener('resize', () => {
+      this.onResize();
+    });
+  }
 
-	createController() {
-		// controller
-		this.controller = new ScrollMagic.Controller({ addIndicators: false });
-	}
+  onResize() {
+    console.log('did');
+    for (const item of this.items) {
+      const img = item.dataset.imageSrc;
 
-	createScene(el) {
-    console.log('kek');
-    // get speed
-		let speed = $(el).data('parallax-speed') || 1;
-
-		// timeline
-		let tl = new TimelineMax()
-			.add([
-				TweenMax.fromTo(el, 1, {y: 50 * speed, ease: Power4.easeOut}, {y: 0, ease: Power4.easeOut})
-			]);
-
-		// scene
-		let scene = new ScrollMagic.Scene({
-			triggerElement: el,
-			triggerHook: 1,
-			duration: '100%'
-		})
-			.setTween(tl)
-			.addTo(this.controller);
-	}
+      item.style.backgroundImage = `url(${img})`;
+      item.removeAttribute('data-parallax');
+    }
+  }
 }
 
-export default new Parallax('.js-parallax');
+export default new Parallax();

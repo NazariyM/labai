@@ -1,0 +1,57 @@
+.accordion
+   
+   &__item
+      border: 2px solid #e6e6e6
+      background: #fff
+      transition: .3s ease
+      &:not(:last-child)
+         margin-bottom: 20px
+      
+      &.is-active
+         border-color: #e4a23b
+      
+   &__btn
+      display: flex
+      width: 100%
+      align-items: center
+      padding: 14px 27px 14px 30px
+      +f('cal-700')
+      line-height: 20px
+      text-transform: uppercase
+      transition: .3s ease
+      color: #000
+      border: 0
+      outline: 0
+      cursor: pointer
+      
+      &-text
+         flex: 1 1 auto
+         padding-right: 10px
+         text-align: left
+      
+      &-icon
+         position: relative
+         flex-basis: 32px
+         width: 32px
+         height: 32px
+         margin-left: auto
+         svg
+            transition: .3s ease
+         .icon-plus
+            .is-active &
+               opacity: 0
+            
+         .icon-minus
+            position: absolute
+            opacity: 0
+            top: 0
+            left: 0
+            fill: #e4a23b
+            .is-active &
+               opacity: 1
+            
+   &__content
+      overflow: hidden
+      color: #61656b
+      &-inner
+         padding: 0 27px 14px 30px

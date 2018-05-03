@@ -282,16 +282,10 @@
 .spec
    position: relative
    padding: 68px 0 93px
-   
-   &__bg
-      pointer-events: none
+   &::after
       +coverdiv
-      +cover
-      z-index: 1
-      &::after
-         +coverdiv
-         background: rgba(#001512, .85)
-         content: ''
+      background: rgba(#001512, .85)
+      content: ''
    
    &__container
       position: relative
@@ -373,61 +367,19 @@
 
 // begin faq //
 .faq
-   padding: 60px 0
+   background-color: #f6f6f6
    
    &__container
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
    
    &__title
       margin-bottom: 40px
       text-transform: uppercase
       text-align: center
       
-   &__item
-      border: 2px solid #e6e6e6
-      background: #fff
-      transition: .3s ease
-      &:not(:last-child)
-         margin-bottom: 20px
-         
-      &.is-active
-         border-color: #e4a23b
-         
-         .faq__question-icon .icon-minus
-            opacity: 1
-         .faq__question-icon .icon-plus
-            opacity: 0
-   
-   &__question
-      display: flex
-      align-items: center
-      padding: 14px 27px 14px 30px
-      +f('cal-700')
-      line-height: 20px
-      text-transform: uppercase
-      transition: .3s ease
-      color: #000
-      cursor: pointer
-      &-icon
-         position: relative
-         flex-basis: 32px
-         width: 32px
-         height: 32px
-         margin-left: auto
-         svg
-            transition: .3s ease
-         .icon-minus
-            position: absolute
-            opacity: 0
-            top: 0
-            left: 0
-            fill: #e4a23b
-      
-   &__answer
-      height: 0
-      overflow: hidden
-      color: #61656b
-      &-inner
-         padding: 0 27px 14px 30px
 // end faq //
 
 // begin form-section //

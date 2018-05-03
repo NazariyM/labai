@@ -12,6 +12,9 @@
       min-height: 0
       
    &_bankrupt
+      height: 100vh
+      min-height: 580px
+   
       &::before
          display: none
       &::after
@@ -43,6 +46,7 @@
       margin: 0 auto
       text-align: center
       #{$parent}_bankrupt &
+         margin: 0 auto auto
          max-width: 870px
          padding: 20px 0 0
          
@@ -53,6 +57,10 @@
       padding: 60px 15px 50px
       color: #fff
       #{$parent}_bankrupt &
+         display: flex
+         flex-direction: column
+         justify-content: center
+         height: 100%
          max-width: 1140px
          padding: 47px 15px 50px
    
@@ -251,8 +259,8 @@
          display: none
          
    &__breadcrumb
-      margin-bottom: 50px
-      
+      margin: 0 0 auto
+   
    &__form
       &-wrap
          max-width: 740px
@@ -288,7 +296,3 @@
          font-size: 14px
          line-height: 18px
          letter-spacing: 0.025em
-         
-   &__parallax-bg
-      +coverdiv
-      +cover

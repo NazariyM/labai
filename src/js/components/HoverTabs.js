@@ -1,3 +1,5 @@
+import { css } from '../modules/dev/_helpers';
+
 class HoverTabs {
   constructor (el) {
     this.$block = el;
@@ -8,26 +10,31 @@ class HoverTabs {
   }
 
   init() {
-    this.bindEvents();
+    this.initHover();
   }
 
-  bindEvents() {
+  initHover() {
     const _this = this;
 
     this.$btn.on('mouseenter', function () {
-      const $index = $(this).index();
+      const $this = $(this);
+      const $index = $this.index();
 
-      _this.$item.siblings().fadeOut();
-      _this.$item.eq($index).fadeIn();
-      _this.$btn.siblings().removeClass('is-active');
+      _this.$item.eq($index).addClass(css.active);
+      _this.$btn.siblings().removeClass(css.active);
+      _this.$item.siblings().removeClass(css.active);
+      _this.$item.eq($index).addClass(css.active);
+      $this.addClass(css.active);
     });
 
     this.$btn.on('mouseleave', function () {
       const $index = $(this).index();
 
-      _this.$item.eq($index).fadeOut();
-      _this.$btn.first().addClass('is-active');
+      _this.$item.eq($index).addClass(css.active).removeAttr('style');
     });
+
+    _this.$item.first().addClass(css.active);
+    _this.$btn.first().addClass(css.active);
   }
 
 }
@@ -37,4 +44,3 @@ const $tabs = $('.hover-tabs');
 $tabs.each((index, el) => {
   new HoverTabs($(el));
 });
-

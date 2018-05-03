@@ -1,5 +1,5 @@
 import { TimelineMax } from 'gsap';
-import { css, changeText } from '../modules/dev/_helpers';
+import { css, $window} from '../modules/dev/_helpers';
 import ScrollAnim from '../modules/dev/animation/scrollAnim';
 
 class ExpandText {
@@ -13,10 +13,10 @@ class ExpandText {
   }
 
   init() {
-    this.bindEvents();
+    this.toggle();
   }
 
-  bindEvents() {
+  toggle() {
     this.$btn.on('click tap', () => {
 
       if (this.$content.hasClass(css.active)) {
@@ -28,6 +28,9 @@ class ExpandText {
         this.$content.addClass(css.active);
       }
 
+      setTimeout(() => {
+        $window.trigger('resize.px.parallax');
+      }, 310);
     });
   }
 }

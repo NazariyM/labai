@@ -15,8 +15,10 @@
     "dotdotdot": "^1.7.0",
     "gsap": "^1.20.4",
     "jquery": "^3.3.1",
+    "jquery-parallax.js": "^1.5.0",
     "npm": "^5.8.0",
     "object-fit-images": "^3.2.3",
+    "parallax-js": "^3.1.0",
     "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.8.1"
   },

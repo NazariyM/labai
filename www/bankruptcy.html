@@ -332,14 +332,14 @@
           </div>
         </div>
       </div>
-      <div class="screen__parallax-bg" style="background-image: url(static/img/bg/screen_bankruptcy_bg.jpg)"></div>
+      <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/screen_bankruptcy_bg.jpg"></div>
     </section>
     <!--end screen-->
     <!--begin hover-tabs-->
     <section class="hover-tabs">
       <div class="hover-tabs__container container">
         <div class="hover-tabs__text">
-          <div class="hover-tabs__item is-active">
+          <div class="hover-tabs__item">
             <div class="hover-tabs__item-inner">
               <div class="hover-tabs__title title-md">
                 <h2>Мы банкротим</h2>
@@ -1261,7 +1261,7 @@
     </section>
     <!--end stages-->
     <!--begin consult-->
-    <section class="consult consult_docs" style="background-image: url(static/img/bg/consult_bg-2.jpg)">
+    <section class="consult consult_docs">
       <div class="consult__container container">
         <div class="consult__title" data-anim="fade-y">
           <h2>Получите список документов для подачи на банкротсво</h2>
@@ -1294,6 +1294,7 @@
           </script>
         </div>
       </div>
+      <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/consult_bg-2.jpg"></div>
     </section>
     <!--end consult-->
     <!--begin tariff-->
@@ -1619,7 +1620,7 @@
           </div>
         </div>
       </div>
-      <div class="spec__bg js-parallax" style="background-image: url(static/img/bg/spec_bg.jpg)"></div>
+      <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/spec_bg.jpg"></div>
     </section>
     <!--end spec-->
     <!--begin form-section-->
@@ -1657,111 +1658,114 @@
         <div class="faq__title title-sm">
           <h2>Популярные вопросы</h2>
         </div>
-        <div class="faq__item">
-          <div class="faq__question" onclick="">
-            <div class="faq__question-text">
-              <h4>Сколько времени занимает банкротство?</h4>
-            </div>
-            <div class="faq__question-icon">
-              <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
-                <defs>
-                  <path id="i9lga" d="M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
-                </defs>
-                <g>
-                  <g transform="translate(-1294 -7112)">
-                    <use xlink:href="#i9lga"></use>
+        <div class="accordion faq__accordion">
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button">
+              <div class="accordion__btn-text">
+                <h4>Сколько времени занимает банкротство? Сколько времени занимает банкротство?</h4>
+              </div>
+              <div class="accordion__btn-icon">
+                <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
+                  <defs>
+                    <path id="i9lga" d="M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
+                  </defs>
+                  <g>
+                    <g transform="translate(-1294 -7112)">
+                      <use xlink:href="#i9lga"></use>
+                    </g>
                   </g>
-                </g>
-              </svg>
-              <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
-                <defs>
-                  <path id="vhfqa" d="M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
-                </defs>
-                <g>
-                  <g transform="translate(-1294 -7024)">
-                    <use xlink:href="#vhfqa"></use>
+                </svg>
+                <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
+                  <defs>
+                    <path id="vhfqa" d="M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
+                  </defs>
+                  <g>
+                    <g transform="translate(-1294 -7024)">
+                      <use xlink:href="#vhfqa"></use>
+                    </g>
                   </g>
-                </g>
-              </svg>
+                </svg>
+              </div>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
+              </div>
             </div>
           </div>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
-              <p>Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и (или)
-                об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.</p>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button">
+              <div class="accordion__btn-text">
+                <h4>Сколько времени занимает банкротство?</h4>
+              </div>
+              <div class="accordion__btn-icon">
+                <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
+                  <defs>
+                    <path id="i9lga" d="M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
+                  </defs>
+                  <g>
+                    <g transform="translate(-1294 -7112)">
+                      <use xlink:href="#i9lga"></use>
+                    </g>
+                  </g>
+                </svg>
+                <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
+                  <defs>
+                    <path id="vhfqa" d="M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
+                  </defs>
+                  <g>
+                    <g transform="translate(-1294 -7024)">
+                      <use xlink:href="#vhfqa"></use>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
+                <p>Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и
+                  (или) об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="faq__item">
-          <div class="faq__question" onclick="">
-            <div class="faq__question-text">
-              <h4>Сколько времени занимает банкротство?</h4>
-            </div>
-            <div class="faq__question-icon">
-              <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
-                <defs>
-                  <path id="i9lga" d="M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
-                </defs>
-                <g>
-                  <g transform="translate(-1294 -7112)">
-                    <use xlink:href="#i9lga"></use>
+          <div class="accordion__item">
+            <button class="accordion__btn" type="button">
+              <div class="accordion__btn-text">
+                <h4>Сколько времени занимает банкротство?</h4>
+              </div>
+              <div class="accordion__btn-icon">
+                <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
+                  <defs>
+                    <path id="i9lga" d="M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
+                  </defs>
+                  <g>
+                    <g transform="translate(-1294 -7112)">
+                      <use xlink:href="#i9lga"></use>
+                    </g>
                   </g>
-                </g>
-              </svg>
-              <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
-                <defs>
-                  <path id="vhfqa" d="M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
-                </defs>
-                <g>
-                  <g transform="translate(-1294 -7024)">
-                    <use xlink:href="#vhfqa"></use>
+                </svg>
+                <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
+                  <defs>
+                    <path id="vhfqa" d="M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
+                  </defs>
+                  <g>
+                    <g transform="translate(-1294 -7024)">
+                      <use xlink:href="#vhfqa"></use>
+                    </g>
                   </g>
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
-              <p>Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и (или)
-                об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq__item">
-          <div class="faq__question" onclick="">
-            <div class="faq__question-text">
-              <h4>Сколько времени занимает банкротство?</h4>
-            </div>
-            <div class="faq__question-icon">
-              <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
-                <defs>
-                  <path id="i9lga" d="M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
-                </defs>
-                <g>
-                  <g transform="translate(-1294 -7112)">
-                    <use xlink:href="#i9lga"></use>
-                  </g>
-                </g>
-              </svg>
-              <svg class="icon-plus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
-                <defs>
-                  <path id="vhfqa" d="M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z"></path>
-                </defs>
-                <g>
-                  <g transform="translate(-1294 -7024)">
-                    <use xlink:href="#vhfqa"></use>
-                  </g>
-                </g>
-              </svg>
-            </div>
-          </div>
-          <div class="faq__answer">
-            <div class="faq__answer-inner">
-              <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
-              <p>Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и (или)
-                об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.</p>
+                </svg>
+              </div>
+            </button>
+            <div class="accordion__content">
+              <div class="accordion__content-inner">
+                <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
+                <p>Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и
+                  (или) об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.</p>
+                <p>Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?</p>
+                <p>Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и
+                  (или) об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1769,7 +1773,7 @@
     </section>
     <!--end faq-->
     <!--begin consult-->
-    <section class="consult consult_bankrupt" style="background-image: url(static/img/bg/consult_bg.jpg)">
+    <section class="consult consult_bankrupt">
       <div class="consult__container container">
         <div class="consult__title" data-anim="fade-y">
           <h2>Задайте свой вопрос юристу по банкротству</h2>
@@ -1810,6 +1814,7 @@
           </script>
         </div>
       </div>
+      <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/consult_bg.jpg"></div>
     </section>
     <!--end consult-->
     <!--begin seo-text-->

@@ -40,7 +40,7 @@ block main
 							| и соглашаетесь c
 							+b.SPAN.link-decor политикой конфиденциальности.
 
-		+e.parallax-bg(style='background-image: url(static/img/bg/screen_bankruptcy_bg.jpg)')
+		+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/screen_bankruptcy_bg.jpg")
 
 	//end screen
 
@@ -49,7 +49,7 @@ block main
 		+e.container.container
 			+e.text
 
-				+e.item.is-active
+				+e.item
 					+e.item-inner
 						+e.title.title-md
 							h2 Мы банкротим
@@ -311,7 +311,7 @@ block main
 	//end stages
 
 	//begin consult
-	+b.SECTION.consult._docs(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+	+b.SECTION.consult._docs
 		+e.container.container
 			+e.title(data-anim='fade-y')
 				h2 Получите список документов для подачи на банкротсво
@@ -340,6 +340,8 @@ block main
 					function showMessageOnSucces () {
 						$.fancybox.open('<div class="success-message"><p>Письмо успешно отправлено</p></div>');
 					}
+
+		+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/consult_bg-2.jpg")
 	//end consult
 
 	//begin tariff
@@ -562,7 +564,7 @@ block main
 
 						-n++
 
-		+e.bg.js-parallax(style='background-image: url(static/img/bg/spec_bg.jpg)')
+		+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/spec_bg.jpg")
 	//end spec
 
 	//begin form-section
@@ -586,7 +588,6 @@ block main
 					= ' '
 					| и соглашаетесь c
 					+b.SPAN.link-decor политикой конфиденциальности.
-
 	//end form-section
 
 	//begin faq
@@ -595,14 +596,12 @@ block main
 			+e.title.title-sm
 				h2 Популярные вопросы
 
-			-n = 0
-			while n < 3
-
+			+b.accordion.faq__accordion
 				+e.item
-					+e.question(onclick='')
-						+e.question-text
-							h4 Сколько времени занимает банкротство?
-						+e.question-icon
+					+e.BUTTON.btn(type='button')
+						+e.btn-text
+							h4 Сколько времени занимает банкротство? Сколько времени занимает банкротство?
+						+e.btn-icon
 							svg(class='icon-minus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
 								defs
 									path#i9lga(d='M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
@@ -618,16 +617,65 @@ block main
 									g(transform='translate(-1294 -7024)')
 										use(xlink:href='#vhfqa')
 
-					+e.answer
-						+e.answer-inner
+					+e.content
+						+e.content-inner
+							p Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?
+				+e.item
+					+e.BUTTON.btn(type='button')
+						+e.btn-text
+							h4 Сколько времени занимает банкротство?
+						+e.btn-icon
+							svg(class='icon-minus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
+								defs
+									path#i9lga(d='M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
+								g
+									g(transform='translate(-1294 -7112)')
+										use(xlink:href='#i9lga')
+
+
+							svg(class='icon-plus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
+								defs
+									path#vhfqa(d='M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
+								g
+									g(transform='translate(-1294 -7024)')
+										use(xlink:href='#vhfqa')
+
+					+e.content
+						+e.content-inner
 							p Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?
 							p Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и (или) об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.
 
-					-n++
+				+e.item
+					+e.BUTTON.btn(type='button')
+						+e.btn-text
+							h4 Сколько времени занимает банкротство?
+						+e.btn-icon
+							svg(class='icon-minus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
+								defs
+									path#i9lga(d='M1317 7128a2 2 0 0 1 0 4h-10a2 2 0 0 1 0-4zm11 2a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
+								g
+									g(transform='translate(-1294 -7112)')
+										use(xlink:href='#i9lga')
+
+
+							svg(class='icon-plus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
+								defs
+									path#vhfqa(d='M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
+								g
+									g(transform='translate(-1294 -7024)')
+										use(xlink:href='#vhfqa')
+
+					+e.content
+						+e.content-inner
+							p Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?
+							p Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и (или) об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.
+							p Итак, кому выгодно и кто может обратиться в суд с заявлением о банкротстве?
+							p Правом на обращение в арбитражный суд с заявлением о признании должника банкротом обладают должник, конкурсный кредитор, уполномоченные органы, а также работник, бывший работник должника, имеющие требования о выплате выходных пособий и (или) об оплате труда.Причем для Должника это обязанность, а для всех остальных только право.
+
 	//end faq
 
 	//begin consult
-	+b.SECTION.consult._bankrupt(style='background-image: url(static/img/bg/consult_bg.jpg)')
+	+b.SECTION.consult._bankrupt
 		+e.container.container
 			+e.title(data-anim='fade-y')
 				h2 Задайте свой вопрос юристу по банкротству
@@ -663,6 +711,8 @@ block main
 					function showMessageOnSucces () {
 						$.fancybox.open('<div class="success-message"><p>Письмо успешно отправлено</p></div>');
 					}
+
+		+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/consult_bg.jpg")
 	//end consult
 
 	//begin seo-text

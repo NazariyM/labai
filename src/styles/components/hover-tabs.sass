@@ -12,13 +12,16 @@
       height: 330px
       
    &__item
-      display: none
+      transform: scaleY(0)
       +coverdiv
       padding: 20px 50px 20px 0
       background: #fff
+      transition: .3s cubic-bezier(0.4, 0, 1, 1)
+      
       &.is-active
-         display: block!important
-         opacity: 1!important
+         display: block
+         opacity: 1
+         transform: scaleY(1)
          
       &-inner
          display: flex

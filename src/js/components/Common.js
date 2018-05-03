@@ -1,4 +1,5 @@
 import objectFitImages from 'object-fit-images';
+import 'jquery-parallax.js';
 import fancybox from '@fancyapps/fancybox';
 import './NoTouch';
 
@@ -11,7 +12,8 @@ import './Realized';
 import './Dot';
 import './HoverTabs';
 import './ExpandText';
-import './Faq';
+import './Parallax';
+import './Accordion';
 import './ContactMap';
 import './scrolls';
 import './initChangeText';
