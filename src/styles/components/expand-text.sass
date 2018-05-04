@@ -1,16 +1,24 @@
 .expand-text
-   padding: 90px 0
+   padding: 90px 0 78px
    line-height: 30px
    letter-spacing: 0
-   
+   background: #f6f6f6
+   +xs
+      padding: 60px 0
+      
    &__title
       margin-bottom: 16px
       text-align: center
       letter-spacing: 0.06em
+      +xs
+         font-size: 22px
+         line-height: 24px
       
    &__descr
       margin-bottom: 30px
-      
+      +xs
+         font-size: 16px
+         line-height: 20px
    &__content
       position: relative
       height: 275px
@@ -19,9 +27,6 @@
       &.is-active
          &::after
             opacity: 0
-            
-         + .expand-text__btn
-            transform: translateY(30px)
       
       &::after
          pointer-events: none
@@ -29,7 +34,7 @@
          left: 0
          right: 0
          bottom: 0
-         background-image: linear-gradient(to top, #fff, transparent)
+         background-image: linear-gradient(to top, #f6f6f6, transparent)
          height: 200px
          content: ''
          transition: opacity .3s ease
@@ -41,6 +46,9 @@
             
          > ul
             counter-reset: expand-list-counter
+            +xs
+               font-size: 17px
+               line-height: 24px
             > li
                position: relative
                &::before
@@ -61,10 +69,13 @@
       &-title
          margin-bottom: 5px
          +f('cal-700', 18, 30)
-         
+         +xs
+            line-height: 20px
    &__btn
       display: block
       margin: 0 auto
       min-width: 250px
       transition: transform .3s ease
+      .is-active &
+         transform: translateY(30px)
       

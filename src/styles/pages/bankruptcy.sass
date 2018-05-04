@@ -1,21 +1,46 @@
 // begin stages //
 .stages
-   padding: 57px 0 62px
+   padding: 68px 0 62px
+   +xs
+      padding: 50px 0
    
    &__tabs
       margin-bottom: 80px
+      .c-tabs__tab
+         &:nth-child(1)
+            .stages__item_left
+               transform: translateX(-60px)
+               opacity: 0
+            .stages__item_right
+               transform: translateX(60px)
+               opacity: 0
+               
+      .c-tabs__btn
+         opacity: 0
+         &:nth-child(1)
+            transform: translateX(-60px)
+         &:nth-child(2)
+            transform: translateX(60px)
    
    &__title
       margin-bottom: 20px
       font-size: 42px
       text-align: center
       letter-spacing: 0.06em
+      transform: translateY(-60px)
+      opacity: 0
+      +xs
+         font-size: 27px
+         line-height: 1.1
    
    &__inner
       position: relative
       display: flex
       flex-wrap: wrap
       margin: 0 -35px
+      +md
+         margin: 0
+         flex-wrap: wrap
       &::after
          position: absolute
          top: 107px
@@ -25,10 +50,17 @@
          height: 511px
          background: url("../img/other/stages_dots.png") no-repeat center
          content: ''
+         +md
+            display: none
          
    &__col
       flex: 0 1 50%
       padding: 0 35px
+      +md
+         flex: 0 1 auto
+      +xs
+         padding: 0
+   
       &:nth-child(1) .stages__item
          &:nth-child(1)
             margin-bottom: 70px
@@ -40,6 +72,8 @@
       &:nth-child(2) .stages__item
          &:nth-child(1)
             margin-top: 115px
+            +md
+               margin-top: 0
             .stages__item-icon
                top: 51px
          &:nth-child(2)
@@ -51,9 +85,11 @@
       $parent: &
       position: relative
       display: flex
+      +md
+         margin-bottom: 30px!important
+            
       &_left
          text-align: right
-         
       &_right
          text-align: left
          
@@ -61,10 +97,22 @@
          #{$parent}_left &
             flex: 0 1 475px
             padding-right: 40px
+            +md
+               flex: 1 1 auto
+               text-align: left
+               padding-right: 0
+               padding-left: 80px
+            +xs
+               padding-left: 55px
          
          #{$parent}_right &
             flex: 0 1 525px
             padding-left: 95px
+            +md
+               flex: 1 1 auto
+               padding-left: 80px
+            +xs
+               padding-left: 55px
          
       &-title
          margin-bottom: 8px
@@ -73,6 +121,9 @@
          margin-bottom: 7px
          font-size: 17px
          line-height: 25px
+         +xs
+            font-size: 16px
+            line-height: 22px
       &-term
          display: flex
          align-items: center
@@ -81,6 +132,8 @@
          text-transform: uppercase
          #{$parent}_left &
             justify-content: flex-end
+            +md
+               justify-content: flex-start
          
          svg
             margin-right: 10px
@@ -94,16 +147,30 @@
          color: #61656b
          #{$parent}_left &
             padding-left: 100px
+            +md
+               padding-left: 25px
          #{$parent}_right &
             padding-left: 25px
             
       &-icon
          position: absolute
          top: 53px
+         +md
+            top: 50%
+            transform: translateY(-50%)
+         +xs
+            transform: translateY(-50%) scale(.7)
+            left: 0!important
+            
          #{$parent}_left &
             right: 3px
+            +md
+               right: auto
+               left: 3px
          #{$parent}_right &
             left: -2px
+            +md
+               left: 3px
    
    &__result
       position: relative
@@ -112,6 +179,9 @@
       padding: 55px 30px 65px
       text-align: center
       border: 2px solid rgba(#e5aa46, .5)
+      +xs
+         padding: 25px 0
+         
       &::before
          position: absolute
          top: -4px
@@ -122,11 +192,18 @@
          margin-left: -145px
          background: #fff
          content: ''
+         +xs
+            display: none
+            
       &-title
          margin-bottom: 33px
          text-transform: none
          line-height: 42px
          letter-spacing: 0.025em
+         +xs
+            margin-bottom: 15px
+            font-size: 24px
+            line-height: 24px
    
       &-btn
          position: absolute
@@ -135,17 +212,28 @@
          z-index: 2
          transform: translateX(-50%)
          min-width: 250px
-         
+         +xs
+            position: static
+            transform: none
+            margin-bottom: 20px
+            
       &-list
          max-width: 790px
          margin: 0 auto
          padding: 0 30px
          text-align: left
+         +xs
+            padding: 0 15px
          ul
             li
                position: relative
                padding-left: 35px
                +f('cal-400', 20, 25, 0)
+               +xs
+                  padding-left: 30px
+                  font-size: 17px
+                  line-height: 22px
+                  
                &:not(:last-child)
                   margin-bottom: 20px
          
@@ -155,6 +243,9 @@
                   left: 0
                   width: 25px
                   height: 25px
+                  +xs
+                     width: 18px
+                     height: 18px
                   
 // end stages //
 
@@ -162,6 +253,8 @@
 .tariff
    padding: 80px 0
    text-align: center
+   +xs
+      padding: 50px 0
    
    &__title
       margin-bottom: 30px
@@ -170,6 +263,12 @@
    &__inner
       display: flex
       margin: 0 -15px
+      +sm
+         max-width: 570px
+         margin: 0 auto
+         flex-wrap: wrap
+         justify-content: center
+      
    &__item
       position: relative
       display: flex
@@ -179,6 +278,16 @@
       margin: 0 15px
       padding: 25px 25px 0
       cursor: default
+      +sm
+         flex: 0 1 calc(50% - 30px)
+         margin: 0 15px 30px
+         min-height: 354px
+      +xs
+         flex: 0 1 auto
+         margin: 0 20px 30px
+         max-width: 255px
+         min-width: 255px
+         
       &:hover::after
          transform: scale(1.08, 1.14)
          border-color: #e4a23b
@@ -210,6 +319,9 @@
          font-size: 18px
          line-height: 20px
          letter-spacing: 0.05em
+         +xs
+            font-size: 20px
+            line-height: 20px
    
       &-title
          margin: auto 0 15px
@@ -241,6 +353,8 @@
 // begin benefits //
 .benefits
    padding: 30px 0 74px
+   +xs
+      padding: 10px 0 50px
    
    &__container
       max-width: 970px
@@ -255,6 +369,12 @@
       justify-content: space-between
       margin: 0 -15px
       padding-left: 20px
+      +md
+         padding-left: 0
+      +xs
+         flex-direction: column
+         align-items: center
+         margin: 0
    
    &__item
       flex-grow: 0
@@ -270,7 +390,14 @@
          flex-basis: 23%
       &:nth-child(3)
          flex-basis: 34%
-      
+         
+      +sm
+         flex-basis: 33.33333% !important
+      +xs
+         flex-basis: auto!important
+         max-width: 300px
+         padding: 0 0 30px
+   
       &-img-wrap
          margin: 0 auto 24px
          width: 57px
@@ -282,6 +409,9 @@
 .spec
    position: relative
    padding: 68px 0 93px
+   +xs
+      padding: 50px 0 72px
+   
    &::after
       +coverdiv
       background: rgba(#001512, .85)
@@ -296,18 +426,31 @@
       text-align: center
       letter-spacing: 0.025em
       color: #fff
-      
+      +sm
+         font-size: 33px
+   
    &__slider
       max-width: 1020px
       padding: 0 100px
       margin: 0 auto
+      +sm
+         max-width: 738px
+         padding: 0 80px
+      +xs
+         padding: 0
+         
       .slider__btn
+         +xs
+            top: calc(100% + 15px)
+            margin-top: 0
          svg
             fill: #fff
       
    &__person
       position: relative
       padding: 33px 10px 10px
+      +xs
+         padding: 0
       &::before
          position: absolute
          top: calc(100% - 10px)
@@ -317,6 +460,8 @@
          z-index: -1
          background: rgba(255, 255, 255, 0.5)
          content: ''
+         +xs
+            display: none
       &::after
          position: absolute
          top: 58px
@@ -326,24 +471,41 @@
          z-index: -1
          background: rgba(#fff, .3)
          content: ''
+         +xs
+            display: none
       &-inner
          display: flex
          align-items: center
          padding: 0 50px 0 25px
          height: 355px
          background: #fff
-         
+         +sm
+            padding: 15px 40px 40px
+            flex-direction: column
+            height: auto
+         +xs
+            padding: 15px 15px 20px
+   
       &-img
          align-self: flex-end
          flex: 0 1 346px
          margin-bottom: -1px
          +cover
          +ratio(346, 388)
+         +sm
+            flex: 0 1 auto
+            margin-bottom: 40px
+            max-width: 346px
+            width: 100%
       
       &-text
          flex: 0 0 380px
          margin-top: -20px
          padding-left: 20px
+         +sm
+            margin-top: 0
+            padding-left: 0
+            flex: 0 1 auto
          
       &-data
          margin-bottom: 20px
@@ -368,6 +530,10 @@
 // begin faq //
 .faq
    background-color: #f6f6f6
+   +sm
+      padding: 70px 0
+   +xs
+      padding: 50px 0
    
    &__container
       height: 100%
@@ -379,12 +545,16 @@
       margin-bottom: 40px
       text-transform: uppercase
       text-align: center
-      
+      +xs
+         margin-bottom: 25px
+
 // end faq //
 
 // begin form-section //
 .form-section
-   padding: 60px 0
+   padding: 66px 0 81px
+   +xs
+      padding: 50px 0
    
    &__container
       max-width: 840px
@@ -400,9 +570,19 @@
       display: flex
       align-items: center
       margin: 0 -10px 20px
+      +xs
+         flex-direction: column
+         
       &-field
          padding: 0 10px
          flex: 0 1 33.33333%
+         +xs
+            width: 100%
+            flex: 0 1 auto
+            
+         &:not(:last-child)
+            +xs
+               margin-bottom: 15px
          
       &-input
          line-height: 35px
@@ -422,5 +602,51 @@
       text-align: center
       span
          color: #28b298
-   
 // end form-section //
+
+// begin geo-work //
+.geo-work
+   position: relative
+   height: 470px
+   opacity: 0
+   transform: translateX(-100px)
+   +xs
+      height: 350px
+   
+   &.is-active .geo-work__title
+      opacity: 0
+      
+   &__title
+      pointer-events: none
+      position: absolute
+      top: 90px
+      left: 0
+      right: 0
+      z-index: 2
+      text-align: center
+      text-transform: uppercase
+      +trs
+   &__map-wrap
+   &__map
+      +coverdiv
+      z-index: 1
+      
+   &__info
+      max-width: 200px
+      margin: 0 auto
+      padding: 5px 0
+      &-title
+         margin-bottom: 5px
+         +f('cal-700', 18)
+         
+      &-descr
+         //margin-right: -20px
+         +f('cal-300', 14)
+         
+   .gm-style .gm-style-iw
+      font-size: 0!important
+      > div
+         overflow: hidden
+         width: 100%
+         max-width: 200px!important
+// end geo-work //

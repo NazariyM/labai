@@ -1,4 +1,4 @@
-import { css } from '../modules/dev/_helpers';
+import { css, Resp } from '../modules/dev/_helpers';
 
 class HoverTabs {
   constructor (el) {
@@ -16,7 +16,7 @@ class HoverTabs {
   initHover() {
     const _this = this;
 
-    this.$btn.on('mouseenter', function () {
+    this.$btn.on('mouseenter', function (e) {
       const $this = $(this);
       const $index = $this.index();
 

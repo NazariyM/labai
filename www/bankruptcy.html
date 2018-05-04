@@ -291,7 +291,7 @@
     <!--begin screen-->
     <section class="screen screen_bankrupt">
       <div class="screen__container container">
-        <div class="screen__breadcrumb breadcrumb">
+        <div class="screen__breadcrumb breadcrumb" data-anim="fade-x" data-anim-delay="1">
           <ul>
             <li>
               <a href="#!">Главная</a>
@@ -301,7 +301,7 @@
             </li>
           </ul>
         </div>
-        <div class="screen__inner">
+        <div class="screen__inner" data-anim-stagger="fade-y" data-anim-delay="1">
           <div class="screen__main-title">
             <h1>Банкротство юридических лиц в Москве и Московской области</h1>
           </div>
@@ -324,10 +324,10 @@
                   </label>
                 </div>
               </div>
-              <a href="#!">Нажимая на кнопку, вы даете согласие на обработку персональных данных
+              <p>Нажимая на кнопку "Списать долг", вы даете согласие на обработку персональных данных
                 <br> и соглашаетесь c
-                <span class="link-decor">политикой конфиденциальности.</span>
-              </a>
+                <a class="link-decor" href="#!">политикой конфиденциальности.</a>
+              </p>
             </form>
           </div>
         </div>
@@ -338,7 +338,7 @@
     <!--begin hover-tabs-->
     <section class="hover-tabs">
       <div class="hover-tabs__container container">
-        <div class="hover-tabs__text">
+        <div class="hover-tabs__text" data-anim="fade-x" data-anim-delay="0.5">
           <div class="hover-tabs__item">
             <div class="hover-tabs__item-inner">
               <div class="hover-tabs__title title-md">
@@ -373,7 +373,7 @@
             </div>
           </div>
         </div>
-        <div class="hover-tabs__actions">
+        <div class="hover-tabs__actions" data-anim-stagger="fade-y" data-anim-duration="1">
           <a class="hover-tabs__actions-btn is-active" href="#!">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="36" viewbox="0 0 35 36">
               <defs>
@@ -422,7 +422,7 @@
     <!--end hover-tabs-->
     <!--begin expand-text-->
     <section class="expand-text">
-      <div class="expand-text__container container">
+      <div class="expand-text__container container" data-anim-stagger="fade-y" data-anim-duration="1">
         <div class="expand-text__title title-lg">
           <h2>Особенности банкротства юридических лиц</h2>
         </div>
@@ -467,10 +467,10 @@
             </ul>
           </div>
         </div>
-        <button class="expand-text__btn btn btn_grey js-change-text" type="button">
-          <span data-change-text="Свернуть" data-default-text="ЧИТАТЬ ПОЛНОСТЬЮ">ЧИТАТЬ ПОЛНОСТЬЮ</span>
-        </button>
       </div>
+      <button class="expand-text__btn btn btn_grey js-change-text" type="button">
+        <span data-change-text="Свернуть" data-default-text="ЧИТАТЬ ПОЛНОСТЬЮ">ЧИТАТЬ ПОЛНОСТЬЮ</span>
+      </button>
     </section>
     <!--end expand-text-->
     <!--begin stages-->
@@ -1138,14 +1138,14 @@
           </div>
         </div>
         <div class="stages__result">
-          <button class="stages__result-btn btn btn_grey" type="button">
+          <button class="stages__result-btn btn btn_grey" type="button" data-anim="fade-y">
             <span>Оставить заявку</span>
           </button>
-          <div class="stages__result-title title-md">
+          <div class="stages__result-title title-md" data-anim="fade-y">
             <h2>Что вы получите в результате банкротства</h2>
           </div>
           <div class="stages__result-list">
-            <ul>
+            <ul data-anim-stagger="fade-y">
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewbox="0 0 27 27">
                   <defs>
@@ -1281,10 +1281,10 @@
                 <input type="submit" value="" />
               </label>
             </div>
-            <a href="#!">Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+            <p>Нажимая на кнопку "Получить документы", вы даете согласие на обработку персональных данных
               <br> и соглашаетесь c
-              <span class="link-decor">политикой конфиденциальности.</span>
-            </a>
+              <a class="link-decor" href="#!">политикой конфиденциальности.</a>
+            </p>
           </form>
           <script>
             function showMessageOnSucces()
@@ -1300,10 +1300,10 @@
     <!--begin tariff-->
     <section class="tariff">
       <div class="tariff__container container">
-        <div class="tariff__title title-sm">
+        <div class="tariff__title title-sm" data-anim="fade-y">
           <h2>Выберете подходящий вам тариф</h2>
         </div>
-        <div class="tariff__inner">
+        <div class="tariff__inner" data-anim-stagger="fade-y">
           <div class="tariff__item tariff__item_top">
             <div class="tariff__item-title title-sm">
               <h5>Устная консультация</h5>
@@ -1544,10 +1544,10 @@
     <!--begin benefits-->
     <section class="benefits">
       <div class="benefits__container container">
-        <div class="benefits__title title-md">
+        <div class="benefits__title title-md" data-anim="fade-y">
           <h2>Преимущества работы с нами</h2>
         </div>
-        <div class="benefits__inner">
+        <div class="benefits__inner" data-anim-stagger="fade-y">
           <div class="benefits__item">
             <div class="benefits__item-img-wrap">
               <img src="static/img/other/benefits_img.jpg" alt="image" title="" />
@@ -1574,10 +1574,10 @@
     <!--begin spec-->
     <section class="spec">
       <div class="spec__container container">
-        <div class="spec__title title-sm">
+        <div class="spec__title title-sm" data-anim="fade-y">
           <h2>Специалисты по банкротству юридических лиц</h2>
         </div>
-        <div class="spec__slider">
+        <div class="spec__slider" data-anim="fade-y">
           <div class="spec__person">
             <div class="spec__person-inner">
               <div class="spec__person-img" style="background-image: url(static/img/content/spec-person_img.png)"></div>
@@ -1623,9 +1623,19 @@
       <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/spec_bg.jpg"></div>
     </section>
     <!--end spec-->
+    <!--begin geo-work-->
+    <section class="geo-work" data-anim="fade-x" data-anim-duration="1">
+      <div class="geo-work__title title-sm">
+        <h2>География работ</h2>
+      </div>
+      <div class="geo-work__map-wrap">
+        <div class="geo-work__map"></div>
+      </div>
+    </section>
+    <!--end geo-work-->
     <!--begin form-section-->
     <section class="form-section">
-      <div class="form-section__container container">
+      <div class="form-section__container container" data-anim-stagger="fade-x">
         <div class="form-section__title title-md">
           <h2> Банкроство юридического лица законный метод получить свое</h2>
         </div>
@@ -1644,25 +1654,25 @@
           </div>
         </form>
         <div class="form-section__agree">
-          <a href="#!">Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+          <p>Нажимая на кнопку "Связаться с юристом", вы даете согласие на обработку персональных данных
             <br> и соглашаетесь c
-            <span class="link-decor">политикой конфиденциальности.</span>
-          </a>
+            <a class="link-decor" href="#!">политикой конфиденциальности.</a>
+          </p>
         </div>
       </div>
     </section>
     <!--end form-section-->
     <!--begin faq-->
     <section class="faq">
-      <div class="faq__container container">
+      <div class="faq__container container" data-anim="fade-y">
         <div class="faq__title title-sm">
           <h2>Популярные вопросы</h2>
         </div>
-        <div class="accordion faq__accordion">
+        <div class="accordion faq__accordion" data-anim-stagger="fade-y">
           <div class="accordion__item">
             <button class="accordion__btn" type="button">
               <div class="accordion__btn-text">
-                <h4>Сколько времени занимает банкротство? Сколько времени занимает банкротство?</h4>
+                <h4>Сколько времени занимает банкротство?</h4>
               </div>
               <div class="accordion__btn-icon">
                 <svg class="icon-minus" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewbox="0 0 35 35">
@@ -1778,7 +1788,7 @@
         <div class="consult__title" data-anim="fade-y">
           <h2>Задайте свой вопрос юристу по банкротству</h2>
         </div>
-        <div class="consult__sub-title">
+        <div class="consult__sub-title" data-anim="fade-y">
           <h4>Наш специалист свяжется с вами в течение рабочего дня</h4>
         </div>
         <div class="consult__form-wrap" data-anim="fade-y">
@@ -1801,10 +1811,10 @@
                 <input type="submit" value="" />
               </label>
             </div>
-            <a href="#!">Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+            <p>Нажимая на кнопку "Оставить заявку", вы даете согласие на обработку персональных данных
               <br> и соглашаетесь c
-              <span class="link-decor">политикой конфиденциальности.</span>
-            </a>
+              <a class="link-decor" href="#!">политикой конфиденциальности.</a>
+            </p>
           </form>
           <script>
             function showMessageOnSucces()
@@ -1833,7 +1843,7 @@
     </section>
     <!--end seo-text-->
     <!--begin footer-->
-    <footer class="footer" data-anim="fade-y" data-anim-duration="1">
+    <footer class="footer footer footer_entry" data-anim="fade-y" data-anim-duration="1">
       <div class="footer__container container">
         <div class="footer__row">
           <div class="footer__col">
@@ -2058,6 +2068,7 @@
     </footer>
     <!--end footer-->
     <!-- Scripts-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIOpQ4aGs5lMqw0kWRFDTw07_m8jgHt04"></script>
     <script src="static/js/jquery-3.3.1.min.js"></script>
     <script src="static/js/index.js"></script>
   </body>

@@ -2,6 +2,8 @@
    $parent: &
    &__container
       display: flex
+      +md
+         flex-direction: column
    
    &__text
       position: relative
@@ -10,18 +12,28 @@
       justify-content: center
       flex: 1 1 auto
       height: 330px
-      
+      opacity: 0
+      transform: translateX(-60px)
+      +xs
+         height: auto
+   
    &__item
       transform: scaleY(0)
       +coverdiv
       padding: 20px 50px 20px 0
       background: #fff
       transition: .3s cubic-bezier(0.4, 0, 1, 1)
-      
+      +md
+         padding: 20px 50px
+      +xs
+         padding: 30px 0 20px
+   
       &.is-active
          display: block
          opacity: 1
          transform: scaleY(1)
+         +xs
+            position: static
          
       &-inner
          display: flex
@@ -44,6 +56,9 @@
    &__actions
       display: flex
       flex: 0 0 540px
+      +md
+         justify-content: center
+         flex: 0 1 auto
       &-btn
          position: relative
          display: flex
@@ -54,6 +69,9 @@
          padding: 30px 20px
          border-right: 1px solid #e5e5e5
          text-align: center
+         +xs
+            flex: 0 1 181px
+            padding: 10px 5px
          &:hover #{$parent}__actions-btn-bg
             height: 100%
          &:hover
@@ -70,7 +88,10 @@
             #{$parent}__actions-btn-bg
                height: 100%
                
-            
+         &:first-child
+            +md
+               border-left: 1px solid #e5e5e5
+               
          &-bg
             height: 6px
             +coverdiv
@@ -89,11 +110,16 @@
             margin-bottom: 20px
             fill: #e5aa46
             transition: .5s ease
-            
-            
+            +xs
+               margin-bottom: 10px
+               width: 26px
+               height: 28px
+   
          h4
             +f('cal-700', 16, 21, 25)
             text-transform: uppercase
             color: #18222d
             transition: .5s ease
-            
+            +xs
+               font-size: 13px
+               line-height: 14px

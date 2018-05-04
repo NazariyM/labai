@@ -6,6 +6,9 @@
 		justify-content: center
 		z-index: 1
 		margin-bottom: 55px
+		+xs
+			flex-direction: column
+			align-items: center
 		
 	&__for
 		position: relative
@@ -21,6 +24,7 @@
 		border: 2px solid #c4c4c4
 		background-color: #fff
 		+trs
+		
 		&.is-active
 			pointer-events: none
 			background-color: #e4a13a

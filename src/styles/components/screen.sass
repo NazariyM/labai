@@ -63,12 +63,18 @@
          height: 100%
          max-width: 1140px
          padding: 47px 15px 50px
+         +xs
+            padding: 50px 15px
    
    &__main-title
       color: #e5aa46
       +f('cal-700', 40, 50)
       letter-spacing: 0.03em
       text-transform: uppercase
+      +xs
+         margin-bottom: 10px
+         font-size: 20px
+         line-height: 24px
       
    &__title
       margin-bottom: 25px
@@ -87,6 +93,10 @@
          margin-bottom: 45px
          font-size: 35px
          letter-spacing: 0.09em
+         +xs
+            margin-bottom: 20px
+            font-size: 20px
+            line-height: 20px
    
    &__slider
       display: flex
@@ -260,6 +270,8 @@
          
    &__breadcrumb
       margin: 0 0 auto
+      +xs
+         margin: 0 0 20px
    
    &__form
       &-wrap
@@ -268,9 +280,15 @@
       &-row
          display: flex
          margin: 0 -5px 13px
+         +xs
+            flex-direction: column
+         
       &-field
          flex: 0 1 33.33333%
          margin: 0 5px
+         &:not(:last-child)
+            +xs
+               margin-bottom: 10px
       &-input
          width: 100%
          height: 50px
@@ -280,6 +298,11 @@
          border: 1px solid #808080
          background: rgba(#000, .3)
          +placeholder-color(#c5c5c5)
+         +xs
+            padding: 0 20px
+            font-size: 14px
+            height: 40px
+            line-height: 40px
          &::placeholder
             text-transform: uppercase
             
@@ -288,7 +311,7 @@
          min-width: 0
          width: 100%
          
-      a
+      p
          display: block
          max-width: 640px
          margin: 0 auto

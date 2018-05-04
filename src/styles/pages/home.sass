@@ -308,7 +308,9 @@
       .realized__title
          margin-bottom: 2px
          letter-spacing: 0.055em
-   
+         +xs
+            margin-bottom: 10px
+            
    &__container
       max-width: 1240px
    
@@ -325,6 +327,9 @@
       letter-spacing: 0.06em
       text-transform: uppercase
       text-align: center
+      +xs
+         font-size: 20px
+         line-height: 22px
    
    &__block
       padding: 0 50px
@@ -498,7 +503,8 @@
    &_docs
       padding: 70px 0 67px
    &_bankrupt
-   
+      padding: 70px 0 75px
+      
    &::after
       +coverdiv
       content: ''
@@ -525,14 +531,17 @@
       #{$parent}_docs &
          margin-bottom: 12px
       #{$parent}_bankrupt &
-         margin-bottom: 5px
+         margin-bottom: 2px
          
          
    &__sub-title
-      margin-bottom: 30px
+      margin-bottom: 25px
       +f('cal-400', 35, 37)
       text-align: center
       color: #fff
+      +xs
+         font-size: 18px
+         line-height: 20px
          
    &__descr
       max-width: 610px
@@ -541,6 +550,10 @@
       font-size: 24px
       line-height: 35px
       text-align: center
+      +xs
+         margin-bottom: 30px
+         font-size: 18px
+         line-height: 22px
       
    &__form-wrap
       position: relative
@@ -554,6 +567,8 @@
          padding: 55px 60px 40px
          max-width: 470px
          margin: 0 auto
+         +xs
+            padding: 20px 20px 25px
       #{$parent}_bankrupt &
          max-width: 470px
          margin: 0 auto
@@ -568,7 +583,7 @@
          background-color: rgba(#fff, .8)
          content: ''
          
-      a
+      p
          color: #18222d
          font-size: 12px
          line-height: 1.2
@@ -732,6 +747,9 @@
       color: #18222d
       letter-spacing: 0
       line-height: 30px
+      +xs
+         font-size: 16px
+         line-height: 22px
       &:not(:last-child)
          margin-bottom: 30px
       a
@@ -740,7 +758,8 @@
    &__more-btn
       display: block
       width: 250px
-      margin: 0 auto
+      min-width: 250px
+      margin: -12px auto 0
 // end seo-text //
 
 // begin contacts //

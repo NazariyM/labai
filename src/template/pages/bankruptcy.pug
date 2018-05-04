@@ -2,7 +2,9 @@ extends ../extend/default
 
 block variables
 	-title = 'Банкротство юридических лиц';
+	- var googleMap = true;
 	-headerClass = 'header_entry';
+	-footerClass = 'footer_entry';
 
 block main
 	main.content
@@ -10,12 +12,12 @@ block main
 	//begin screen
 	+b.SECTION.screen._bankrupt
 		+e.container.container
-			+e.breadcrumb.breadcrumb
+			+e.breadcrumb.breadcrumb(data-anim='fade-x' data-anim-delay='1')
 				ul
 					li: a(href='#!') Главная
 					li.is-active: a(href='#!') Банкротство юридических лиц
 
-			+e.inner
+			+e.inner(data-anim-stagger='fade-y' data-anim-delay='1')
 				+e.main-title
 					h1 Банкротство юридических лиц в Москве и Московской области
 				+e.title
@@ -34,11 +36,11 @@ block main
 									span Списать долг
 									+e.INPUT(type='submit' value='')
 
-						+e.A(href='#!') Нажимая на кнопку, вы даете согласие на обработку персональных данных
+						+e.P Нажимая на кнопку "Списать долг", вы даете согласие на обработку персональных данных
 							br
 							= ' '
 							| и соглашаетесь c
-							+b.SPAN.link-decor политикой конфиденциальности.
+							+b.A.link-decor(href='#!') политикой конфиденциальности.
 
 		+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/screen_bankruptcy_bg.jpg")
 
@@ -47,7 +49,7 @@ block main
 	//begin hover-tabs
 	+b.SECTION.hover-tabs
 		+e.container.container
-			+e.text
+			+e.text(data-anim='fade-x' data-anim-delay='0.5')
 
 				+e.item
 					+e.item-inner
@@ -74,7 +76,7 @@ block main
 							p "Лаборатория антикризисных исследований" обращает Ваше внимание на то, что добросовестность действий физических лиц в ходе процедур банкротства и в преддверии него будет являться самым сложным моментом. Необходимо тщательно оценить свои действия, чтобы они не могли быть расценены кредиторами, управляющим и судом как недобросовестные в деле о банкротстве физического лица. "Лаборатория антикризисных исследований" обращает Ваше внимание на то, что добросовестность действий физических лиц в ходе процедур банкротства и в преддверии него будет являться самым сложным моментом.
 
 
-			+e.actions
+			+e.actions(data-anim-stagger='fade-y' data-anim-duration='1')
 				+e.A.actions-btn.is-active(href='#!')
 					svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='36', viewbox='0 0 35 36')
 						defs
@@ -276,14 +278,14 @@ block main
 						-n++
 
 			+e.result
-				+e.BUTTON.result-btn.btn._grey(type='button')
+				+e.BUTTON.result-btn.btn._grey(type='button' data-anim='fade-y')
 					span Оставить заявку
 
-				+e.result-title.title-md
+				+e.result-title.title-md(data-anim='fade-y')
 					h2 Что вы получите в результате банкротства
 
 				+e.result-list
-					ul
+					ul(data-anim-stagger='fade-y')
 						-
 							resultList = [
 							'Сопровождение процедуры банкротства командой опытных арбитражных управляющих при поддержке юристов и адвокатов',
@@ -330,11 +332,11 @@ block main
 							span получить документы
 							+e.INPUT(type='submit' value='')
 
-					+e.A(href='#!') Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+					+e.P Нажимая на кнопку "Получить документы", вы даете согласие на обработку персональных данных
 						br
 						= ' '
 						| и соглашаетесь c
-						+b.SPAN.link-decor политикой конфиденциальности.
+						+b.A.link-decor(href='#!') политикой конфиденциальности.
 
 				script.
 					function showMessageOnSucces () {
@@ -347,10 +349,10 @@ block main
 	//begin tariff
 	+b.SECTION.tariff
 		+e.container.container
-			+e.title.title-sm
+			+e.title.title-sm(data-anim='fade-y')
 				h2 Выберете подходящий вам тариф
 
-			+e.inner
+			+e.inner(data-anim-stagger='fade-y')
 
 				+e.item._top
 					+e.item-title.title-sm
@@ -513,7 +515,7 @@ block main
 	//begin benefits
 	+b.SECTION.benefits
 		+e.container.container
-			+e.title.title-md
+			+e.title.title-md(data-anim='fade-y')
 				h2 Преимущества работы с нами
 
 			-
@@ -521,7 +523,7 @@ block main
 				'Ликвидация организации на абсолютно легальных и законных основаниях',
 				'Списание финансовых обязательств']
 
-			+e.inner
+			+e.inner(data-anim-stagger='fade-y')
 				for benefitsText in benefitsList
 					+e.item
 						+e.item-img-wrap
@@ -540,10 +542,10 @@ block main
 	//begin spec
 	+b.SECTION.spec
 		+e.container.container
-			+e.title.title-sm
+			+e.title.title-sm(data-anim='fade-y')
 				h2 Специалисты по банкротству юридических лиц
 
-			+e.slider
+			+e.slider(data-anim='fade-y')
 				-n = 0
 				while n < 2
 
@@ -567,9 +569,17 @@ block main
 		+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/spec_bg.jpg")
 	//end spec
 
+	//begin geo-work
+	+b.SECTION.geo-work(data-anim='fade-x' data-anim-duration='1')
+		+e.title.title-sm
+			h2 География работ
+		+e.map-wrap
+			+e.map
+	//end geo-work
+
 	//begin form-section
 	+b.SECTION.form-section
-		+e.container.container
+		+e.container.container(data-anim-stagger='fade-x')
 			+e.title.title-md
 				h2  Банкроство юридического лица законный метод получить свое
 			+e.FORM.form(action='#!' method='POST')
@@ -583,24 +593,24 @@ block main
 						+e.INPUT(type='submit' value='')
 
 			+e.agree
-				+e.A(href='#!') Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+				+e.P Нажимая на кнопку "Связаться с юристом", вы даете согласие на обработку персональных данных
 					br
 					= ' '
 					| и соглашаетесь c
-					+b.SPAN.link-decor политикой конфиденциальности.
+					+b.A.link-decor(href='#!') политикой конфиденциальности.
 	//end form-section
 
 	//begin faq
 	+b.SECTION.faq
-		+e.container.container
+		+e.container.container(data-anim='fade-y')
 			+e.title.title-sm
 				h2 Популярные вопросы
 
-			+b.accordion.faq__accordion
+			+b.accordion.faq__accordion(data-anim-stagger='fade-y')
 				+e.item
 					+e.BUTTON.btn(type='button')
 						+e.btn-text
-							h4 Сколько времени занимает банкротство? Сколько времени занимает банкротство?
+							h4 Сколько времени занимает банкротство?
 						+e.btn-icon
 							svg(class='icon-minus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
 								defs
@@ -679,7 +689,7 @@ block main
 		+e.container.container
 			+e.title(data-anim='fade-y')
 				h2 Задайте свой вопрос юристу по банкротству
-			+e.sub-title
+			+e.sub-title(data-anim='fade-y')
 				h4 Наш специалист свяжется с вами в течение рабочего дня
 
 			+e.form-wrap(data-anim='fade-y')
@@ -701,11 +711,11 @@ block main
 							span оставить заявку
 							+e.INPUT(type='submit' value='')
 
-					+e.A(href='#!') Нажимая на кнопку "Получить консультацию", вы даете согласие на обработку персональных данных
+					+e.P Нажимая на кнопку "Оставить заявку", вы даете согласие на обработку персональных данных
 						br
 						= ' '
 						| и соглашаетесь c
-						+b.SPAN.link-decor политикой конфиденциальности.
+						+b.A.link-decor(href='#!') политикой конфиденциальности.
 
 				script.
 					function showMessageOnSucces () {

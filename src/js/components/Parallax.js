@@ -1,4 +1,4 @@
-import { $window, Resp } from '../modules/dev/_helpers';
+import { Resp } from '../modules/dev/_helpers';
 
 class Parallax {
   constructor () {
@@ -15,7 +15,6 @@ class Parallax {
   }
 
   onResize() {
-    console.log('did');
     for (const item of this.items) {
       const img = item.dataset.imageSrc;
 

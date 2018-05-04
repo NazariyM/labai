@@ -1,5 +1,5 @@
 import { TimelineMax } from 'gsap';
-import { css } from '../modules/dev/_helpers';
+import { $window, css } from '../modules/dev/_helpers';
 import ScrollAnim from '../modules/dev/animation/scrollAnim';
 
 class CTabs {
@@ -27,6 +27,9 @@ class CTabs {
       const targetIndex = $(ev.currentTarget).index();
 
       this.changeTab(currentIndex, targetIndex);
+      setTimeout(() => {
+        $window.trigger('resize.px.parallax');
+      }, 510);
     });
   }
 

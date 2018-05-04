@@ -76,8 +76,9 @@ class Anims {
     const animItems = item.children;
     const duration = item.getAttribute('data-anim-duration') || 0.5;
     const staggerDelay = item.getAttribute('data-stagger-delay') || 0.3;
+    const delay = item.getAttribute('data-anim-delay') || 0;
 
-    tl.staggerTo(animItems, duration, { autoAlpha: 1, y: 0, ease: Power2.easeOut }, staggerDelay);
+    tl.staggerTo(animItems, duration, { autoAlpha: 1, y: 0, ease: Power2.easeOut, delay: delay }, staggerDelay);
   }
 
   staggerXAnim(item) {
@@ -85,8 +86,9 @@ class Anims {
     const animItems = item.children;
     const duration = item.getAttribute('data-anim-duration') || 0.5;
     const staggerDelay = item.getAttribute('data-stagger-delay') || 0.3;
+    const delay = item.getAttribute('data-anim-delay') || 0;
 
-    tl.staggerTo(animItems, duration, { autoAlpha: 1, x: 0, ease: Power2.easeOut }, staggerDelay);
+    tl.staggerTo(animItems, duration, { autoAlpha: 1, x: 0, ease: Power2.easeOut, delay: delay }, staggerDelay);
   }
 }
 

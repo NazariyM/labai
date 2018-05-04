@@ -2,7 +2,7 @@ if expandText ? expandText : expandText = []
 
 //begin expand-text
 +b.SECTION.expand-text(class= expandTextClass ? expandTextClass : '')
-	+e.container.container
+	+e.container.container(data-anim-stagger='fade-y' data-anim-duration='1')
 		+e.title.title-lg
 			h2 Особенности банкротства юридических лиц
 
@@ -29,7 +29,7 @@ if expandText ? expandText : expandText = []
 								li - в процессе банкротства мы не допускаем привлечения к субсидиарной и уголовной ответственности контролирующее Должника лицо.
 					-i++
 
-		+e.BUTTON.btn.btn._grey.js-change-text(type='button')
-			span(data-change-text='Свернуть' data-default-text='ЧИТАТЬ ПОЛНОСТЬЮ') ЧИТАТЬ ПОЛНОСТЬЮ
+	+e.BUTTON.btn.btn._grey.js-change-text(type='button')
+		span(data-change-text='Свернуть' data-default-text='ЧИТАТЬ ПОЛНОСТЬЮ') ЧИТАТЬ ПОЛНОСТЬЮ
 
 //end expand-text

@@ -1,5 +1,5 @@
 import { TweenMax, CSSPlugin } from 'gsap';
-import { $window, css } from '../modules/dev/_helpers';
+import { $window, css, Resp } from '../modules/dev/_helpers'
 
 class Accordion {
   constructor(el, enableFix = false, speed = 0.3) {
@@ -17,7 +17,7 @@ class Accordion {
   init() {
     this.countContentHeight();
     this.initToggle();
-    this.enableFix ? this.parallaxFix() : false;
+    if (this.enableFix && Resp.isDesk) this.parallaxFix();
   }
 
   initToggle() {

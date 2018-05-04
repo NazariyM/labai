@@ -14,7 +14,9 @@ import './HoverTabs';
 import './ExpandText';
 import './Parallax';
 import './Accordion';
+import './Stages';
 import './ContactMap';
+import './GeoWorkMap';
 import './scrolls';
 import './initChangeText';
 

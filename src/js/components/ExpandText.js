@@ -22,10 +22,12 @@ class ExpandText {
       if (this.$content.hasClass(css.active)) {
         TweenLite.to(this.$content, .3, { height: this.$contentHeight });
         this.$content.removeClass(css.active);
+        this.$block.removeClass(css.active);
       } else {
         TweenLite.set(this.$content, { height: 'auto' });
         TweenLite.from(this.$content, .3, { height: this.$contentHeight });
         this.$content.addClass(css.active);
+        this.$block.addClass(css.active);
       }
 
       setTimeout(() => {

@@ -63,13 +63,17 @@
       +f('cal-400', 17, 20)
       
 .breadcrumb
+   transform: translateX(-50px)
+   opacity: 0
    ul
       display: flex
       li
          &:not(:first-child) a
             padding: 0 10px 0 25px
             border-left: 0
-            
+            +xs
+               padding: 0 3px 0 20px
+   
          &.is-active
             a
                pointer-events: none
@@ -85,6 +89,9 @@
             border: 1px solid rgba(#fff, .2)
             border-right: 0
             +trs
+            +xs
+               padding: 0 5px 0 10px
+               font-size: 10px
             .no-touch &:hover
                color: $color3
             

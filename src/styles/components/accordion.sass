@@ -23,13 +23,21 @@
       border: 0
       outline: 0
       cursor: pointer
-      
+      +xs
+         padding: 10px 10px 10px 15px
+         font-size: 16px
+         line-height: 18px
+   
       &-text
          flex: 1 1 auto
          padding-right: 10px
          text-align: left
-      
+         letter-spacing: 0.08em
+   
       &-icon
+         display: flex
+         align-items: center
+         justify-content: center
          position: relative
          flex-basis: 32px
          width: 32px
@@ -37,6 +45,9 @@
          margin-left: auto
          svg
             transition: .3s ease
+            +xs
+               width: 25px
+               height: 25px
          .icon-plus
             .is-active &
                opacity: 0
@@ -54,4 +65,10 @@
       overflow: hidden
       color: #61656b
       &-inner
-         padding: 0 27px 14px 30px
+         padding: 0 27px 25px 30px
+         letter-spacing: 0
+         line-height: 25px
+         +xs
+            padding: 0 15px 15px
+            font-size: 16px
+            line-height: 20px

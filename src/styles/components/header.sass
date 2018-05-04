@@ -19,6 +19,15 @@
       color: #000
       &.is-fixed
          background: #fff!important
+         +md
+            box-shadow: 0 0 15px rgba($color2, .5)
+         
+      .nav-btn span
+         color: #e5aa46
+      .nav-btn__lines,
+      .nav-btn__lines::before,
+      .nav-btn__lines::after
+         background: #e5aa46
       
    &.no-transition
       transform: translateY(-100%)
