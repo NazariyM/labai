@@ -2,7 +2,7 @@
    padding: 40px 0 60px
    transform: translateY(-100px)
    +xs
-      padding: 40px 0
+      padding: 40px 0 25px
       
    &_entry
       background: #f6f6f6
@@ -32,35 +32,55 @@
          
       &:nth-child(1)
          position: relative
-         flex-basis: 360px
+         flex-basis: 342px
          +xs
             flex: 0 1 auto
             
       &:nth-child(2)
-         flex-basis: 250px
-         +xs
-            display: none
-      &:nth-child(3)
-         flex-basis: 340px
+         flex-basis: 470px
          +md
             display: none
+      &:nth-child(3)
+         padding-top: 15px
+         flex-basis: auto
+         flex-grow: 1
+         margin-left: -80px
+         +md
+            flex-grow: 0
+            margin-left: 0
       
    &__logo
-      margin-left: -8px
-      margin-bottom: 17px
-      svg
-         margin-right: 11px
+      margin-left: -18px
+      margin-bottom: 20px
+      font-size: 21px
+      line-height: 26px
       +xs
+         flex: 0 0 100px
          margin: 0 auto 15px
+         font-size: 17px
+         line-height: 21px
+         text-align: left
+      svg
+         height: 95px
+         margin-right: 8px
+         +xs
+            height: 60px
+            flex: 0 0 80px
    
    &__copyright
       font-size: 14px
-      line-height: 20px
-      
+      line-height: 22px
+      +xs
+         font-size: 13px
+         line-height: 18px
    &__info-item
       color: #000
       line-height: 22px
-      margin-bottom: 5px
+      +xs
+         text-align: left
+         font-size: 17px
+         line-height: 20px
+         align-items: center
       &:nth-child(2)
          margin-bottom: 16px
       &:last-child
@@ -68,10 +88,12 @@
       &.info-item_tel a
          margin-top: -3px
          margin-left: 3px
+         +xs
+            font-size: 17px
       .info-item__icon
          flex: 0 0 25px
          width: 25px
-         margin-right: 14px
+         margin-right: 10px
          
       a:not(.link-decor)
          +trs
@@ -79,19 +101,28 @@
             color: $color1
       
    &__socials
+      display: flex
+      align-items: center
       margin: 5px 0 35px
       +xs
          margin: 5px 0 25px
          
    &__dev
+      margin-top: 25px
       letter-spacing: 0
+      +xs
+         font-size: 17px
+         margin-top: 20px
       a
          color: #28b298
       
    ul
+      margin-bottom: 42px
+      column-count: 2
       li
          a
             +trs
-            +f('cal-700', 18, 30)
+            +f('cal-400', 18, 28)
+            border-bottom: 1px solid #000
             .no-touch &:hover
-               color: $color1
+               border-bottom-color: transparent

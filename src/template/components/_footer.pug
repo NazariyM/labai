@@ -59,10 +59,13 @@
 					li: a(href='#!') О компании
 					li: a(href='#!') Услуги
 					li: a(href='#!') Цены
+					li: a(href='#!') Реализованные проекты
 					li: a(href='#!') Новости
 					li: a(href='#!') Вопрос-ответ
-					li: a(href='#!') Реализованные проекты
 					li: a(href='#!') Контакты
+
+				-socials = {classMod: 'footer__socials', title: 'Наши соц. сети'}
+				include ../components/socials
 
 			+e.col
 				+e.info-item.info-item._tel
@@ -95,8 +98,7 @@
 
 
 					.info-item__text
-						+e.P г. Москва,
-						+e.P Большой Головин переулок, д.3,
+						+e.P г. Москва, Большой Головин переулок, д.3,
 						+b.A.link-decor(href='#!') Карта проезда
 
 				+e.info-item.info-item
@@ -114,12 +116,7 @@
 
 					+b.A.link-decor(href='mailto:labai@labai.ru') labai@labai.ru
 
-			+e.col
-				-socials = {classMod: 'footer__socials', title: 'Наши соц. сети'}
-				include ../components/socials
-
 				+e.P.dev Создание сайта
-					br
-					+b.A.link-decor(href='http://akticom.ru/' target='_blank') Актиком
+					+b.A.link-decor(href='http://akticom.ru/' target='_blank') Студия "Актиком"
 
 //end footer
