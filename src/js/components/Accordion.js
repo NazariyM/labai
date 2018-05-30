@@ -1,5 +1,5 @@
 import { TweenMax, CSSPlugin } from 'gsap';
-import { $window, css, Resp } from '../modules/dev/_helpers'
+import { css, Resp } from '../modules/dev/_helpers';
 
 class Accordion {
   constructor(el, enableFix = false, speed = 0.3) {

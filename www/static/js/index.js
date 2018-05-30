@@ -37588,7 +37588,7 @@ var HeaderAPI = exports.HeaderAPI = new Header();
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.sliderAPI = undefined;
 
@@ -37609,135 +37609,135 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Slider = function () {
-  function Slider() {
-    _classCallCheck(this, Slider);
+    function Slider() {
+        _classCallCheck(this, Slider);
 
-    this.$slider = (0, _jquery2.default)('.slider');
-    this.$mobSlider = (0, _jquery2.default)('.mob-slider');
+        this.$slider = (0, _jquery2.default)('.slider');
+        this.$mobSlider = (0, _jquery2.default)('.mob-slider');
 
-    this.arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n    <defs>\n        <path id="i6tca"\n              d="M196.72 2737l17.95-18.07c.44-.44.44-1.15 0-1.6a1.12 1.12 0 0 0-1.6 0l-18.74 18.87a1.13 1.13 0 0 0 0 1.6l18.75 18.86a1.1 1.1 0 0 0 1.58 0c.44-.44.44-1.15 0-1.6z"/>\n    </defs>\n    <g>\n        <g transform="translate(-192 -2715)">\n            <use xlink:href="#i6tca"/>\n        </g>\n    </g>\n</svg>';
-    this.arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n        <defs>\n            <path id="vmhva"\n                  d="M1403.28 2737l-17.92-18.07a1.13 1.13 0 0 1 0-1.6 1.11 1.11 0 0 1 1.59 0l18.72 18.87c.44.45.44 1.16 0 1.6l-18.72 18.86a1.1 1.1 0 0 1-1.58 0 1.13 1.13 0 0 1 0-1.6z"/>\n        </defs>\n        <g>\n            <g transform="translate(-1383 -2715)">\n                <use xlink:href="#vmhva"/>\n            </g>\n        </g>\n    </svg>';
+        this.arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n    <defs>\n        <path id="i6tca"\n              d="M196.72 2737l17.95-18.07c.44-.44.44-1.15 0-1.6a1.12 1.12 0 0 0-1.6 0l-18.74 18.87a1.13 1.13 0 0 0 0 1.6l18.75 18.86a1.1 1.1 0 0 0 1.58 0c.44-.44.44-1.15 0-1.6z"/>\n    </defs>\n    <g>\n        <g transform="translate(-192 -2715)">\n            <use xlink:href="#i6tca"/>\n        </g>\n    </g>\n</svg>';
+        this.arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n        <defs>\n            <path id="vmhva"\n                  d="M1403.28 2737l-17.92-18.07a1.13 1.13 0 0 1 0-1.6 1.11 1.11 0 0 1 1.59 0l18.72 18.87c.44.45.44 1.16 0 1.6l-18.72 18.86a1.1 1.1 0 0 1-1.58 0 1.13 1.13 0 0 1 0-1.6z"/>\n        </defs>\n        <g>\n            <g transform="translate(-1383 -2715)">\n                <use xlink:href="#vmhva"/>\n            </g>\n        </g>\n    </svg>';
 
-    this.init();
-  }
-
-  _createClass(Slider, [{
-    key: 'init',
-    value: function init() {
-      this.createSlider();
-      this.createMobileSlider();
-      this.screenSlider();
+        this.init();
     }
-  }, {
-    key: 'screenSlider',
-    value: function screenSlider() {
-      this.$screenSldFor = (0, _jquery2.default)('.screen__slider-for');
-      this.$screenSldNav = (0, _jquery2.default)('.screen__slider-nav');
 
-      var arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="95"\n     viewBox="0 0 35 95">\n    <defs>\n        <path id="62cia" d="M215.15 395l-30.16 45 30.16 46"/>\n        <clipPath id="62cib">\n            <use fill="#fff" xlink:href="#62cia"/>\n        </clipPath>\n    </defs>\n    <g>\n        <g transform="translate(-182 -393)">\n            <use fill="#fff" fill-opacity="0" stroke="#fff" stroke-miterlimit="50" stroke-width="2"\n                 clip-path="url(&quot;#62cib&quot;)" xlink:href="#62cia"/>\n        </g>\n    </g>\n    </svg>';
+    _createClass(Slider, [{
+        key: 'init',
+        value: function init() {
+            this.createSlider();
+            this.createMobileSlider();
+            this.screenSlider();
+        }
+    }, {
+        key: 'screenSlider',
+        value: function screenSlider() {
+            this.$screenSldFor = (0, _jquery2.default)('.screen__slider-for');
+            this.$screenSldNav = (0, _jquery2.default)('.screen__slider-nav');
 
-      var arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33" height="94"\n     viewBox="0 0 33 94">\n    <defs>\n        <path id="mieia" d="M1386 394.56l29.82 44.96-29.82 45.95"/>\n        <clipPath id="mieib">\n            <use fill="#fff" xlink:href="#mieia"/>\n        </clipPath>\n    </defs>\n    <g>\n        <g transform="translate(-1384 -393)">\n            <use fill="#fff" fill-opacity="0" stroke="#fff" stroke-miterlimit="50" stroke-width="2"\n                 clip-path="url(&quot;#mieib&quot;)" xlink:href="#mieia"/>\n        </g>\n    </g>\n  </svg>';
+            var arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="95"\n     viewBox="0 0 35 95">\n    <defs>\n        <path id="62cia" d="M215.15 395l-30.16 45 30.16 46"/>\n        <clipPath id="62cib">\n            <use fill="#fff" xlink:href="#62cia"/>\n        </clipPath>\n    </defs>\n    <g>\n        <g transform="translate(-182 -393)">\n            <use fill="#fff" fill-opacity="0" stroke="#fff" stroke-miterlimit="50" stroke-width="2"\n                 clip-path="url(&quot;#62cib&quot;)" xlink:href="#62cia"/>\n        </g>\n    </g>\n    </svg>';
 
-      this.$screenSldFor.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        asNavFor: '.screen__slider-nav',
-        rows: 0,
-        accessibility: false,
-        infinite: true,
-        prevArrow: '<button type="button" class="screen__slider-btn screen__slider-btn_prev">' + arrLeft + '</button>',
-        nextArrow: '<button type="button" class="screen__slider-btn screen__slider-btn_next">' + arrRight + '</button>',
-        speed: 700
-      });
+            var arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33" height="94"\n     viewBox="0 0 33 94">\n    <defs>\n        <path id="mieia" d="M1386 394.56l29.82 44.96-29.82 45.95"/>\n        <clipPath id="mieib">\n            <use fill="#fff" xlink:href="#mieia"/>\n        </clipPath>\n    </defs>\n    <g>\n        <g transform="translate(-1384 -393)">\n            <use fill="#fff" fill-opacity="0" stroke="#fff" stroke-miterlimit="50" stroke-width="2"\n                 clip-path="url(&quot;#mieib&quot;)" xlink:href="#mieia"/>\n        </g>\n    </g>\n  </svg>';
 
-      this.$screenSldNav.slick({
-        vertical: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: '.screen__slider-for',
-        dots: false,
-        centerMode: false,
-        focusOnSelect: true,
-        rows: 0,
-        accessibility: false,
-        infinite: false,
-        speed: 700
-      });
+            this.$screenSldFor.slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                asNavFor: '.screen__slider-nav',
+                rows: 0,
+                accessibility: false,
+                infinite: true,
+                prevArrow: '<button type="button" class="screen__slider-btn screen__slider-btn_prev">' + arrLeft + '</button>',
+                nextArrow: '<button type="button" class="screen__slider-btn screen__slider-btn_next">' + arrRight + '</button>',
+                speed: 700
+            });
 
-      this.$screenSldFor.on('init afterChange reInit', function (event, slick, currentSlide) {
-        var activeIdx = (0, _jquery2.default)('.slick-active').data('slick-index');
-        var $screenBg = (0, _jquery2.default)('.screen__bg');
+            this.$screenSldNav.slick({
+                vertical: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                asNavFor: '.screen__slider-for',
+                dots: false,
+                centerMode: false,
+                focusOnSelect: true,
+                rows: 0,
+                accessibility: false,
+                infinite: false,
+                speed: 700
+            });
 
-        $screenBg.siblings().removeClass(_helpers.css.active);
-        $screenBg.eq(activeIdx).addClass(_helpers.css.active);
-      });
-    }
-  }, {
-    key: 'createMobileSlider',
-    value: function createMobileSlider() {
-      var defaultOptions = {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: false,
-        arrows: true,
-        speed: 400,
-        cssEase: 'cubic-bezier(0.74, 0.1, 0.32, 0.98)',
-        useTransform: true,
-        adaptiveHeight: true,
-        mobileFirst: true,
-        accessibility: false,
-        rows: 0,
-        prevArrow: '<button type="button" class="slider__btn slider__btn_prev">' + this.arrLeft + '</button>',
-        nextArrow: '<button type="button" class="slider__btn slider__btn_next">' + this.arrRight + '</button>'
-      };
+            this.$screenSldFor.on('init afterChange reInit', function (event, slick, currentSlide) {
+                var activeIdx = (0, _jquery2.default)('.slick-active').data('slick-index');
+                var $screenBg = (0, _jquery2.default)('.screen__bg');
 
-      this.$mobSlider.slick(_jquery2.default.extend({}, defaultOptions, {
-        responsive: [{
-          breakpoint: 1023,
-          settings: 'unslick'
-        }]
-      }));
-    }
-  }, {
-    key: 'createSlider',
-    value: function createSlider() {
+                $screenBg.siblings().removeClass(_helpers.css.active);
+                $screenBg.eq(activeIdx).addClass(_helpers.css.active);
+            });
+        }
+    }, {
+        key: 'createMobileSlider',
+        value: function createMobileSlider() {
+            var defaultOptions = {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                infinite: false,
+                arrows: true,
+                speed: 400,
+                cssEase: 'cubic-bezier(0.74, 0.1, 0.32, 0.98)',
+                useTransform: true,
+                adaptiveHeight: true,
+                mobileFirst: true,
+                accessibility: false,
+                rows: 0,
+                prevArrow: '<button type="button" class="slider__btn slider__btn_prev">' + this.arrLeft + '</button>',
+                nextArrow: '<button type="button" class="slider__btn slider__btn_next">' + this.arrRight + '</button>'
+            };
 
-      var $specSlider = (0, _jquery2.default)('.spec__slider');
+            this.$mobSlider.slick(_jquery2.default.extend({}, defaultOptions, {
+                responsive: [{
+                    breakpoint: 1023,
+                    settings: 'unslick'
+                }]
+            }));
+        }
+    }, {
+        key: 'createSlider',
+        value: function createSlider() {
 
-      var defaultOptions = {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        arrows: true,
-        speed: 800,
-        cssEase: 'cubic-bezier(0.74, 0.1, 0.32, 0.98)',
-        useTransform: true,
-        adaptiveHeight: false,
-        accessibility: false,
-        swipe: true,
-        rows: 0,
-        prevArrow: '<button type="button" class="slider__btn slider__btn_prev">' + this.arrLeft + '</button>',
-        nextArrow: '<button type="button" class="slider__btn slider__btn_next">' + this.arrRight + '</button>'
-      };
+            var $specSlider = (0, _jquery2.default)('.spec__slider');
 
-      this.$slider.each(function (i, slider) {
+            var defaultOptions = {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: false,
+                infinite: true,
+                arrows: true,
+                speed: 800,
+                cssEase: 'cubic-bezier(0.74, 0.1, 0.32, 0.98)',
+                useTransform: true,
+                adaptiveHeight: false,
+                accessibility: false,
+                swipe: true,
+                rows: 0,
+                prevArrow: '<button type="button" class="slider__btn slider__btn_prev">' + this.arrLeft + '</button>',
+                nextArrow: '<button type="button" class="slider__btn slider__btn_next">' + this.arrRight + '</button>'
+            };
 
-        (0, _jquery2.default)(slider).slick(_jquery2.default.extend({}, defaultOptions, {
-          infinite: false,
-          adaptiveHeight: true
-        }));
-      });
+            this.$slider.each(function (i, slider) {
 
-      $specSlider.slick(_jquery2.default.extend({}, defaultOptions, {
-        infinite: true
-      }));
-    }
-  }]);
+                (0, _jquery2.default)(slider).slick(_jquery2.default.extend({}, defaultOptions, {
+                    infinite: false,
+                    adaptiveHeight: true
+                }));
+            });
 
-  return Slider;
+            $specSlider.slick(_jquery2.default.extend({}, defaultOptions, {
+                infinite: true
+            }));
+        }
+    }]);
+
+    return Slider;
 }();
 
 var sliderAPI = exports.sliderAPI = new Slider();

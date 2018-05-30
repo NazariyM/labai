@@ -15,7 +15,7 @@
             .stages__item_right
                transform: translateX(60px)
                opacity: 0
-               
+      
       .c-tabs__btn
          opacity: 0
          &:nth-child(1)
@@ -53,7 +53,7 @@
          content: ''
          +md
             display: none
-         
+   
    &__col
       flex: 0 1 50%
       padding: 0 35px
@@ -61,7 +61,7 @@
          flex: 0 1 auto
       +xs
          padding: 0
-   
+      
       &:nth-child(1) .stages__item
          &:nth-child(1)
             margin-bottom: 70px
@@ -87,24 +87,24 @@
       position: relative
       display: flex
       +md
-         margin-bottom: 30px!important
-            
+         margin-bottom: 30px !important
+      
       &_left
          text-align: right
       &_right
          text-align: left
-         
+      
       &-text
-         #{$parent}_left &
-            flex: 0 1 475px
-            padding-right: 40px
-            +md
-               flex: 1 1 auto
-               text-align: left
-               padding-right: 0
-               padding-left: 80px
-            +xs
-               padding-left: 55px
+         #{$parent} _left &
+         flex: 0 1 475px
+         padding-right: 40px
+         +md
+            flex: 1 1 auto
+            text-align: left
+            padding-right: 0
+            padding-left: 80px
+         +xs
+            padding-left: 55px
          
          #{$parent}_right &
             flex: 0 1 525px
@@ -114,7 +114,7 @@
                padding-left: 80px
             +xs
                padding-left: 55px
-         
+      
       &-title
          margin-bottom: 8px
          +f('cal-700', 20, 21, -30)
@@ -140,7 +140,7 @@
             margin-right: 10px
             width: 17px
             height: 17px
-            
+      
       &-addition
          font-size: 13px
          line-height: 14px
@@ -152,7 +152,7 @@
                padding-left: 25px
          #{$parent}_right &
             padding-left: 25px
-            
+      
       &-icon
          position: absolute
          top: 53px
@@ -161,8 +161,8 @@
             transform: translateY(-50%)
          +xs
             transform: translateY(-50%) scale(.7)
-            left: 0!important
-            
+            left: 0 !important
+         
          #{$parent}_left &
             right: 3px
             +md
@@ -182,7 +182,7 @@
       border: 2px solid rgba(#e5aa46, .5)
       +xs
          padding: 25px 0
-         
+      
       &::before
          position: absolute
          top: -4px
@@ -195,7 +195,7 @@
          content: ''
          +xs
             display: none
-            
+      
       &-title
          margin-bottom: 33px
          text-transform: none
@@ -205,7 +205,7 @@
             margin-bottom: 15px
             font-size: 24px
             line-height: 24px
-   
+      
       &-btn
          position: absolute
          top: -30px
@@ -217,7 +217,7 @@
             position: static
             transform: none
             margin-bottom: 20px
-            
+      
       &-list
          max-width: 790px
          margin: 0 auto
@@ -234,10 +234,10 @@
                   padding-left: 30px
                   font-size: 17px
                   line-height: 22px
-                  
+               
                &:not(:last-child)
                   margin-bottom: 20px
-         
+               
                svg
                   position: absolute
                   top: 0
@@ -247,7 +247,7 @@
                   +xs
                      width: 18px
                      height: 18px
-                  
+
 // end stages //
 
 // begin tariff //
@@ -269,7 +269,7 @@
          margin: 0 auto
          flex-wrap: wrap
          justify-content: center
-      
+   
    &__item
       position: relative
       display: flex
@@ -288,7 +288,7 @@
          margin: 0 20px 30px
          max-width: 255px
          min-width: 255px
-         
+      
       &:hover::after
          transform: scale(1.08, 1.14)
          border-color: #e4a23b
@@ -297,10 +297,10 @@
             background: #e4a23b
             &::after
                opacity: 0
-               
+      
       &_top
          padding: 5px 25px 0
-   
+      
       &::after
          position: absolute
          top: 0
@@ -312,7 +312,7 @@
          content: ''
          transform-origin: 50% 10%
          transition: .4s ease
-         
+      
       &-title,
       &-price
          color: #000
@@ -323,14 +323,14 @@
          +xs
             font-size: 20px
             line-height: 20px
-   
+      
       &-title
          margin: auto 0 15px
          &_top
             margin-top: 15px
       &-icon
          margin-bottom: 25px
-         
+      
       &-descr
          margin-bottom: 20px
          font-size: 15px
@@ -339,16 +339,29 @@
          p
             &:not(:last-child)
                margin-bottom: 10px
-         
+      
       &-price
          margin-bottom: 20px
-         
+      
       &-btn
          align-self: center
          margin-top: auto
          min-width: 158px
          &::after
             transition: .5s ease
+            
+      &-hit
+         position: absolute
+         top: -15px
+         right: -15px
+         width: 50px
+         height: 50px
+         border-radius: 50%
+         color: #fff
+         +f('cal-700', 15, 50)
+         letter-spacing: 0.75px
+         background-color: #28b197
+         
 // end tariff //
 
 // begin benefits //
@@ -359,12 +372,12 @@
    
    &__container
       max-width: 970px
-      
+   
    &__title
       margin-bottom: 60px
       text-transform: none
       letter-spacing: 0.025em
-
+   
    &__inner
       display: flex
       justify-content: space-between
@@ -391,14 +404,14 @@
          flex-basis: 23%
       &:nth-child(3)
          flex-basis: 34%
-         
+      
       +sm
          flex-basis: 33.33333% !important
       +xs
-         flex-basis: auto!important
+         flex-basis: auto !important
          max-width: 300px
          padding: 0 0 30px
-   
+      
       &-img-wrap
          margin: 0 auto 24px
          width: 57px
@@ -439,14 +452,14 @@
          padding: 0 80px
       +xs
          padding: 0
-         
+      
       .slider__btn
          +xs
             top: calc(100% + 15px)
             margin-top: 0
          svg
             fill: #fff
-      
+   
    &__person
       position: relative
       padding: 33px 10px 10px
@@ -474,11 +487,9 @@
          content: ''
          +xs
             display: none
-      &-inner
-         display: flex
-         align-items: center
-         padding: 0 50px 0 25px
-         height: 355px
+      
+      &-text
+         padding: 50px 50px 30px 25px
          background: #fff
          +sm
             padding: 15px 40px 40px
@@ -486,31 +497,10 @@
             height: auto
          +xs
             padding: 15px 15px 20px
-   
-      &-img
-         align-self: flex-end
-         flex: 0 1 346px
-         margin-bottom: -1px
-         +cover
-         +ratio(346, 388)
-         +sm
-            flex: 0 1 auto
-            margin-bottom: 40px
-            max-width: 346px
-            width: 100%
       
-      &-text
-         flex: 0 0 380px
-         margin-top: -20px
-         padding-left: 20px
-         +sm
-            margin-top: 0
-            padding-left: 0
-            flex: 0 1 auto
-         
       &-data
          margin-bottom: 20px
-   
+      
       &-name
          margin-bottom: 10px
          +f('cal-700', 20)
@@ -526,6 +516,10 @@
          p
             &:not(:last-child)
                margin-bottom: 5px
+         &-title
+            +f('cal-700')
+            color: #61656b
+            
 // end spec //
 
 // begin faq //
@@ -559,7 +553,7 @@
    
    &__container
       max-width: 840px
-      
+   
    &__title
       max-width: 600px
       margin: 0 auto 45px
@@ -573,29 +567,29 @@
       margin: 0 -10px 20px
       +xs
          flex-direction: column
-         
+      
       &-field
          padding: 0 10px
          flex: 0 1 33.33333%
          +xs
             width: 100%
             flex: 0 1 auto
-            
+         
          &:not(:last-child)
             +xs
                margin-bottom: 15px
-         
+      
       &-input
          line-height: 35px
          height: 35px
          +f('cal-400', 16)
          border-bottom: 3px solid rgba(#cccccc, .5)
          +placeholder-color(#18222d)
-         
+      
       &-submit
          min-width: 0
          width: 100%
-         
+   
    &__agree
       max-width: 560px
       margin: 0 auto
@@ -616,7 +610,7 @@
    
    &.is-active .geo-work__title
       opacity: 0
-      
+   
    &__title
       pointer-events: none
       position: absolute
@@ -631,7 +625,7 @@
    &__map
       +coverdiv
       z-index: 1
-      
+   
    &__info
       max-width: 200px
       margin: 0 auto
@@ -640,17 +634,17 @@
       &-title
          margin-bottom: 5px
          +f('cal-700', 18)
-         
+      
       &-descr
          //margin-right: -20px
          +f('cal-300', 14)
-         
+   
    .gm-style .gm-style-iw
-      font-size: 0!important
+      font-size: 0 !important
       > div
          overflow: hidden
          width: 100%
-         max-width: 200px!important
+         max-width: 200px !important
 // end geo-work //
 
 @keyframes scaleIn
@@ -658,3 +652,230 @@
       transform: scale(.6)
    100%
       transform: scale(1)
+
+.links-block
+   padding: 60px 0
+   background: #F6F6F6
+   border-top: 2px solid #fff
+   &__title
+      margin-bottom: 30px
+      text-align: center
+   
+   &__list
+      display: flex
+      flex-wrap: wrap
+      li
+         flex: 0 1 50%
+         &:nth-child(2) ~ li
+            margin-top: 30px
+         a
+            position: relative
+            display: block
+            padding-left: 35px
+            font-size: 20px
+            line-height: 25px
+            &:hover
+               span
+                  border-bottom-color: transparent
+               svg
+                  fill: $black
+            
+            span
+               border-bottom: 1px solid currentColor
+               +trs
+            
+            svg
+               position: absolute
+               top: 0
+               left: 0
+               width: 26px
+               height: 26px
+               fill: #e4a43d
+               +trs
+
+.steps
+   &__nav
+      position: relative
+      display: flex
+      justify-content: center
+      text-align: center
+      margin: 0 -15px 50px
+      &::before
+         position: absolute
+         top: 25px
+         left: 60px
+         right: 60px
+         z-index: -1
+         background-color: #e5e5e5
+         height: 6px
+         content: ''
+      &-item
+         flex: 0 1 (100% / 7)
+         margin: 0 15px
+         cursor: pointer
+         &.is-active
+            i
+               border-color: #ffffff
+               background-color: #e4a13a
+               color: #fff
+               &::after
+                  z-index: 1
+                  transform: translateY(0)
+         
+         i
+            position: relative
+            display: block
+            margin: 0 auto 20px
+            width: 50px
+            height: 50px
+            border-radius: 50%
+            border: 3px solid transparent
+            background-color: #e5e5e5
+            +f('cal-400', 22)
+            text-align: center
+            line-height: 46px
+            font-style: normal
+            &::after
+               position: absolute
+               bottom: -8px
+               left: 50%
+               margin-left: -4px
+               +arr(8, 9, #e4a13a, b)
+               transform: translateY(-100%)
+               transition: .3s .3s ease
+               z-index: -1
+               content: ''
+         p
+            color: #000
+            +f('cal-400')
+   
+   &__box
+      display: none
+      max-width: 920px
+      margin: 0 auto
+      padding: 0 40px
+      color: #61656b
+      &.is-active
+         display: block
+      
+      &-top
+         display: flex
+         &-icon
+            margin-right: 35px
+            +cover-img
+            svg, img
+               flex: 0 0 84px
+               width: 84px
+               height: 102px
+         &-text
+            flex: 0 1 auto
+            text-align: left
+            p
+               +f('cal-400', 20)
+      &-title
+         font-size: 25px
+         letter-spacing: 0.63px
+         color: #18222d
+      &-bot
+         margin-top: 40px
+         padding: 25px 30px
+         border: 2px solid rgba(#e5aa46, .5)
+         letter-spacing: 0.45px
+         text-align: center
+         
+.suggest
+   padding: 60px 0
+   text-align: center
+   background: #f6f6f6
+   &__tabs
+      .c-tabs__btn
+         min-width: 268px
+      
+   &__title
+      max-width: 880px
+      margin: 0 auto 30px
+   &__content
+      text-align: center
+      &-row
+         display: flex
+         margin: 0 -15px 30px
+      &-item
+         display: flex
+         flex: 0 1 50%
+         padding: 0 15px
+         text-align: left
+      &-icon
+         margin-right: 30px
+      &-text
+         color: #61656b
+         font-size: 17px
+         letter-spacing: 0.42px
+      &-title
+         margin-bottom: 10px
+         +f('cal-700', 20, 21)
+         color: #000
+      &-list
+         li
+            &:not(:last-child)
+               margin-bottom: 5px
+               
+      &-btn
+         display: inline-block
+         
+.facts
+   padding: 150px 0
+   &__container
+      max-width: 822px
+      
+   &__title
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-left: -170px
+      margin-top: -170px
+      width: 340px
+      height: 340px
+      border-radius: 50%
+      overflow: hidden
+      text-align: center
+      +cover
+      color: #fff
+      h2
+         z-index: 1
+      &::after
+         +coverdiv
+         background: rgba(#28b197, .85)
+         content: ''
+      
+   &__row
+      display: flex
+      justify-content: space-between
+      &:not(:last-child)
+         margin-bottom: 50px
+      
+   &__item
+      text-align: center
+      max-width: 190px
+      cursor: default
+      +trs
+      &:hover
+         svg
+            fill: #e39528
+         p
+            opacity: 1
+      &-icon
+         margin-bottom: 10px
+         svg
+            +trs
+            fill: #e5e5e5
+            
+      p
+         opacity: .3
+         +f('cal-400')
+         line-height: 21px
+         color: #000
+
+         +trs
