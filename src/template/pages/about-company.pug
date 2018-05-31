@@ -69,7 +69,7 @@ block main
 				+e.title.title-md
 					h2 История компании
 
-				+e.slider#small-preview
+				+e.slider
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
 						+e.slider-text._l.js-dot(data-history-year='2000')
@@ -133,7 +133,102 @@ block main
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
-				+e.slider-nav(data-anim='fade-y')
-
+				+e.slider-nav
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2000
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2001
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2002
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2003
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2004
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2005
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2006
+					+e.slider-nav-item
+						+e.BUTTON(type='button') 2007
 
 		//end history
+
+		//begin spec
+		+b.SECTION.spec._white
+			+e.container.container
+				+e.title.title-md(data-anim='fade-y')
+					h2 Наши сотрудники
+
+				+e.slider(data-anim='fade-y')
+					-n = 0
+					while n < 2
+
+						+e.person
+							+e.person-text
+								+e.person-data
+									+e.person-name
+										h4 Нехина Анна Александровна
+									+e.person-pos
+										h5 Генеральный директор
+								+e.person-descr
+									+e.person-descr-title
+										p Начало карьеры в 2000 году.
+									p В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства
+						-n++
+		//end spec
+
+		//begin latest-events
+		+b.SECTION.latest-events
+			+e.container.container
+				+e.top(data-anim='fade-y')
+					+e.H2.title.title-sm Последние события
+
+					+e.A.more-btn.btn._grey(href='#!')
+						span Все события
+
+				+e.inner.mob-slider(data-anim-stagger='fade-y' data-stagger-delay='.2')
+					+e.item
+						+e.img(style='background-image: url(static/img/content/latest-events_img-1.jpg)' onclick='')
+							+e.text._hidden
+								span 22.03.2018
+
+								p.js-dot От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+
+								a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+						+e.text
+							p.js-dot От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+							span 22.03.2018
+
+							a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+					+e.item
+						+e.img(style='background-image: url(static/img/content/latest-events_img-1.jpg)' onclick='')
+							+e.text._hidden
+								span 22.03.2018
+
+								p.js-dot От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+
+								a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+						+e.text
+							p.js-dot От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+							span 22.03.2018
+
+							a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+					+e.item
+						+e.img(style='background-image: url(static/img/content/latest-events_img-1.jpg)' onclick='')
+							+e.text._hidden
+								span 22.03.2018
+
+								p.js-dot От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+
+								a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+
+						+e.text
+							p.js-dot От нового собственника «Улан-Удэстальмоста» ожидали разработки и внедрения эффективного антикризисного
+							span 22.03.2018
+
+							a.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+		//end latest-events

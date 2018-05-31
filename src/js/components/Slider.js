@@ -34,10 +34,14 @@ class Slider {
         </g>
     </svg>`;
 
-    if (this.$slider.length) this.createSlider();
-    if (this.$mobSlider.length) this.createMobileSlider();
-    if (this.$screenSld.length) this.initScreenSlider();
-    if (this.$historySld.length) this.initHistorySld();
+    this.init();
+  }
+
+  init() {
+    this.createSlider();
+    this.createMobileSlider();
+    this.initScreenSlider();
+    this.initHistorySld();
   }
 
   initScreenSlider() {
@@ -175,61 +179,31 @@ class Slider {
   }
 
   initHistorySld () {
-    const _this = this;
 
     this.$historySld.slick({
+      asNavFor: '.history__slider-nav',
       arrows: false,
       infinite: false,
-      speed: 800,
-      dots: true,
-      centerMode: true,
-      centerPadding: 0,
-      // dotsClass: 'history__slider-dots',
-      // appendDots: '.history__slider-nav',
-      customPaging: function (slider, i) {
-        const $yearText = $(slider.$slides[i]).find('.history__slider-text').data('history-year');
-
-        return `<button type="button">${$yearText}</button>`;
-      }
+      speed: 500,
+      dots: false,
+      rows: 0,
+      cssEase: 'cubic-bezier(0.74, 0.1, 0.77, 0.98)'
     });
 
-    // function ClassDotsManager(slickElementId, numOfItems, numOfDots) {
-    //   this.listDotsElement = $('#' + slickElementId + ' ul.slick-dots li');
-    //   this.numOfDots = numOfDots <= numOfItems ? numOfDots : numOfItems;
-    //   this.minIndex = 0;
-    //   this.maxIndex = numOfDots - 1;
-    //   this.showDotsBetween = function (minIndex, maxIndex) {
-    //     this.listDotsElement.filter(function (index) {
-    //       $(this).css('display', index >= minIndex && index <= maxIndex ? 'inline-block' : 'none');
-    //
-    //     });
-    //   };
-    //   this.init = function () {
-    //     this.showDotsBetween(0, this.numOfDots - 1);
-    //   };
-    //   this.updateDots = function (newIndex) {
-    //     if (newIndex >= this.minIndex && newIndex <= this.maxIndex) {
-    //       // don't need to update
-    //     } else {
-    //       if (newIndex > this.maxIndex) {
-    //         this.maxIndex = newIndex;
-    //         this.minIndex = this.maxIndex - this.numOfDots + 1;
-    //       } else {
-    //         this.minIndex = newIndex;
-    //         this.maxIndex = this.minIndex + this.numOfDots - 1;
-    //       }
-    //       this.showDotsBetween(this.minIndex, this.maxIndex);
-    //     }
-    //   };
-    // }
-
-    // var numberOfItems = getNumberOfItems();
-    // var dotsManager = new ClassDotsManager('small-preview', 8, 6);
-    // dotsManager.init();
-    //
-    // this.$historySld.on('afterChange', function (slick, currentSlide) {
-    //   dotsManager.updateDots(currentSlide.currentSlide);
-    // });
+    $('.history__slider-nav').slick({
+      asNavFor: '.history__slider',
+      infinite: false,
+      centerMode: true,
+      focusOnSelect: true,
+      dots: false,
+      arrows: false,
+      centerPadding: 0,
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      speed: 500,
+      cssEase: 'cubic-bezier(0.74, 0.1, 0.77, 0.98)',
+      rows: 0
+    });
 
   }
 }

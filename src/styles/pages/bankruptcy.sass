@@ -421,15 +421,20 @@
 
 // begin spec //
 .spec
+   $parent: &
    position: relative
    padding: 68px 0 93px
    +xs
       padding: 50px 0 72px
-   
    &::after
       +coverdiv
       background: rgba(#001512, .85)
       content: ''
+      
+   &_white
+      background: #fff
+      &::after
+         display: none
    
    &__container
       position: relative
@@ -442,6 +447,8 @@
       color: #fff
       +sm
          font-size: 33px
+      #{$parent}_white &
+         color: #18222d
    
    &__slider
       max-width: 1020px
@@ -465,6 +472,10 @@
       padding: 33px 10px 10px
       +xs
          padding: 0
+      
+      #{$parent}_white &
+         border: 10px solid #e6e6e6
+         
       &::before
          position: absolute
          top: calc(100% - 10px)
