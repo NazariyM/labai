@@ -37614,23 +37614,21 @@ var Slider = function () {
 
         this.$slider = (0, _jquery2.default)('.slider');
         this.$mobSlider = (0, _jquery2.default)('.mob-slider');
+        this.$screenSld = (0, _jquery2.default)('.screen__slider');
+        this.$historySld = (0, _jquery2.default)('.history__slider');
 
         this.arrLeft = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n    <defs>\n        <path id="i6tca"\n              d="M196.72 2737l17.95-18.07c.44-.44.44-1.15 0-1.6a1.12 1.12 0 0 0-1.6 0l-18.74 18.87a1.13 1.13 0 0 0 0 1.6l18.75 18.86a1.1 1.1 0 0 0 1.58 0c.44-.44.44-1.15 0-1.6z"/>\n    </defs>\n    <g>\n        <g transform="translate(-192 -2715)">\n            <use xlink:href="#i6tca"/>\n        </g>\n    </g>\n</svg>';
         this.arrRight = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">\n        <defs>\n            <path id="vmhva"\n                  d="M1403.28 2737l-17.92-18.07a1.13 1.13 0 0 1 0-1.6 1.11 1.11 0 0 1 1.59 0l18.72 18.87c.44.45.44 1.16 0 1.6l-18.72 18.86a1.1 1.1 0 0 1-1.58 0 1.13 1.13 0 0 1 0-1.6z"/>\n        </defs>\n        <g>\n            <g transform="translate(-1383 -2715)">\n                <use xlink:href="#vmhva"/>\n            </g>\n        </g>\n    </svg>';
 
-        this.init();
+        if (this.$slider.length) this.createSlider();
+        if (this.$mobSlider.length) this.createMobileSlider();
+        if (this.$screenSld.length) this.initScreenSlider();
+        if (this.$historySld.length) this.initHistorySld();
     }
 
     _createClass(Slider, [{
-        key: 'init',
-        value: function init() {
-            this.createSlider();
-            this.createMobileSlider();
-            this.screenSlider();
-        }
-    }, {
-        key: 'screenSlider',
-        value: function screenSlider() {
+        key: 'initScreenSlider',
+        value: function initScreenSlider() {
             this.$screenSldFor = (0, _jquery2.default)('.screen__slider-for');
             this.$screenSldNav = (0, _jquery2.default)('.screen__slider-nav');
 
@@ -37734,6 +37732,65 @@ var Slider = function () {
             $specSlider.slick(_jquery2.default.extend({}, defaultOptions, {
                 infinite: true
             }));
+        }
+    }, {
+        key: 'initHistorySld',
+        value: function initHistorySld() {
+            var _this = this;
+
+            this.$historySld.slick({
+                arrows: false,
+                infinite: false,
+                speed: 800,
+                dots: true,
+                centerMode: true,
+                centerPadding: 0,
+                // dotsClass: 'history__slider-dots',
+                // appendDots: '.history__slider-nav',
+                customPaging: function customPaging(slider, i) {
+                    var $yearText = (0, _jquery2.default)(slider.$slides[i]).find('.history__slider-text').data('history-year');
+
+                    return '<button type="button">' + $yearText + '</button>';
+                }
+            });
+
+            // function ClassDotsManager(slickElementId, numOfItems, numOfDots) {
+            //   this.listDotsElement = $('#' + slickElementId + ' ul.slick-dots li');
+            //   this.numOfDots = numOfDots <= numOfItems ? numOfDots : numOfItems;
+            //   this.minIndex = 0;
+            //   this.maxIndex = numOfDots - 1;
+            //   this.showDotsBetween = function (minIndex, maxIndex) {
+            //     this.listDotsElement.filter(function (index) {
+            //       $(this).css('display', index >= minIndex && index <= maxIndex ? 'inline-block' : 'none');
+            //
+            //     });
+            //   };
+            //   this.init = function () {
+            //     this.showDotsBetween(0, this.numOfDots - 1);
+            //   };
+            //   this.updateDots = function (newIndex) {
+            //     if (newIndex >= this.minIndex && newIndex <= this.maxIndex) {
+            //       // don't need to update
+            //     } else {
+            //       if (newIndex > this.maxIndex) {
+            //         this.maxIndex = newIndex;
+            //         this.minIndex = this.maxIndex - this.numOfDots + 1;
+            //       } else {
+            //         this.minIndex = newIndex;
+            //         this.maxIndex = this.minIndex + this.numOfDots - 1;
+            //       }
+            //       this.showDotsBetween(this.minIndex, this.maxIndex);
+            //     }
+            //   };
+            // }
+
+            // var numberOfItems = getNumberOfItems();
+            // var dotsManager = new ClassDotsManager('small-preview', 8, 6);
+            // dotsManager.init();
+            //
+            // this.$historySld.on('afterChange', function (slick, currentSlide) {
+            //   dotsManager.updateDots(currentSlide.currentSlide);
+            // });
         }
     }]);
 

@@ -529,7 +529,9 @@
       padding: 70px 0
    +xs
       padding: 50px 0
-   
+      
+   &_white
+      background: #fff
    &__container
       height: 100%
       display: flex
@@ -879,3 +881,69 @@
          color: #000
 
          +trs
+         
+.articles-block
+   padding: 70px 0
+   background: #f6f6f6
+   &__title
+      margin-bottom: 30px
+      letter-spacing: 0.88px
+      text-align: center
+   &__row
+      display: flex
+      flex-wrap: wrap
+      margin: 0 -15px
+      
+   &__item
+      display: flex
+      align-items: flex-start
+      flex: 0 1 50%
+      padding: 0 15px
+      max-width: 555px
+      &:nth-child(2) ~ &
+         margin-top: 30px
+         
+      &-icon
+         flex: 0 0 25px
+         margin-right: 10px
+      &-title
+         margin-bottom: 5px
+         +f('cal-700', 20, 26)
+         color: #18222d
+      p
+         +f('cal-400')
+         
+.text-block
+   &__title
+      max-width: 650px
+      margin: 0 auto 40px
+      text-align: center
+      
+   &__inner
+      padding: 0 34px
+      
+   &__item
+      &-title
+         +f('cal-700')
+   
+   p
+      line-height: 30px
+      
+.small-adv
+   padding: 60px 0
+   text-align: center
+   &__container
+      max-width: 900px
+   &__title
+      max-width: 600px
+      margin: 0 auto 40px
+   &__row
+   &__item
+      padding: 0 15px
+      flex: 0 1 33.33333%
+      &-icon
+         margin-bottom: 10px
+      p
+         +f('cal-400', null, 21)
+         color: #000000
+         

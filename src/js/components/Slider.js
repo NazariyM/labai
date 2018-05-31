@@ -8,6 +8,8 @@ class Slider {
   constructor () {
     this.$slider = $('.slider');
     this.$mobSlider = $('.mob-slider');
+    this.$screenSld = $('.screen__slider');
+    this.$historySld = $('.history__slider');
 
     this.arrLeft = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="43" viewBox="0 0 25 43">
     <defs>
@@ -32,16 +34,13 @@ class Slider {
         </g>
     </svg>`;
 
-    this.init();
+    if (this.$slider.length) this.createSlider();
+    if (this.$mobSlider.length) this.createMobileSlider();
+    if (this.$screenSld.length) this.initScreenSlider();
+    if (this.$historySld.length) this.initHistorySld();
   }
 
-  init () {
-    this.createSlider();
-    this.createMobileSlider();
-    this.screenSlider();
-  }
-
-  screenSlider() {
+  initScreenSlider() {
     this.$screenSldFor = $('.screen__slider-for');
     this.$screenSldNav = $('.screen__slider-nav');
 
@@ -173,6 +172,65 @@ class Slider {
     $specSlider.slick($.extend({}, defaultOptions, {
       infinite: true
     }));
+  }
+
+  initHistorySld () {
+    const _this = this;
+
+    this.$historySld.slick({
+      arrows: false,
+      infinite: false,
+      speed: 800,
+      dots: true,
+      centerMode: true,
+      centerPadding: 0,
+      // dotsClass: 'history__slider-dots',
+      // appendDots: '.history__slider-nav',
+      customPaging: function (slider, i) {
+        const $yearText = $(slider.$slides[i]).find('.history__slider-text').data('history-year');
+
+        return `<button type="button">${$yearText}</button>`;
+      }
+    });
+
+    // function ClassDotsManager(slickElementId, numOfItems, numOfDots) {
+    //   this.listDotsElement = $('#' + slickElementId + ' ul.slick-dots li');
+    //   this.numOfDots = numOfDots <= numOfItems ? numOfDots : numOfItems;
+    //   this.minIndex = 0;
+    //   this.maxIndex = numOfDots - 1;
+    //   this.showDotsBetween = function (minIndex, maxIndex) {
+    //     this.listDotsElement.filter(function (index) {
+    //       $(this).css('display', index >= minIndex && index <= maxIndex ? 'inline-block' : 'none');
+    //
+    //     });
+    //   };
+    //   this.init = function () {
+    //     this.showDotsBetween(0, this.numOfDots - 1);
+    //   };
+    //   this.updateDots = function (newIndex) {
+    //     if (newIndex >= this.minIndex && newIndex <= this.maxIndex) {
+    //       // don't need to update
+    //     } else {
+    //       if (newIndex > this.maxIndex) {
+    //         this.maxIndex = newIndex;
+    //         this.minIndex = this.maxIndex - this.numOfDots + 1;
+    //       } else {
+    //         this.minIndex = newIndex;
+    //         this.maxIndex = this.minIndex + this.numOfDots - 1;
+    //       }
+    //       this.showDotsBetween(this.minIndex, this.maxIndex);
+    //     }
+    //   };
+    // }
+
+    // var numberOfItems = getNumberOfItems();
+    // var dotsManager = new ClassDotsManager('small-preview', 8, 6);
+    // dotsManager.init();
+    //
+    // this.$historySld.on('afterChange', function (slick, currentSlide) {
+    //   dotsManager.updateDots(currentSlide.currentSlide);
+    // });
+
   }
 }
 

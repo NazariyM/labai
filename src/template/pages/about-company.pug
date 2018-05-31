@@ -1,0 +1,139 @@
+extends ../extend/default
+
+block variables
+	-title = 'О компании';
+	-googleMap = false;
+	-headerClass = 'header_entry';
+	-footerClass = 'footer_entry';
+
+block main
+	main.content.content_default
+
+		//begin about
+		+b.SECTION.about
+			+e.container.container
+				+e.breadcrumb.breadcrumb(data-anim='fade-x' data-anim-delay='1')
+					ul
+						li: a(href='#!') Главная
+						li.is-active: a(href='#!') О компании
+
+				+e.tabs.c-tabs
+					.c-tabs__nav
+						button.c-tabs__btn(class='is-active' type='button') о нас
+						button.c-tabs__btn(type='button') обращение ген. директора
+						button.c-tabs__btn(type='button') наши услуги
+						button.c-tabs__btn(type='button') история команды
+						button.c-tabs__btn(type='button') события
+
+					.c-tabs__for
+						.c-tabs__tab
+							+e.content
+								+e.content-img(style='background-image: url(static/img/content/about_img.jpg)')
+								+e.content-text
+									+e.content-title.title-md
+										h3 О НАС
+									p Лаборатория Антикризисных Исследований — это профессиональная команда антикризисных менеджеров с опытом работы в различных отраслях экономики, в которую входят арбитражные управляющие, юристы, экономисты, бухгалтеры, аудиторы, профессиональные оценщики, а также специалисты по работе с персоналом.
+									p С 2000 года мы оказываем услуги в области антикризисного управления ­ отвечаем на Ваши вопросы в области финансового оздоровления и банкротства, реализуем проекты любого уровня сложности.Наша команда способна оперативно разработать и реализовать оптимальный план разрешения кризисной ситуации, обеспечить защиту интересов заказчика и добиться поставленных им целей.
+									p На сегодняшний день в активе специалистов Лаборатории Антикризисных Исследований 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд. рублей взысканных долгов, свыше 10 млрд. рублей погашенной кредиторской задолженности.
+									p Основные принципы нашей работы ­ профессионализм, конфиденциальность, порядочность.
+		//end about
+
+		//begin services
+		+b.SECTION.services
+			+e.container.container
+				+e.title.title-md
+					h2 наши услуги
+				+e.row.row
+					-
+						servList = [
+						[1, 'Разработка антикризисного плана'],
+						[2, 'Банкротство юридических и физических лиц'],
+						[3, 'Ликвидация предприятия с задолженностью '],
+						[4, 'Разработка антикризисного плана'],
+						[1, 'Банкротство юридических и физических лиц'],
+						[2, 'Ликвидация предприятия с задолженностью ']
+						]
+
+					for el in servList
+						+e.item(onclick='')
+							+e.item-img(style=`background-image: url(static/img/content/serv-${el[0]}.jpg)`)
+							+e.item-content
+								+e.item-title.js-dot
+									h6= el[1]
+								a(href='#!').link-decor ЧИТАТЬ ДАЛЬШЕ
+		//end services
+
+		//begin history
+		+b.SECTION.history
+			+e.container.container
+				+e.title.title-md
+					h2 История компании
+
+				+e.slider#small-preview
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._l.js-dot(data-history-year='2000')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._r.js-dot(data-history-year='2001')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._l.js-dot(data-history-year='2002')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._r.js-dot(data-history-year='2003')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._l.js-dot(data-history-year='2004')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._r.js-dot(data-history-year='2005')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._l.js-dot(data-history-year='2006')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+					+e.slider-item
+						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
+						+e.slider-text._l.js-dot(data-history-year='2007')
+							p На сегодняшний день в активе специалистов
+								strong Лаборатории Антикризисных Исследований
+								= ' '
+								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
+
+				+e.slider-nav(data-anim='fade-y')
+
+
+		//end history
