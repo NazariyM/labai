@@ -1,5 +1,5 @@
 import { TweenMax, CSSPlugin } from 'gsap';
-import { css, Resp } from '../modules/dev/_helpers';
+import { $window, css, Resp } from '../modules/dev/_helpers';
 
 class Accordion {
   constructor(el, enableFix = false, speed = 0.3) {
@@ -44,6 +44,11 @@ class Accordion {
       } else {
         hideContent($selftContent);
       }
+
+      // parallax fix
+      setTimeout(() => {
+        $window.trigger('resize.px.parallax');
+      }, 300);
     });
 
     function showContent(el) {

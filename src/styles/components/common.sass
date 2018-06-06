@@ -26,7 +26,9 @@ body
 .content
   &_default
     padding-top: 200px
-  
+    +sm
+      padding-top: 110px
+
 .link-decor
   border-bottom: 1px solid currentColor
   +trs
@@ -37,6 +39,9 @@ body
   +f('cal-700', 35)
   line-height: 1.2
   text-transform: uppercase
+  +xs
+    font-size: 28px
+    line-height: 30px
   
 .title-md
   +f('cal-400', 42, 48)
@@ -53,6 +58,14 @@ body
   +xs
     font-size: 28px
     line-height: 30px
+    
+.title-xs
+  color: #18222d
+  +f('cal-400', 35, 40)
+  text-transform: uppercase
+  +xs
+    font-size: 30px
+    line-height: 30px
 
 .btn
   position: relative
@@ -61,9 +74,9 @@ body
   text-align: center
   outline: 0
   cursor: pointer
-  
-  &:hover::after
-    background-position: 99% 50%
+  &:hover
+    &::after
+      background-position: 99% 50%
   
   &::after
     content: ''

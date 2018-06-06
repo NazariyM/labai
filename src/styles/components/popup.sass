@@ -1,0 +1,86 @@
+.popup
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  visibility: hidden
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+  z-index: 1300
+  overflow: auto
+  outline: 0
+  text-align: center
+  font-size: 0
+  transform: translate3d(0, 0, 0)
+  background-color: rgba(#000,.8)
+  transition: opacity .3s ease, transform .5s ease, visibility .5s
+  will-change: opacity, transform
+  $parent: &
+  &:after
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    width: 0
+    height: 100%
+    //+md
+    //  display: none
+    
+  &.opened
+    opacity: 1
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+    visibility: visible
+  &__close
+    position: absolute
+    top: -12px
+    right: 4px
+    z-index: 10
+    cursor: pointer
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 0
+    width: 32px
+    height: 32px
+    background-color: #e4a23b
+    border-radius: 50%
+    +xs
+      top: 10px
+      right: 12px
+    &:hover svg
+      fill: darken($color1, 50)
+    svg
+      fill: #fff
+      +trs
+      
+  &__container
+    display: inline-block
+    vertical-align: middle
+    max-width: 500px
+    width: 100%
+    position: relative
+    padding: 0 15px
+    margin: 30px auto
+    transition: opacity .5s ease, transform .5s ease
+    transform: translate3d(0, -100px, 0)
+    will-change: transform, opacity
+    text-align: left
+    border-radius: 5px
+    +mob-fix
+
+body.popup-opened
+  overflow: hidden
+  //+md
+  //  position: fixed
+  //  height: 100%
+  
+  //@media only screen and (min-width: 767px) and (max-width: 1199px)
+  //  position: fixed
+  //  height: 100%
+
+.popup.opened .popup__container
+  -webkit-transform: translate3d(0, 0, 0)
+  -moz-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
+  

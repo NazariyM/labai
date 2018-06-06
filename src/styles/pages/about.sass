@@ -1,32 +1,65 @@
 .about
-   padding: 40px 0 100px
+   padding: 40px 0 95px
+   +xs
+      padding: 15px 0 45px
+   
+   &__breadcrumb
+      margin-bottom: 20px
    
    &__content
       display: flex
-      &-img
+      align-items: flex-start
+      +sm
+         flex-direction: column
+         
+      &-images
          flex: 0 0 31.53153%
+         +sm
+            align-self: center
+            width: 400px
+         +xs
+            width: 100%
+      &-img
+         display: none
          +ratio(350, 395)
          +cover
+         +sm
+            +ratio(400, 300)
+         
+         &.is-active
+            display: block
+         
       &-text
          flex: 0 1 auto
          padding-left: 28px
-      
+         +sm
+            margin-top: 35px
+            padding: 0 50px
+         +xs
+            padding: 0
+            
       &-title
-         margin-bottom: 10px
+         margin: -10px 0 10px
          text-align: left
       p
          font-size: 17px
+         line-height: 25px
          color: #61656b
          &:not(:last-child)
-            margin-bottom: 15px
+            margin-bottom: 11px
             
 .services
-   padding: 60px 0
+   padding: 88px 0 100px
+   +xs
+      padding: 50px 0
    &__title
       margin-bottom: 30px
       
    &__row
       flex-wrap: wrap
+      +xs
+         justify-content: center
+         margin: 0
       
    &__item
       $parent: &
@@ -36,6 +69,12 @@
       max-width: 380px
       cursor: default
       overflow: hidden
+      +sm
+         flex: 0 1 calc(50% - 30px)
+      +xs
+         flex: 0 1 auto
+         width: 100%
+         margin: 0
       &:hover
          #{$parent}-content
             padding: 35px 30px
@@ -44,6 +83,13 @@
          #{$parent}-title
             color: #fff
             
+      &:nth-child(1) ~ &
+         +xs
+            margin-top: 30px
+            
+      &:nth-child(2) ~ &
+         +sm
+            margin-top: 30px
       &:nth-child(3) ~ &
          margin-top: 30px
       &-img
@@ -75,12 +121,17 @@
       &-title
          +f('cal-400', 22, 22)
          transition: color .5s ease
+         +xs
+            font-size: 18px
+            line-height: 18px
          h6
             max-height: 44px
 
 .history
-   padding: 60px 0
+   padding: 65px 0 85px
    background: #f6f6f6
+   +xs
+      padding: 50px 0
    &__title
       margin-bottom: 30px
       
@@ -91,6 +142,8 @@
          position: relative
          padding: 0 15px
          height: 410px
+         +sm
+            height: 350px
       &-img
          position: absolute
          top: 0
@@ -103,25 +156,44 @@
          top: 0
          bottom: 0
          z-index: 1
-         padding: 45px 38px
+         padding: 40px
          width: 394px
          background: rgba(#000d0a, .6)
          color: #fff
          font-size: 23px
          line-height: 30px
+         letter-spacing: 0
+         +xs
+            padding: 15px
+            font-size: 19px
+            line-height: 25px
+            width: auto
          &_l
-            left: 50px
+            left: 65px
+            +xs
+               left: 15px
+               right: 15px
          &_r
-            right: 50px
+            right: 65px
+            +xs
+               right: 15px
+               left: 15px
          strong
             +f('cal-700')
          p
             max-height: 330px
+            +xs
+               max-height: 310px
             
       &-nav
-         padding: 30px 0 0
+         opacity: 0
+         transform: translateX(150px)
+         padding: 20px 0 0
          margin: 0 -2px
+         +xs
+            margin: 0 -5px
          &::before
+            pointer-events: none
             position: absolute
             left: 0
             top: 100%
@@ -131,7 +203,11 @@
             z-index: 1
             background-image: linear-gradient(to right, #f6f6f6, transparent)
             content: ''
+            +xs
+               height: 50px
+               top: 90%
          &::after
+            pointer-events: none
             position: absolute
             right: 0
             top: 100%
@@ -141,12 +217,17 @@
             z-index: 1
             background-image: linear-gradient(to left, #f6f6f6, transparent)
             content: ''
+            +xs
+               height: 50px
+               top: 90%
          &-item
             position: relative
             margin: 0 2px
             padding-bottom: 30px
             text-align: center
             cursor: pointer
+            +xs
+               margin: 0 5px
             &.slick-current
                &::before
                   background: #28b298
@@ -183,4 +264,51 @@
                +f('cal-700', 25, 25)
                letter-spacing: -0.75px
                color: #000
-            
+               +xs
+                  font-size: 20px
+                  line-height: 20px
+                  margin-bottom: 5px
+                  letter-spacing: 0
+.director
+   padding: 80px 0 90px
+   background: #f6f6f6
+   +xs
+      padding: 50px 0
+   
+   &__container
+      display: flex
+      justify-content: flex-start
+      +sm
+         flex-direction: column
+   
+   &__title
+      opacity: 0
+      transform: translateX(-100px)
+      margin-bottom: 8px
+      text-align: left
+      letter-spacing: 0.03em
+      
+   &__text
+      flex: 0 1 auto
+      padding-right: 30px
+      +sm
+         padding: 0
+   &__img
+      opacity: 0
+      transform: translateX(100px)
+      flex: 0 0 350px
+      height: 500px
+      +cover-img
+      +sm
+         display: none
+      
+   &__descr
+      opacity: 0
+      transform: translateX(-100px)
+      font-size: 17px
+      line-height: 25px
+      color: #61656b
+      strong
+         +f('cal-700')
+         
+         

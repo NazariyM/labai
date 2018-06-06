@@ -278,7 +278,7 @@ block main
 							-n++
 
 				+e.result
-					+e.BUTTON.result-btn.btn._grey(type='button' data-anim='fade-y')
+					+e.BUTTON.result-btn.btn._grey(data-popup-target='call-popup' type='button' data-anim='fade-y')
 						span Оставить заявку
 
 					+e.result-title.title-md(data-anim='fade-y')
@@ -540,32 +540,6 @@ block main
 							br
 							| направлений бизнеса
 		//end benefits
-
-		//begin spec
-		+b.SECTION.spec
-			+e.container.container
-				+e.title.title-sm(data-anim='fade-y')
-					h2 Специалисты по банкротству юридических лиц
-
-				+e.slider(data-anim='fade-y')
-					-n = 0
-					while n < 2
-
-						+e.person
-							+e.person-text
-								+e.person-data
-									+e.person-name
-										h4 Нехина Анна Александровна
-									+e.person-pos
-										h5 Генеральный директор
-								+e.person-descr
-									+e.person-descr-title
-										p Начало карьеры в 2000 году.
-									p В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства
-						-n++
-
-			+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/spec_bg.jpg")
-		//end spec
 
 		//begin geo-work
 		+b.SECTION.geo-work(data-anim='fade-x' data-anim-duration='1')

@@ -12,23 +12,63 @@ block main
 		//begin about
 		+b.SECTION.about
 			+e.container.container
-				+e.breadcrumb.breadcrumb(data-anim='fade-x' data-anim-delay='1')
+				+e.breadcrumb.breadcrumb._black(data-anim='fade-x' data-anim-delay='1')
 					ul
 						li: a(href='#!') Главная
 						li.is-active: a(href='#!') О компании
 
-				+e.tabs.c-tabs
-					.c-tabs__nav
+				+e.tabs.c-tabs.c-tabs_about
+					.c-tabs__nav(data-anim-stagger='fade-y' data-stagger-delay='0.1' data-anim-duration='0.1')
 						button.c-tabs__btn(class='is-active' type='button') о нас
-						button.c-tabs__btn(type='button') обращение ген. директора
 						button.c-tabs__btn(type='button') наши услуги
 						button.c-tabs__btn(type='button') история команды
 						button.c-tabs__btn(type='button') события
 
-					.c-tabs__for
+					.c-tabs__for(data-anim='fade-y' data-anim-delay='0.5')
 						.c-tabs__tab
 							+e.content
-								+e.content-img(style='background-image: url(static/img/content/about_img.jpg)')
+								+e.content-images
+									+e.content-img.is-active(style='background-image: url(static/img/content/about_img.jpg)')
+									+e.content-img(style='background-image: url(static/img/content/serv-2.jpg)')
+								+e.content-text
+									+e.content-title.title-md
+										h3 О НАС
+									p Лаборатория Антикризисных Исследований — это профессиональная команда антикризисных менеджеров с опытом работы в различных отраслях экономики, в которую входят арбитражные управляющие, юристы, экономисты, бухгалтеры, аудиторы, профессиональные оценщики, а также специалисты по работе с персоналом.
+									p С 2000 года мы оказываем услуги в области антикризисного управления ­ отвечаем на Ваши вопросы в области финансового оздоровления и банкротства, реализуем проекты любого уровня сложности.Наша команда способна оперативно разработать и реализовать оптимальный план разрешения кризисной ситуации, обеспечить защиту интересов заказчика и добиться поставленных им целей.
+									p На сегодняшний день в активе специалистов Лаборатории Антикризисных Исследований 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд. рублей взысканных долгов, свыше 10 млрд. рублей погашенной кредиторской задолженности.
+									p Основные принципы нашей работы ­ профессионализм, конфиденциальность, порядочность.
+
+						.c-tabs__tab
+							+e.content
+								+e.content-images
+									+e.content-img.is-active(style='background-image: url(static/img/content/about_img.jpg)')
+									+e.content-img(style='background-image: url(static/img/content/serv-2.jpg)')
+								+e.content-text
+									+e.content-title.title-md
+										h3 О НАС
+									p Лаборатория Антикризисных Исследований — это профессиональная команда антикризисных менеджеров с опытом работы в различных отраслях экономики, в которую входят арбитражные управляющие, юристы, экономисты, бухгалтеры, аудиторы, профессиональные оценщики, а также специалисты по работе с персоналом.
+									p С 2000 года мы оказываем услуги в области антикризисного управления ­ отвечаем на Ваши вопросы в области финансового оздоровления и банкротства, реализуем проекты любого уровня сложности.Наша команда способна оперативно разработать и реализовать оптимальный план разрешения кризисной ситуации, обеспечить защиту интересов заказчика и добиться поставленных им целей.
+									p На сегодняшний день в активе специалистов Лаборатории Антикризисных Исследований 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд. рублей взысканных долгов, свыше 10 млрд. рублей погашенной кредиторской задолженности.
+									p Основные принципы нашей работы ­ профессионализм, конфиденциальность, порядочность.
+
+						.c-tabs__tab
+							+e.content
+								+e.content-images
+									+e.content-img.is-active(style='background-image: url(static/img/content/about_img.jpg)')
+									+e.content-img(style='background-image: url(static/img/content/serv-2.jpg)')
+								+e.content-text
+									+e.content-title.title-md
+										h3 О НАС
+									p Лаборатория Антикризисных Исследований — это профессиональная команда антикризисных менеджеров с опытом работы в различных отраслях экономики, в которую входят арбитражные управляющие, юристы, экономисты, бухгалтеры, аудиторы, профессиональные оценщики, а также специалисты по работе с персоналом.
+									p С 2000 года мы оказываем услуги в области антикризисного управления ­ отвечаем на Ваши вопросы в области финансового оздоровления и банкротства, реализуем проекты любого уровня сложности.Наша команда способна оперативно разработать и реализовать оптимальный план разрешения кризисной ситуации, обеспечить защиту интересов заказчика и добиться поставленных им целей.
+									p На сегодняшний день в активе специалистов Лаборатории Антикризисных Исследований 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд. рублей взысканных долгов, свыше 10 млрд. рублей погашенной кредиторской задолженности.
+									p Основные принципы нашей работы ­ профессионализм, конфиденциальность, порядочность.
+
+						.c-tabs__tab
+							+e.content
+								+e.content-images
+									+e.content-img.is-active(style='background-image: url(static/img/content/about_img.jpg)')
+									+e.content-img(style='background-image: url(static/img/content/serv-2.jpg)')
 								+e.content-text
 									+e.content-title.title-md
 										h3 О НАС
@@ -38,10 +78,29 @@ block main
 									p Основные принципы нашей работы ­ профессионализм, конфиденциальность, порядочность.
 		//end about
 
+		//begin director
+		+b.SECTION.director
+			+e.container.container
+				+e.text
+					+e.title.title-md(data-anim='fade-x')
+						h2 обращение ген. директора
+					+e.descr(data-anim='fade-x' data-anim-delay='0.2')
+						p
+							strong Уважаемые господа,
+							
+						p В течение многих лет мы помогаем нашим клиентам решать задачи, связанные с  несостоятельностью (банкротством), реструктуризацией бизнеса, защитой собственности и внесудебными процедурами по финансовому оздоровлению предприятий.
+						p Банкротство юридического лица или предпринимателя это всего лишь механизм, который используется в различных экономических условиях. Прежде всего, банкротство ­ это способ ликвидации юридического лица погашением всех непогашенных задолженностей при отсутствии правопреемников. Однако, механизм банкротства используется и как способ юридической защиты от кредиторов и получения отсрочки для оплаты задолженности, и как способ разрешения зашедшего в тупик корпоративного конфликта, и как способ взыскания дебиторской задолженности. Причины, по которым владельцы бизнеса и кредиторы обращаются к механизму банкротства, различны, однако в любом случае при использовании этого механизма возникает ряд вопросов, которые невозможно разрешить без участия профессионалов рынка.
+						p Законодательство о банкротстве с каждым годом продолжает усложняться: значительное число исключений из правил, специализированных процедур, разночтений в законодательстве, возникающих не только у лиц, использующих закон, но и у государственных органов......
+						p С уважением, Генеральный директор ООО «Лаборатория Антикризисных Иследований”
+
+				+e.img(data-anim='fade-x')
+					+e.IMG(src='static/img/content/director_img.jpg' alt='image')
+		//end director
+
 		//begin services
 		+b.SECTION.services
 			+e.container.container
-				+e.title.title-md
+				+e.title.title-md(data-anim='fade-y')
 					h2 наши услуги
 				+e.row.row
 					-
@@ -54,86 +113,86 @@ block main
 						[2, 'Ликвидация предприятия с задолженностью ']
 						]
 
-					for el in servList
-						+e.item(onclick='')
+					for el, i in servList
+						+e.item(onclick='' data-anim='fade-y' data-anim-delay=`${i * 0.2}`)
 							+e.item-img(style=`background-image: url(static/img/content/serv-${el[0]}.jpg)`)
 							+e.item-content
-								+e.item-title.js-dot
-									h6= el[1]
+								+e.item-title
+									h6.js-dot= el[1]
 								a(href='#!').link-decor ЧИТАТЬ ДАЛЬШЕ
 		//end services
 
 		//begin history
 		+b.SECTION.history
 			+e.container.container
-				+e.title.title-md
+				+e.title.title-md(data-anim='fade-y')
 					h2 История компании
 
-				+e.slider
+				+e.slider(data-anim='fade-y' data-anim-delay='0.1')
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._l.js-dot(data-history-year='2000')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._l(data-history-year='2000')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._r.js-dot(data-history-year='2001')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._r(data-history-year='2001')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._l.js-dot(data-history-year='2002')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._l(data-history-year='2002')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._r.js-dot(data-history-year='2003')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._r(data-history-year='2003')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._l.js-dot(data-history-year='2004')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._l(data-history-year='2004')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._r.js-dot(data-history-year='2005')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._r(data-history-year='2005')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._l.js-dot(data-history-year='2006')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._l(data-history-year='2006')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
 					+e.slider-item
 						+e.slider-img(style='background-image: url(static/img/bg/consult_bg-2.jpg)')
-						+e.slider-text._l.js-dot(data-history-year='2007')
-							p На сегодняшний день в активе специалистов
+						+e.slider-text._l(data-history-year='2007')
+							p.js-dot На сегодняшний день в активе специалистов
 								strong Лаборатории Антикризисных Исследований
 								= ' '
 								| 1139 реализованных проектов, более 5000 выигранных судебных дел, около 1 млрд.
 
-				+e.slider-nav
+				+e.slider-nav(data-anim='fade-x' data-anim-delay='0.2')
 					+e.slider-nav-item
 						+e.BUTTON(type='button') 2000
 					+e.slider-nav-item
@@ -152,30 +211,6 @@ block main
 						+e.BUTTON(type='button') 2007
 
 		//end history
-
-		//begin spec
-		+b.SECTION.spec._white
-			+e.container.container
-				+e.title.title-md(data-anim='fade-y')
-					h2 Наши сотрудники
-
-				+e.slider(data-anim='fade-y')
-					-n = 0
-					while n < 2
-
-						+e.person
-							+e.person-text
-								+e.person-data
-									+e.person-name
-										h4 Нехина Анна Александровна
-									+e.person-pos
-										h5 Генеральный директор
-								+e.person-descr
-									+e.person-descr-title
-										p Начало карьеры в 2000 году.
-									p В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства
-						-n++
-		//end spec
 
 		//begin latest-events
 		+b.SECTION.latest-events

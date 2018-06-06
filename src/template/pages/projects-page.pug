@@ -1,0 +1,53 @@
+extends ../extend/default
+
+block variables
+	-title = 'Проекты';
+	-headerClass = 'header_entry';
+	-footerClass = 'footer_entry';
+
+block main
+	main.content.content_default
+
+		//begin projects
+		+b.SECTION.projects
+			+e.container.container
+				+e.breadcrumb.breadcrumb._black(data-anim='fade-x' data-anim-delay='1')
+					ul
+						li: a(href='#!') Главная
+						li.is-active: a(href='#!') ПРОЕКТЫ
+
+				+e.top
+					+e.title.title-xs(data-anim='fade-y')
+						h2 Реализованные проекты
+
+					+e.descr(data-anim-stagger='fade-y')
+						+e.descr-title
+							h5 В настоящее время сотрудники ООО "ЛАИ" одновременно участвуют в
+							+e.descr-title-count
+								span 70
+
+						+e.descr-text
+							p делах о банкротстве юридических и физических лиц прежде всего в городе Москве и Московской области. Наши сотрудники также принимают участие в делах о банкротстве групп компаний, рассмотрение которых осуществляется, в том числе, и в иных субъектах Российской Федерации.Специалисты имеют огромный опыт в решении задач различного уровня и масштаба, в зависимости от потребностей заказчика. Приводим небольшую часть проектов и направлений, которые успешно были реализованы сотрудниками ООО "ЛАИ":
+
+				+e.row.row
+					-n = 0
+					while n < 6
+						+e.item(onclick='' data-anim='fade-y' data-anim-delay= `${n * 0.2}`)
+							+e.item-img(style='background-image: url(static/img/content/realized_img.jpg)')
+							+e.item-text
+								+e.item-title
+									h4 Банкротство ООО НПО "Мостовик"
+								+e.item-descr
+									p.js-dot Крупнейшее строительное предприятие, построившее значительное количество объектов к Олимпиаде в г. Сочи (в том числе бобслейную трассу), мост на остров Русский в г. Владивосток. Крупнейшее строительное предприятие, построившее
+
+							+e.item-text._more(style='background-image: url(static/img/bg/event_bg.jpg)')
+								+e.item-inner
+									+e.item-title
+										h4 Банкротство ООО НПО "Мостовик"
+									+e.item-descr
+										p.js-dot Крупнейшее строительное предприятие, построившее значительное количество объектов к Олимпиаде в г. Сочи (в том числе бобслейную трассу), мост на остров Русский в г. Владивосток. Крупнейшее строительное предприятие, построившее значительное количество объектов к Олимпиаде в г. Сочи (в том числе бобслейную трассу), мост на остров Русский в г. Владивосток.
+
+									+e.A.item-link.link-decor(href='#!') ЧИТАТЬ ДАЛЬШЕ
+						-n++
+
+		//end projects

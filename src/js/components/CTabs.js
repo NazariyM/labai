@@ -18,7 +18,8 @@ class CTabs {
 
   bindEvents() {
     if (!this.$tabNav.hasClass('js-disabled') && this.getActiveIndex() !== 0) {
-      this.$tabItem.hide()
+      this.$tabItem
+        .hide()
         .eq(this.getActiveIndex()).show();
     }
 
@@ -27,9 +28,11 @@ class CTabs {
       const targetIndex = $(ev.currentTarget).index();
 
       this.changeTab(currentIndex, targetIndex);
+
+      // parallax fix
       setTimeout(() => {
         $window.trigger('resize.px.parallax');
-      }, 510);
+      }, 1000);
     });
   }
 
@@ -55,6 +58,7 @@ class CTabs {
 
     $currentTabNav.removeClass(css.active);
     $nextTabNav.removeClass(css.disabled).addClass(css.active);
+
     TweenMax.to($currentTab, speed, {
       autoAlpha: 0,
       y: 30,

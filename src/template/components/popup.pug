@@ -1,0 +1,50 @@
+mixin popup(el)
+  case el.name
+
+    when 'callPopup'
+      +b.popup(data-popup-id='call-popup' tabindex='-1', role='dialog')
+        +e.container
+          +e.BUTTON.close.js-popup-close(type='button').
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"
+            viewBox="0 0 12 12" >
+            <defs>
+            <path id="fy6qa"
+            d="M1040.95 449.12l-2.12-2.12 2.12-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12-2.12-2.12a2 2 0 0 0-2.83 2.83l2.12 2.12-2.12 2.12a2 2 0 0 0 2.83 2.83l2.12-2.12 2.12 2.12a2 2 0 0 0 2.83-2.83z" / >
+            </defs>
+            <g>
+            <g transform="translate(-1030 -441)">
+            <use xlink:href="#fy6qa"/>
+            </g>
+            </g>
+            </svg>
+
+          +b.consult._popup
+            +e.form-wrap(data-anim='fade-y')
+              +e.title
+                h2 ОБРАТНЫЙ ЗВОНОК
+              +e.FORM(action='#!' method='POST')
+                +e.form-field
+                  +e.INPUT(type='text' placeholder='Имя' name='' required)
+
+                +e.form-field
+                  +e.INPUT(type='text' placeholder='Телефон' name='' required)
+
+                +e.form-field
+                  +e.INPUT(type='text' placeholder='Комментарий' name='' required)
+
+                +e.form-submit
+                  +b.LABEL.btn._grey.consult__form-submit-btn
+                    span оставить заявку
+                    +e.INPUT(type='submit' value='')
+
+                +e.P Нажимая на кнопку "Оставить заявку", вы даете
+                  +b.A.link-decor(href='#!') согласие на обработку персональных данных
+                  br
+                  = ' '
+                  | и соглашаетесь c
+                  +b.A.link-decor(href='#!') политикой конфиденциальности.
+
+              script.
+                function showMessageOnSucces () {
+                  $.fancybox.open('<div class="success-message"><p>Письмо успешно отправлено</p></div>');
+                }

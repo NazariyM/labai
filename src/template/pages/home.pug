@@ -67,7 +67,6 @@ block main
 								| от действий кредиторов
 							+e.item-nav-bg(style='background-image: url(static/img/bg/screen-item_4-active.png)')
 
-
 			+e.bg.is-active(style='background-image: url(static/img/bg/screen-bg-1.jpg)')
 			+e.bg(style='background-image: url(static/img/bg/screen-bg-2.jpg)')
 			+e.bg(style='background-image: url(static/img/bg/screen-bg-3.jpg)')
@@ -98,7 +97,8 @@ block main
 		//end why-us
 
 		//begin bankruptcy
-		+b.SECTION.bankruptcy(style='background-image: url(static/img/bg/bankruptcy_bg.jpg)')
+		+b.SECTION.bankruptcy
+			+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/bankruptcy_bg.jpg")
 			+e.container.container
 				+e.H2.title.title-md(data-anim='fade-y') Мы осуществляем банкротство
 
@@ -261,7 +261,8 @@ block main
 		//end banks
 
 		//begin consult
-		+b.SECTION.consult(style='background-image: url(static/img/bg/consult_bg.jpg)')
+		+b.SECTION.consult
+			+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/consult_bg.jpg")
 			+e.container.container
 				+e.title(data-anim='fade-y')
 					h2 Получите консультацию профессионального юриста
@@ -460,5 +461,4 @@ block main
 
 			+e.map-wrap(data-anim='fade-x')
 				+e.map
-
 		//end contacts

@@ -599,7 +599,8 @@
       </section>
       <!--end why-us-->
       <!--begin bankruptcy-->
-      <section class="bankruptcy" style="background-image: url(static/img/bg/bankruptcy_bg.jpg)">
+      <section class="bankruptcy">
+        <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/bankruptcy_bg.jpg"></div>
         <div class="bankruptcy__container container">
           <h2 class="bankruptcy__title title-md" data-anim="fade-y">Мы осуществляем банкротство</h2>
           <div class="bankruptcy__row" data-anim-stagger="fade-y" data-stagger-delay=".2">
@@ -831,7 +832,8 @@
       </section>
       <!--end banks-->
       <!--begin consult-->
-      <section class="consult" style="background-image: url(static/img/bg/consult_bg.jpg)">
+      <section class="consult">
+        <div class="parallax-bg" data-parallax="scroll" data-image-src="static/img/bg/consult_bg.jpg"></div>
         <div class="consult__container container">
           <div class="consult__title" data-anim="fade-y">
             <h2>Получите консультацию профессионального юриста</h2>
@@ -1069,6 +1071,55 @@
       </section>
       <!--end contacts-->
     </main>
+    <div class="popup" data-popup-id="call-popup" tabindex="-1" role="dialog">
+      <div class="popup__container">
+        <button class="popup__close js-popup-close" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+            <defs>
+              <path id="fy6qa" d="M1040.95 449.12l-2.12-2.12 2.12-2.12a2 2 0 0 0-2.83-2.83l-2.12 2.12-2.12-2.12a2 2 0 0 0-2.83 2.83l2.12 2.12-2.12 2.12a2 2 0 0 0 2.83 2.83l2.12-2.12 2.12 2.12a2 2 0 0 0 2.83-2.83z" /> </defs>
+            <g>
+              <g transform="translate(-1030 -441)">
+                <use xlink:href="#fy6qa" /> </g>
+            </g>
+          </svg>
+        </button>
+        <div class="consult consult_popup">
+          <div class="consult__form-wrap" data-anim="fade-y">
+            <div class="consult__title">
+              <h2>ОБРАТНЫЙ ЗВОНОК</h2>
+            </div>
+            <form action="#!" method="POST">
+              <div class="consult__form-field">
+                <input type="text" placeholder="Имя" name="" required="required" />
+              </div>
+              <div class="consult__form-field">
+                <input type="text" placeholder="Телефон" name="" required="required" />
+              </div>
+              <div class="consult__form-field">
+                <input type="text" placeholder="Комментарий" name="" required="required" />
+              </div>
+              <div class="consult__form-submit">
+                <label class="btn btn_grey consult__form-submit-btn">
+                  <span>оставить заявку</span>
+                  <input type="submit" value="" />
+                </label>
+              </div>
+              <p>Нажимая на кнопку "Оставить заявку", вы даете
+                <a class="link-decor" href="#!">согласие на обработку персональных данных</a>
+                <br/> и соглашаетесь c
+                <a class="link-decor" href="#!">политикой конфиденциальности.</a>
+              </p>
+            </form>
+            <script>
+              function showMessageOnSucces()
+              {
+                $.fancybox.open('<div class="success-message"><p>Письмо успешно отправлено</p></div>');
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--begin footer-->
     <footer class="footer" data-anim="fade-y" data-anim-duration="1">
       <div class="footer__container container">

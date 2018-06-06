@@ -1,9 +1,14 @@
 // begin stages //
 .stages
-   padding: 68px 0 62px
+   padding: 105px 0 62px
    +xs
       padding: 50px 0
       overflow: hidden
+      
+   &_steps
+      padding: 105px 0 87px
+      .stages__tabs
+         margin-bottom: 0
    
    &__tabs
       margin-bottom: 80px
@@ -24,8 +29,7 @@
             transform: translateX(60px)
    
    &__title
-      margin-bottom: 20px
-      font-size: 42px
+      margin-bottom: 13px
       text-align: center
       letter-spacing: 0.06em
       transform: translateY(-60px)
@@ -256,7 +260,11 @@
    text-align: center
    +xs
       padding: 50px 0
-   
+      
+   &_gray
+      padding: 80px 0 130px
+      background: #f6f6f6
+      
    &__title
       margin-bottom: 30px
       text-transform: uppercase
@@ -432,9 +440,19 @@
       content: ''
       
    &_white
+      padding: 83px 0 23px
       background: #fff
       &::after
          display: none
+         
+      .slick-list
+         margin: 0 -15px
+   
+      .spec__slider .slider__btn
+         svg
+            fill: #28b298
+         &:hover svg
+            fill: $color2
    
    &__container
       position: relative
@@ -459,19 +477,21 @@
          padding: 0 80px
       +xs
          padding: 0
-      
+         
       .slider__btn
          +xs
             top: calc(100% + 15px)
             margin-top: 0
          svg
             fill: #fff
-   
+            
    &__person
       position: relative
       padding: 33px 10px 10px
       +xs
          padding: 0
+      #{$parent}_white &
+         margin: 0 15px
       
       #{$parent}_white &
          border: 10px solid #e6e6e6
@@ -500,7 +520,7 @@
             display: none
       
       &-text
-         padding: 50px 50px 30px 25px
+         padding: 60px 45px 60px
          background: #fff
          +sm
             padding: 15px 40px 40px
@@ -508,13 +528,21 @@
             height: auto
          +xs
             padding: 15px 15px 20px
-      
+            
+         #{$parent}_white &
+            padding: 10px 45px 60px
+            +sm
+               padding: 10px 25px 30px
+            +xs
+               padding: 18px 15px 15px
+   
       &-data
-         margin-bottom: 20px
+         margin-bottom: 17px
       
       &-name
-         margin-bottom: 10px
+         margin-bottom: 3px
          +f('cal-700', 20)
+         letter-spacing: 0.045em
          text-transform: uppercase
       &-pos
          font-size: 17px
@@ -525,24 +553,38 @@
          color: #61656b
          font-size: 16px
          p
+            line-height: 25px
             &:not(:last-child)
                margin-bottom: 5px
          &-title
+            margin-bottom: 5px
             +f('cal-700')
             color: #61656b
-            
 // end spec //
 
 // begin faq //
 .faq
+   $parent: &
    background-color: #f6f6f6
-   +sm
+   +md
       padding: 70px 0
    +xs
       padding: 50px 0
       
+   &_section
+      padding: 40px 0 17px
+      background: #fff
+      +sm
+         padding: 30px 0
+      +xs
+         padding: 20px 0 30px
+   
    &_white
       background: #fff
+      
+   &__breadcrumb
+      margin-bottom: 23px
+   
    &__container
       height: 100%
       display: flex
@@ -555,17 +597,52 @@
       text-align: center
       +xs
          margin-bottom: 25px
-
+      #{$parent}_section &
+         margin-bottom: 24px
+         text-align: left
 // end faq //
 
 // begin form-section //
 .form-section
+   $parent: &
    padding: 66px 0 81px
    +xs
       padding: 50px 0
+      
+   &_has-msg
+      padding: 66px 0 50px
+      +xs
+         padding: 35px 0
+   
+   &_padding
+      padding: 66px 0 110px
+   
+   &__top
+      margin: 0 -15px 30px
+      letter-spacing: 0.88px
+      +xs
+         margin: 0 0 25px
+      &-title
+         text-transform: none
+         line-height: 37px
+      &-sub-title
+         +f('cal-400', 35, 37)
+         
+      &_sm .form-section__top-title
+         margin-bottom: 15px
+         text-transform: uppercase
+      &_sm .form-section__top-sub-title
+         color: #000
+         +f('cal-700')
+         font-size: 18px
+         line-height: 20px
+         letter-spacing: 0.9px
+         text-transform: uppercase
    
    &__container
       max-width: 840px
+      #{$parent}_has-msg &
+         text-align: center
    
    &__title
       max-width: 600px
@@ -580,7 +657,16 @@
       margin: 0 -10px 20px
       +xs
          flex-direction: column
-      
+      #{$parent}_has-msg &
+         display: block
+         margin: 0 0 10px
+         
+      &-row
+         display: flex
+         margin: 0 -10px 25px
+         +xs
+            flex-direction: column
+         
       &-field
          padding: 0 10px
          flex: 0 1 33.33333%
@@ -592,16 +678,32 @@
             +xs
                margin-bottom: 15px
       
-      &-input
-         line-height: 35px
+      &-input, &-message textarea
+         width: 100%
          height: 35px
+         line-height: 35px
          +f('cal-400', 16)
          border-bottom: 3px solid rgba(#cccccc, .5)
          +placeholder-color(#18222d)
+         +trs
+         &:focus
+            border-bottom-color: $color2
+         
+      &-message
+         margin: 0 0 30px
+         textarea
+            display: block
+            border: 0
+            border-bottom: 3px solid rgba(#cccccc, .5)
+            resize: none
+            overflow: hidden
       
       &-submit
          min-width: 0
          width: 100%
+         #{$parent}_has-msg &
+            width: auto
+            min-width: 255px
    
    &__agree
       max-width: 560px
@@ -667,26 +769,44 @@
       transform: scale(1)
 
 .links-block
-   padding: 60px 0
+   padding: 92px 0
    background: #F6F6F6
    border-top: 2px solid #fff
+   +xs
+      padding: 50px 0
+      
    &__title
-      margin-bottom: 30px
+      margin-bottom: 32px
+      letter-spacing: 0.06em
       text-align: center
    
    &__list
       display: flex
       flex-wrap: wrap
+      margin: 0 -15px
+      +sm
+         flex-direction: column
+         
       li
          flex: 0 1 50%
+         padding: 0 15px
+         &:nth-child(1) ~ li
+            +sm
+               margin-top: 15px
+               
          &:nth-child(2) ~ li
             margin-top: 30px
+            +sm
+               margin-top: 15px
          a
             position: relative
             display: block
             padding-left: 35px
             font-size: 20px
             line-height: 25px
+            +sm
+               font-size: 16px
+               line-height: 20px
             &:hover
                span
                   border-bottom-color: transparent
@@ -694,6 +814,7 @@
                   fill: $black
             
             span
+               letter-spacing: 0.03em
                border-bottom: 1px solid currentColor
                +trs
             
@@ -713,6 +834,11 @@
       justify-content: center
       text-align: center
       margin: 0 -15px 50px
+      +sm
+         flex-direction: column
+      +xs
+         margin: 0 -15px 25px
+   
       &::before
          position: absolute
          top: 25px
@@ -722,18 +848,26 @@
          background-color: #e5e5e5
          height: 6px
          content: ''
+         +sm
+            display: none
+         
       &-item
          flex: 0 1 (100% / 7)
          margin: 0 15px
          cursor: pointer
+         +sm
+            &:not(:last-child)
+               margin-bottom: 20px
          &.is-active
+            pointer-events: none
             i
                border-color: #ffffff
-               background-color: #e4a13a
-               color: #fff
                &::after
                   z-index: 1
                   transform: translateY(0)
+               span
+                  color: #fff
+                  background-color: #e4a13a
          
          i
             position: relative
@@ -743,11 +877,13 @@
             height: 50px
             border-radius: 50%
             border: 3px solid transparent
-            background-color: #e5e5e5
-            +f('cal-400', 22)
             text-align: center
             line-height: 46px
             font-style: normal
+            transition: .3s ease
+            +sm
+               margin: 0 auto 5px
+               
             &::after
                position: absolute
                bottom: -8px
@@ -755,27 +891,47 @@
                margin-left: -4px
                +arr(8, 9, #e4a13a, b)
                transform: translateY(-100%)
-               transition: .3s .3s ease
+               transition: .3s ease
                z-index: -1
                content: ''
+            span
+               position: relative
+               z-index: 1
+               +coverdiv
+               border-radius: 50%
+               background-color: #e5e5e5
+               transition: .3s ease
+               +f('cal-400', 22)
          p
             color: #000
             +f('cal-400')
+            br
+               +sm
+                  display: none
    
    &__box
       display: none
-      max-width: 920px
+      max-width: 940px
       margin: 0 auto
       padding: 0 40px
       color: #61656b
-      &.is-active
-         display: block
-      
+      +xs
+         padding: 0
+   
       &-top
          display: flex
+         align-items: flex-start
+         max-width: 760px
+         margin: 0 auto
+         +xs
+            flex-direction: column
+            
          &-icon
             margin-right: 35px
             +cover-img
+            +xs
+               display: none
+               
             svg, img
                flex: 0 0 84px
                width: 84px
@@ -785,47 +941,85 @@
             text-align: left
             p
                +f('cal-400', 20)
+               line-height: 28px
+               +xs
+                  font-size: 18px
+                  line-height: 21px
+               
       &-title
+         margin-bottom: 5px
+         line-height: 25px
          font-size: 25px
          letter-spacing: 0.63px
          color: #18222d
+         +xs
+            font-size: 25px
+            line-height: 26px
+            
       &-bot
-         margin-top: 40px
-         padding: 25px 30px
+         margin-top: 30px
+         padding: 33px
+         line-height: 24px
+         letter-spacing: 0.03em
          border: 2px solid rgba(#e5aa46, .5)
-         letter-spacing: 0.45px
          text-align: center
-         
+         +xs
+            padding: 15px
+            
 .suggest
-   padding: 60px 0
+   padding: 92px 0 100px
    text-align: center
    background: #f6f6f6
+   +xs
+      padding: 50px 0
    &__tabs
+      max-width: 980px
+      margin: 0 auto
       .c-tabs__btn
          min-width: 268px
       
    &__title
       max-width: 880px
       margin: 0 auto 30px
+      letter-spacing: 0.06em
    &__content
       text-align: center
+      +sm
+         max-width: 470px
+         margin: 0 auto
       &-row
          display: flex
-         margin: 0 -15px 30px
+         margin: 0 -15px 45px
+         +sm
+            flex-direction: column
+         +xs
+            margin: 0 -15px 30px
+   
       &-item
          display: flex
          flex: 0 1 50%
          padding: 0 15px
          text-align: left
+         &:not(:last-child)
+            +sm
+               margin-bottom: 30px
       &-icon
-         margin-right: 30px
+         margin-right: 18px
+         +xs
+            margin-right: 12px
+            width: 50px
+            height: 35px
+            svg
+               width: 100%
+               height: 100%
       &-text
          color: #61656b
          font-size: 17px
          letter-spacing: 0.42px
       &-title
-         margin-bottom: 10px
+         margin: -5px 0 10px
          +f('cal-700', 20, 21)
+         letter-spacing: 0.008em
          color: #000
       &-list
          li
@@ -834,9 +1028,13 @@
                
       &-btn
          display: inline-block
+         min-width: 250px
          
 .facts
-   padding: 150px 0
+   padding: 173px 0
+   +xs
+      padding: 60px 0
+   
    &__container
       max-width: 822px
       
@@ -854,8 +1052,16 @@
       border-radius: 50%
       overflow: hidden
       text-align: center
+      line-height: 35px
+      letter-spacing: 0.06em
       +cover
       color: #fff
+      +xs
+         position: static
+         margin: 0 auto 30px
+         width: 290px
+         height: 290px
+      
       h2
          z-index: 1
       &::after
@@ -866,14 +1072,29 @@
    &__row
       display: flex
       justify-content: space-between
+      +xs
+         flex-direction: column
+         justify-content: center
+         align-items: center
       &:not(:last-child)
          margin-bottom: 50px
+         +xs
+            margin-bottom: 30px
       
    &__item
       text-align: center
       max-width: 190px
       cursor: default
       +trs
+      opacity: 0
+      transform: translateX(70px)
+      &:not(:last-child)
+         +sm
+            margin-bottom: 30px
+      
+      &:nth-child(2n)
+         transform: translateX(-70px)
+         
       &:hover
          svg
             fill: #e39528
@@ -881,29 +1102,36 @@
             opacity: 1
       &-icon
          margin-bottom: 10px
+         +xs
+            margin-bottom: 0
          svg
             +trs
             fill: #e5e5e5
+            +xs
+               fill: #e39528
             
       p
          opacity: .3
          +f('cal-400')
          line-height: 21px
          color: #000
-
          +trs
+         +xs
+            opacity: 1
          
 .articles-block
-   padding: 70px 0
+   padding: 90px 0
    background: #f6f6f6
    &__title
-      margin-bottom: 30px
-      letter-spacing: 0.88px
+      margin-bottom: 42px
+      letter-spacing: 0.04em
       text-align: center
    &__row
       display: flex
       flex-wrap: wrap
       margin: 0 -15px
+      +xs
+         flex-direction: column
       
    &__item
       display: flex
@@ -911,47 +1139,78 @@
       flex: 0 1 50%
       padding: 0 15px
       max-width: 555px
+      +xs
+         flex: 0 1 auto
+         width: 100%
+         
+      &:nth-child(1) ~ &
+         +xs
+            margin-top: 20px
       &:nth-child(2) ~ &
          margin-top: 30px
+         +xs
+            margin-top: 20px
          
       &-icon
          flex: 0 0 25px
          margin-right: 10px
       &-title
-         margin-bottom: 5px
+         margin-bottom: 10px
          +f('cal-700', 20, 26)
          color: #18222d
       p
          +f('cal-400')
          
-.text-block
+.aspects
+   padding-bottom: 107px
    &__title
       max-width: 650px
-      margin: 0 auto 40px
+      margin: 0 auto 20px
       text-align: center
-      
+      letter-spacing: 0.065em
+   
    &__inner
       padding: 0 34px
+      +xs
+         padding: 0
       
    &__item
+      margin-top: 15px
       &-title
+         margin-bottom: 2px
+         letter-spacing: 0
          +f('cal-700')
+         
+      ul
+         margin-top: 12px
+         li
+            &:not(:last-child)
+               margin-bottom: 15px
    
    p
       line-height: 30px
       
 .small-adv
-   padding: 60px 0
+   padding: 30px 0 90px
    text-align: center
    &__container
       max-width: 900px
+      
    &__title
-      max-width: 600px
+      max-width: 610px
       margin: 0 auto 40px
+      text-transform: none
+      letter-spacing: 0
+      
    &__row
+      +xs
+         flex-direction: column
    &__item
       padding: 0 15px
       flex: 0 1 33.33333%
+      &:not(:last-child)
+         +xs
+            margin-bottom: 30px
       &-icon
          margin-bottom: 10px
       p

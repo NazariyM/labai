@@ -20,7 +20,8 @@
     "object-fit-images": "^3.2.3",
     "parallax-js": "^3.1.0",
     "scrollmagic": "^2.0.5",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "vintage-popup": "^0.1.10"
   },
   "author": "Nazar",
   "devDependencies": {

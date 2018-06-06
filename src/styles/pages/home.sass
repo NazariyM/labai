@@ -501,9 +501,13 @@
       padding: 50px 0 70px
       
    &_docs
-      padding: 70px 0 67px
+      padding: 87px 0 125px
    &_bankrupt
       padding: 70px 0 75px
+   &_popup
+      padding: 0
+      &::after
+         display: none
       
    &::after
       +coverdiv
@@ -529,10 +533,13 @@
          font-size: 25px
          line-height: 30px
       #{$parent}_docs &
-         margin-bottom: 12px
+         max-width: 520px
+         margin: 0 auto 25px
       #{$parent}_bankrupt &
          margin-bottom: 2px
-         
+      #{$parent}_popup &
+         margin-bottom: 15px
+         color: #18222d
          
    &__sub-title
       margin-bottom: 25px
@@ -613,14 +620,18 @@
          +xs
             min-width: 0
             width: 100%
+         #{$parent}_popup &
+            line-height: 10px
 
 // end consult //
 
 // begin latest-events //
 .latest-events
+   $parent: &
    padding: 80px 0 60px
    +xs
       padding: 50px 0
+      
    &__top
       display: flex
       align-items: center
@@ -648,7 +659,7 @@
          margin: 0 auto
       +xs
          padding: 0 0 18px
-   
+         
       .slider__btn
          opacity: 1
          transform: none!important
@@ -673,6 +684,7 @@
       z-index: 2
       transition: height .4s ease-in-out
       will-change: height
+   
       &::after
          pointer-events: none
          +coverdiv
@@ -685,6 +697,8 @@
          .latest-events__text_hidden
             opacity: 1
             transform: translateY(0)
+            a
+               pointer-events: auto
          
    &__text
       margin-top: 228px
@@ -727,7 +741,6 @@
             font-size: 24px
             color: #fff
          a
-            pointer-events: auto
             align-self: flex-start
       
 // end latest-events //
@@ -737,6 +750,8 @@
    padding: 70px 0 40px
    +xs
       padding: 50px 0 20px
+   &_padding
+      padding: 70px 0 90px
    &__title
       max-width: 860px
       margin: 0 auto 30px
@@ -764,6 +779,7 @@
 
 // begin contacts //
 .contacts
+   $parent: &
    position: relative
    z-index: 2
    display: flex
@@ -848,9 +864,74 @@
       transform: translateX(100px)
       +xs
          height: 300px
+      #{$parent}_mod &
+         height: 450px
+         +xs
+            height: 300px
+         
    &__map
       +coverdiv
       
       .gmnoprint
          pointer-events: none
+         
+   &__block
+      opacity: 0
+      transform: translateX(-100px)
+      position: absolute
+      top: 112px
+      left: 50%
+      width: 424px
+      margin-left: -545px
+      z-index: 1
+      +md
+         margin-left: -475px
+      +sm
+         position: static
+         width: 100%
+         margin-left: 0
+         
+      &::before
+         position: absolute
+         top: 28px
+         left: -10px
+         right: -10px
+         bottom: -10px
+         background: rgba(#000, .2)
+         content: ''
+         +sm
+            display: none
+      &-inner
+         position: relative
+         z-index: 2
+         padding: 33px 40px 20px
+         background: #fff
+         +sm
+            max-width: 510px
+            margin: 0 auto
+            padding: 25px 20px
+   
+      &-title
+         margin-bottom: 15px
+         +f('cal-700', 20, 21)
+         color: #000
+   
+      &-text
+         font-size: 17px
+         line-height: 30px
+         letter-spacing: 0.42px
+         color: #61656b
+         > p
+            line-height: 23px
+      &-docs
+         display: flex
+         flex-wrap: wrap
+         margin: 5px -5px 0
+         > p
+            padding: 0 5px
+            flex: 0 1 50%
+            +xs
+               flex: 0 1 auto
+               width: 100%
+               padding: 0
 // end contacts //

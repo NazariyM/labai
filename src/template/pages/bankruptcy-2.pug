@@ -111,7 +111,7 @@ block main
 		//begin links-block
 		+b.SECTION.links-block
 			+e.container.container
-				+e.title.title-lg
+				+e.title.title-lg(data-anim='fade-y')
 					h2 осуществляя банкротство мы предлагаем
 
 					-
@@ -123,8 +123,8 @@ block main
 						]
 
 				+e.UL.list
-					for linksText in listBlock
-						li: a(href='#!')
+					for linksText, i in listBlock
+						li(data-anim='fade-y' data-stagger-delay= `${i * 0.2}`): a(href='#!')
 							svg(class='icon-plus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
 								defs
 									path#vhfqa(d='M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
@@ -135,12 +135,12 @@ block main
 		//end links-block
 
 		//begin stages
-		+b.SECTION.stages
+		+b.SECTION.stages._steps
 			+e.container.container
 				+e.title.title-lg
 					h2 ЭТАПЫ процедуры банкротства в пользу
 
-				+e.tabs.c-tabs
+				+e.tabs.c-tabs.c-tabs_stages
 					.c-tabs__nav
 						button.c-tabs__btn(class='is-active' type='button') должника
 						button.c-tabs__btn(type='button') КРЕДИТОРА
@@ -149,29 +149,36 @@ block main
 						.c-tabs__tab
 							//begin steps
 							+b.steps
-								+e.nav
+								+e.nav(data-anim='fade-y' data-anim-delay='0.2')
 									+e.nav-item(class='is-active' onclick='')
-										i 1
+										i
+											span 1
 										p Сбор документов
 									+e.nav-item(onclick='')
-										i 2
+										i
+											span 2
 										p Подготовка заявления на банкротство
 									+e.nav-item(onclick='')
-										i 3
+										i
+											span 3
 										p Расмотрение заявления
 											br
 											| в суде
 									+e.nav-item(onclick='')
-										i 4
+										i
+											span 4
 										p Признание банкротства
 									+e.nav-item(onclick='')
-										i 5
+										i
+											span 5
 										p Проведение собрания кредиторов
 									+e.nav-item(onclick='')
-										i 6
+										i
+											span 6
 										p Сдача в суд отчета о процедуре
 									+e.nav-item(onclick='')
-										i 7
+										i
+											span 7
 										p Решение
 											br
 											| о списании долга
@@ -179,7 +186,7 @@ block main
 								-n = 0
 								while n < 7
 									+e.box(class= n === 0 ? 'is-active' : '')
-										+e.box-top
+										+e.box-top(data-anim='fade-y' data-anim-delay='0.3')
 											+e.box-top-icon.
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="102" viewBox="0 0 84 102"><defs><path id="o1kxa" d="M448.26 1879.75h22.1v4.25h-22.1zm0 8.5h4.42v4.25h-4.42zm8.85 0h4.42v4.25h-4.42zm61.89-2.13v76.5a6.5 6.5 0 0 1-6.63 6.38h-70.74a6.5 6.5 0 0 1-6.63-6.38v-89.25a6.5 6.5 0 0 1 6.63-6.37h57.48c.58 0 1.14.22 1.56.62l17.68 17c.42.4.65.94.65 1.5zm-4.42.88l-13.26-12.75v7.62c0 1.18.99 2.13 2.2 2.13h4.43v4.25h-4.42a6.5 6.5 0 0 1-6.64-6.38v-10.62h-55.26c-1.22 0-2.2.95-2.2 2.12v89.25c0 1.18.98 2.13 2.2 2.13h70.74c1.22 0 2.2-.95 2.2-2.13zm-6.63 33.12c0 5.66-2.57 10.74-6.63 14.25v21.88c0 1.17-1 2.12-2.21 2.12-.5 0-1-.16-1.39-.46l-9.67-7.44-9.67 7.44c-.95.73-2.34.58-3.1-.33a2.08 2.08 0 0 1-.5-1.33v-21.87a18.77 18.77 0 0 1-6.62-14.26c0-10.56 8.9-19.12 19.9-19.12 10.98 0 19.89 8.56 19.89 19.12zm-19.9 19.13c-3.17 0-6.18-.72-8.84-1.99v14.57l7.46-5.74c.8-.62 1.96-.62 2.76 0l7.46 5.74v-14.58a20.5 20.5 0 0 1-8.84 2zm15.48-19.13c-.01-8.2-6.94-14.86-15.48-14.87-8.54 0-15.47 6.66-15.47 14.87 0 8.22 6.93 14.88 15.47 14.88 8.55 0 15.48-6.66 15.48-14.88zm-4.42 0c-.01 5.87-4.96 10.62-11.06 10.63-6.1 0-11.05-4.76-11.05-10.63 0-5.87 4.95-10.62 11.05-10.62 6.1 0 11.06 4.75 11.06 10.62zm-4.43 0a6.5 6.5 0 0 0-6.63-6.37 6.5 6.5 0 0 0-6.63 6.37 6.5 6.5 0 0 0 6.63 6.38 6.5 6.5 0 0 0 6.63-6.38zm-42-14.87v17h8.85v4.25h-11.06a2.17 2.17 0 0 1-2.2-2.13v-21.25c0-1.17.98-2.12 2.2-2.12h17.69v4.25zm-4.42 27.62h4.42v4.25h-4.42zm8.85 0h8.84v4.25h-8.84zm-8.85 8.5h19.9v4.25h-19.9zm0 8.5h19.9v4.25h-19.9z"/></defs><g><g transform="translate(-435 -1867)"><use fill="#f2d4a2" xlink:href="#o1kxa"/></g></g></svg>
 											+e.box-top-text
@@ -187,7 +194,7 @@ block main
 													h3 Подготовка заявления на банкротство
 												p Оно может быть подано вашими кредиторами или Вами, если вы не можете расплатиться по обязательствам, независимо от размера задолженности.
 
-										+e.box-bot
+										+e.box-bot(data-anim='fade-y' data-anim-delay='0.4')
 											p Срок проведения банкротства организации составляет около 6 месецев, однако в некоторых случаях можеть быть увеличен. Точные сроки процедуры банкротства можно узнать на консультации.
 										-n++
 								//end steps
@@ -196,25 +203,32 @@ block main
 							+b.steps
 								+e.nav
 									+e.nav-item(class='is-active' onclick='')
-										i 1
+										i
+											span 1
 										p Проведение анализа задолженности
 									+e.nav-item(onclick='')
-										i 2
+										i
+											span 2
 										p Уведомление должника и выяснение причин просрочек
 									+e.nav-item(onclick='')
-										i 3
+										i
+											span 3
 										p Направление должнику претензии по поводу неуплаты
 									+e.nav-item(onclick='')
-										i 4
+										i
+											span 4
 										p Привлечение коллекторов
 									+e.nav-item(onclick='')
-										i 5
+										i
+											span 5
 										p Направление уведомления о подготовке передачи дела в суд
 									+e.nav-item(onclick='')
-										i 6
+										i
+											span 6
 										p Подготовка документов должника для передачи в юридический отдел
 									+e.nav-item(onclick='')
-										i 7
+										i
+											span 7
 										p Судебное разбирательство
 
 								-n = 0
@@ -238,15 +252,15 @@ block main
 		//begin suggest
 		+b.SECTION.suggest
 			+e.container.container
-				+e.title.title-lg
+				+e.title.title-lg(data-anim='fade-y')
 					h2 Мы предлагаем банкротство физических лиц следующими способами:
 
 				+e.tabs.c-tabs
-					.c-tabs__nav
+					.c-tabs__nav(data-anim='fade-y' data-anim-delay='0.15')
 						button.c-tabs__btn(class='is-active' type='button') Реализация имущества гражданина
 						button.c-tabs__btn(type='button') реструктуризация долго гражданина
 
-					.c-tabs__for
+					.c-tabs__for(data-anim='fade-y' data-anim-delay='0.3')
 						-i = 0
 						while i < 2
 							.c-tabs__tab
@@ -386,43 +400,43 @@ block main
 		//end tariff
 
 		//begin stages
-		+b.SECTION.stages
+		+b.SECTION.stages._steps
 			+e.container.container
 				+e.title.title-lg
 					h2 ЭТАПЫ процедуры банкротства в пользу
 
-				+e.tabs.c-tabs
+				+e.tabs.c-tabs.c-tabs_stages
 					.c-tabs__nav
-						button.c-tabs__btn(class='is-active' type='button') должника
-						button.c-tabs__btn(type='button') КРЕДИТОРА
+						button.c-tabs__btn(type='button') должника
+						button.c-tabs__btn.is-active(type='button') КРЕДИТОРА
 
-					.c-tabs__for
+					.c-tabs__for(data-anim='fade-y' data-anim-delay='0.2')
 						.c-tabs__tab
 							//begin steps
 							+b.steps
 								+e.nav
 									+e.nav-item(class='is-active' onclick='')
-										i 1
+										i: span 1
 										p Сбор документов
 									+e.nav-item(onclick='')
-										i 2
+										i: span 2
 										p Подготовка заявления на банкротство
 									+e.nav-item(onclick='')
-										i 3
+										i: span 3
 										p Расмотрение заявления
 											br
 											| в суде
 									+e.nav-item(onclick='')
-										i 4
+										i: span 4
 										p Признание банкротства
 									+e.nav-item(onclick='')
-										i 5
+										i: span 5
 										p Проведение собрания кредиторов
 									+e.nav-item(onclick='')
-										i 6
+										i: span 6
 										p Сдача в суд отчета о процедуре
 									+e.nav-item(onclick='')
-										i 7
+										i: span 7
 										p Решение
 											br
 											| о списании долга
@@ -444,25 +458,25 @@ block main
 							+b.steps
 								+e.nav
 									+e.nav-item(class='is-active' onclick='')
-										i 1
+										i: span 1
 										p Проведение анализа задолженности
 									+e.nav-item(onclick='')
-										i 2
+										i: span 2
 										p Уведомление должника и выяснение причин просрочек
 									+e.nav-item(onclick='')
-										i 3
+										i: span 3
 										p Направление должнику претензии по поводу неуплаты
 									+e.nav-item(onclick='')
-										i 4
+										i: span 4
 										p Привлечение коллекторов
 									+e.nav-item(onclick='')
-										i 5
+										i: span 5
 										p Направление уведомления о подготовке передачи дела в суд
 									+e.nav-item(onclick='')
-										i 6
+										i: span 6
 										p Подготовка документов должника для передачи в юридический отдел
 									+e.nav-item(onclick='')
-										i 7
+										i: span 7
 										p Судебное разбирательство
 
 								-n = 0
@@ -473,9 +487,10 @@ block main
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="102" viewBox="0 0 84 102"><defs><path id="o1kxa" d="M448.26 1879.75h22.1v4.25h-22.1zm0 8.5h4.42v4.25h-4.42zm8.85 0h4.42v4.25h-4.42zm61.89-2.13v76.5a6.5 6.5 0 0 1-6.63 6.38h-70.74a6.5 6.5 0 0 1-6.63-6.38v-89.25a6.5 6.5 0 0 1 6.63-6.37h57.48c.58 0 1.14.22 1.56.62l17.68 17c.42.4.65.94.65 1.5zm-4.42.88l-13.26-12.75v7.62c0 1.18.99 2.13 2.2 2.13h4.43v4.25h-4.42a6.5 6.5 0 0 1-6.64-6.38v-10.62h-55.26c-1.22 0-2.2.95-2.2 2.12v89.25c0 1.18.98 2.13 2.2 2.13h70.74c1.22 0 2.2-.95 2.2-2.13zm-6.63 33.12c0 5.66-2.57 10.74-6.63 14.25v21.88c0 1.17-1 2.12-2.21 2.12-.5 0-1-.16-1.39-.46l-9.67-7.44-9.67 7.44c-.95.73-2.34.58-3.1-.33a2.08 2.08 0 0 1-.5-1.33v-21.87a18.77 18.77 0 0 1-6.62-14.26c0-10.56 8.9-19.12 19.9-19.12 10.98 0 19.89 8.56 19.89 19.12zm-19.9 19.13c-3.17 0-6.18-.72-8.84-1.99v14.57l7.46-5.74c.8-.62 1.96-.62 2.76 0l7.46 5.74v-14.58a20.5 20.5 0 0 1-8.84 2zm15.48-19.13c-.01-8.2-6.94-14.86-15.48-14.87-8.54 0-15.47 6.66-15.47 14.87 0 8.22 6.93 14.88 15.47 14.88 8.55 0 15.48-6.66 15.48-14.88zm-4.42 0c-.01 5.87-4.96 10.62-11.06 10.63-6.1 0-11.05-4.76-11.05-10.63 0-5.87 4.95-10.62 11.05-10.62 6.1 0 11.06 4.75 11.06 10.62zm-4.43 0a6.5 6.5 0 0 0-6.63-6.37 6.5 6.5 0 0 0-6.63 6.37 6.5 6.5 0 0 0 6.63 6.38 6.5 6.5 0 0 0 6.63-6.38zm-42-14.87v17h8.85v4.25h-11.06a2.17 2.17 0 0 1-2.2-2.13v-21.25c0-1.17.98-2.12 2.2-2.12h17.69v4.25zm-4.42 27.62h4.42v4.25h-4.42zm8.85 0h8.84v4.25h-8.84zm-8.85 8.5h19.9v4.25h-19.9zm0 8.5h19.9v4.25h-19.9z"/></defs><g><g transform="translate(-435 -1867)"><use fill="#f2d4a2" xlink:href="#o1kxa"/></g></g></svg>
 											+e.box-top-text
 												+e.box-title.title-sm
-													h3 Подготовка заявления на банкротство
-												p Оно может быть подано вашими кредиторами или Вами, если вы не можете расплатиться по обязательствам, независимо от размера задолженности.
-										-n++
+													h3 Направление должнику претензии по поводу неуплаты
+												p Претензия составляется в свободной форме, но в ней обязательно должны быть указаны данные должника, сумма задолженности, даты и сроки. Если дело дойдёт до суда, этот документ нужно будет приложить к исковому заявлению о взыскании долга.
+
+									-n++
 								//end steps
 		//end stages
 
@@ -606,57 +621,31 @@ block main
 		//begin facts
 		+b.SECTION.facts
 			+e.container.container
-				+e.title.title-lg(style='background-image: url(static/img/bg/facts-title_bg.jpg)')
+				+e.title.title-lg(style='background-image: url(static/img/bg/facts-title_bg.jpg)' data-anim='fade-y' data-anim-delay='0.1')
 					h2 Факты о банкротстве, которые важно знать
 
 				+e.row
-					+e.item._1
+					+e.item(data-anim='fade-x' data-anim-delay='0.25')
 						+e.item-icon.
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46"><defs><path id="1cv3a" d="M570 6178c0 12.68-10.32 23-23 23s-23-10.32-23-23 10.32-23 23-23 23 10.32 23 23zm-1.77 0c0-11.7-9.52-21.23-21.23-21.23a21.26 21.26 0 0 0-21.23 21.23c0 11.7 9.52 21.23 21.23 21.23 11.7 0 21.23-9.52 21.23-21.23zm-9.14-9.5c.36.32.4.88.07 1.24l-14.15 15.92a.88.88 0 0 1-1.22.1l-8.84-7.07a.89.89 0 0 1 1.1-1.38l8.2 6.55 13.59-15.3a.88.88 0 0 1 1.25-.07z"/></defs><g><g transform="translate(-524 -6155)"><use xlink:href="#1cv3a"/></g></g></svg>
 						p Признавать себя банкротом можно один раз в пять лет
 
-					+e.item._2
+					+e.item(data-anim='fade-x' data-anim-delay='0.25')
 						+e.item-icon.
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46"><defs><path id="1cv3a" d="M570 6178c0 12.68-10.32 23-23 23s-23-10.32-23-23 10.32-23 23-23 23 10.32 23 23zm-1.77 0c0-11.7-9.52-21.23-21.23-21.23a21.26 21.26 0 0 0-21.23 21.23c0 11.7 9.52 21.23 21.23 21.23 11.7 0 21.23-9.52 21.23-21.23zm-9.14-9.5c.36.32.4.88.07 1.24l-14.15 15.92a.88.88 0 0 1-1.22.1l-8.84-7.07a.89.89 0 0 1 1.1-1.38l8.2 6.55 13.59-15.3a.88.88 0 0 1 1.25-.07z"/></defs><g><g transform="translate(-524 -6155)"><use xlink:href="#1cv3a"/></g></g></svg>
 						p Признавать себя банкротом можно один раз в пять лет
 
 				+e.row
-					+e.item._3
+					+e.item(data-anim='fade-x' data-anim-delay='0.25')
 						+e.item-icon.
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46"><defs><path id="1cv3a" d="M570 6178c0 12.68-10.32 23-23 23s-23-10.32-23-23 10.32-23 23-23 23 10.32 23 23zm-1.77 0c0-11.7-9.52-21.23-21.23-21.23a21.26 21.26 0 0 0-21.23 21.23c0 11.7 9.52 21.23 21.23 21.23 11.7 0 21.23-9.52 21.23-21.23zm-9.14-9.5c.36.32.4.88.07 1.24l-14.15 15.92a.88.88 0 0 1-1.22.1l-8.84-7.07a.89.89 0 0 1 1.1-1.38l8.2 6.55 13.59-15.3a.88.88 0 0 1 1.25-.07z"/></defs><g><g transform="translate(-524 -6155)"><use xlink:href="#1cv3a"/></g></g></svg>
 						p Признавать себя банкротом можно один раз в пять лет
 
-					+e.item._4
+					+e.item(data-anim='fade-x' data-anim-delay='0.25')
 						+e.item-icon.
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="46" viewBox="0 0 46 46"><defs><path id="1cv3a" d="M570 6178c0 12.68-10.32 23-23 23s-23-10.32-23-23 10.32-23 23-23 23 10.32 23 23zm-1.77 0c0-11.7-9.52-21.23-21.23-21.23a21.26 21.26 0 0 0-21.23 21.23c0 11.7 9.52 21.23 21.23 21.23 11.7 0 21.23-9.52 21.23-21.23zm-9.14-9.5c.36.32.4.88.07 1.24l-14.15 15.92a.88.88 0 0 1-1.22.1l-8.84-7.07a.89.89 0 0 1 1.1-1.38l8.2 6.55 13.59-15.3a.88.88 0 0 1 1.25-.07z"/></defs><g><g transform="translate(-524 -6155)"><use xlink:href="#1cv3a"/></g></g></svg>
 						p Признавать себя банкротом можно один раз в пять лет
 		//end facts
-
-		//begin spec
-		+b.SECTION.spec
-			+e.container.container
-				+e.title.title-sm(data-anim='fade-y')
-					h2 Специалисты по банкротству юридических лиц
-
-				+e.slider(data-anim='fade-y')
-					-n = 0
-					while n < 2
-
-						+e.person
-							+e.person-text
-								+e.person-data
-									+e.person-name
-										h4 Нехина Анна Александровна
-									+e.person-pos
-										h5 Генеральный директор
-								+e.person-descr
-									+e.person-descr-title
-										p Начало карьеры в 2000 году.
-									p В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства В конце 2006 года На сегодняшний день в рамках работы команды под началом Анны Александровны юридическая помощь была оказана более, чем 400 компаниям.  Успешно решены более 60 арбитражных споров, завершено более 30 процедур банкротства
-						-n++
-
-			+b.parallax-bg(data-parallax="scroll" data-image-src="static/img/bg/spec_bg.jpg")
-		//end spec
 
 		//begin geo-work
 		+b.SECTION.geo-work(data-anim='fade-x' data-anim-duration='1')
@@ -670,7 +659,7 @@ block main
 		+b.SECTION.form-section
 			+e.container.container(data-anim-stagger='fade-x')
 				+e.title.title-md
-					h2  Банкроство юридического лица законный метод получить свое
+					h2  Банкротство юридического лица законный метод получить свое
 				+e.FORM.form(action='#!' method='POST')
 					+e.form-field
 						+e.INPUT.form-input.input(type='text' placeholder='Ваше имя' name='' required)

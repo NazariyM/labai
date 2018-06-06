@@ -1,0 +1,207 @@
+.text-block
+   padding: 40px 0 85px
+   color: #61656b
+   font-size: 17px
+   letter-spacing: 0.42px
+   +xs
+      padding: 20px 0 50px
+   &__breadcrumb
+      margin-bottom: 30px
+      
+   &__title
+      text-align: left
+      font-size: 30px
+      line-height: 35px
+      letter-spacing: 0.035em
+      +xs
+         font-size: 26px
+         line-height: 30px
+   &__top
+      opacity: 0
+      transform: translateX(-60px)
+      margin-bottom: 35px
+      &-descr
+         margin-top: 8px
+      
+   &__article
+      &-title
+         opacity: 0
+         transform: translateX(-60px)
+         display: flex
+         margin-bottom: 40px
+         +xs
+            margin-bottom: 20px
+         &-icon
+            margin-right: 15px
+            +xs
+               width: 70px
+               height: 70px
+               margin-right: 5px
+               
+            svg
+               +xs
+                  width: 100%
+                  height: 100%
+            
+      &-item
+         opacity: 0
+         transform: translateX(-60px)
+         &:not(:last-child)
+            margin-bottom: 30px
+            +xs
+               margin-bottom: 20px
+         &-title
+            margin-bottom: 4px
+            color: #18222d
+            +f('cal-700', 17)
+            letter-spacing: 0.07em
+            text-transform: uppercase
+   p
+      line-height: 25px
+      
+.get-docs
+   padding: 75px 0 80px
+   background: #f6f6f6
+   +xs
+      padding: 50px 0
+   
+   &__container
+      display: flex
+      align-items: flex-start
+      max-width: 1020px
+   
+   &__text
+      flex: 0 1 700px
+      margin-right: 35px
+      +xs
+         flex: 1 1 auto
+         width: 100%
+         margin-right: 0
+      
+   &__img
+      opacity: 0
+      transform: translateX(60px)
+      flex: 0 1 300px
+      +ratio(300, 300)
+      +cover
+      +xs
+         display: none
+      
+   &__title
+      opacity: 0
+      transform: translateX(-60px)
+      margin-bottom: 45px
+      text-align: left
+      letter-spacing: 0.035em
+      +xs
+         margin-bottom: 30px
+         
+   &__item
+      opacity: 0
+      transform: translateX(-60px)
+      &:not(:last-child)
+         margin-bottom: 30px
+      &-title
+         margin-bottom: 18px
+         +f('cal-400', 22, 22)
+         letter-spacing: 0
+         +xs
+            font-size: 19px
+      &-download
+         display: flex
+         align-items: center
+         +f('cal-700', 16, 21)
+         color: #027d65
+         letter-spacing: 0.4px
+         text-transform: uppercase
+         &:hover
+            span
+               border-bottom-color: transparent
+               color: #000
+               
+            .get-docs__item-icon
+               fill: #000
+            
+         span
+            border-bottom: 1px solid currentColor
+            letter-spacing: 0.06em
+            +trs
+            
+      &-icon
+         margin-right: 11px
+         fill: #027d65
+         +trs
+         
+.cost
+   padding: 80px 0 20px
+   +xs
+      padding: 50px 0 20px
+      
+   &__title
+      margin-bottom: 33px
+      text-align: center
+      letter-spacing: 0.035em
+      
+   &__table
+      +f('cal-400', 22, 22)
+      +xs
+         min-width: 650px
+         font-size: 17px
+         line-height: 18px
+      &-wrap
+         +xs
+            overflow-x: scroll
+      &-row
+         display: flex
+         align-items: stretch
+         justify-content: space-between
+         border: 2px solid #e6e6e6
+         border-top: 0
+         &_title
+            height: 60px
+            color: #fff
+            +f('cal-700', 17, 17)
+            text-transform: uppercase
+            border: 0
+            background-color: #027d65
+            +xs
+               height: 45px
+               font-size: 16px
+               
+            .cost__table-data
+               position: relative
+               border-right: 0
+               &::after
+                  position: absolute
+                  top: 0
+                  right: 0
+                  z-index: 1
+                  height: 100%
+                  width: 2px
+                  background: rgba(#e6e6e6, .7)
+                  content: ''
+               
+            .cost__table-data_term::after
+               display: none
+   
+      &-data
+         display: flex
+         justify-content: center
+         align-items: center
+         padding: 24px 10px
+         text-align: center
+         border-right: 2px solid #e6e6e6
+         +xs
+            padding: 10px 15px
+         &_name
+            padding: 24px 30px
+            flex: 0 1 803px
+            justify-content: flex-start
+            text-align: left
+            +xs
+               padding: 10px 15px
+         &_price
+            flex: 0 0 155px
+         &_term
+            flex: 0 0 150px
+            border-right: 0

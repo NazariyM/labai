@@ -63,11 +63,14 @@
       +f('cal-400', 17, 20)
       
 .breadcrumb
+   $parent: &
    transform: translateX(-50px)
    opacity: 0
+      
    ul
       display: flex
       li
+         white-space: nowrap
          &:not(:first-child) a
             padding: 0 10px 0 25px
             border-left: 0
@@ -77,11 +80,6 @@
          &.is-active
             a
                pointer-events: none
-               //background: #147c66
-               //&::after
-               //   background: #147c66
-               //   z-index: -1
-               
          a
             position: relative
             display: block
@@ -96,7 +94,7 @@
             +xs
                padding: 0 5px 0 10px
                font-size: 10px
-            .no-touch &:hover
+            &:hover
                color: $color3
             
             &::after
@@ -110,7 +108,162 @@
                border-top: 1px solid rgba(#fff, .2)
                border-right: 1px solid rgba(#fff, .2)
                content: ''
+               
+   &_black ul li a
+      color: #18222d
+      border-color: rgba(#18222d, .2)
+      &::after
+         border-top-color: rgba(#18222d, .2)
+         border-right-color: rgba(#18222d, .2)
 
 .parallax-bg
    +coverdiv
    +cover
+   
+.projects
+   padding: 38px 0 80px
+   +sm
+      padding: 25px 0 50px
+   &__breadcrumb
+      margin-bottom: 25px
+      
+   &__row
+      flex-wrap: wrap
+      justify-content: center
+      
+   &__top
+      max-width: 798px
+      margin: 0 auto 47px
+      text-align: center
+      +xs
+         margin: 0 auto 30px
+   
+   &__title
+      margin-bottom: 20px
+      
+   &__descr
+      &-title
+         max-width: 580px
+         margin: 0 auto
+         font-size: 30px
+         line-height: 28px
+         letter-spacing: 0.75px
+         +xs
+            font-size: 21px
+            line-height: 24px
+         &-count
+            display: flex
+            align-items: center
+            justify-content: center
+            margin: 18px auto 0
+            width: 125px
+            height: 129px
+            background: url('../img/other/green-circle.png') no-repeat center/cover
+            +f('ms-black', 63, 60)
+            span
+               margin-top: -27px
+               margin-left: 10px
+               
+      &-text
+         +f('cal-400', 20, 25)
+         margin-top: 12px
+         +xs
+            font-size: 17px
+            line-height: 22px
+         
+   &__item
+      $parent: &
+      position: relative
+      height: 400px
+      flex: 0 1 calc(33.333333% - 30px)
+      margin: 0 15px
+      max-width: 350px
+      cursor: default
+      +sm
+         flex: 0 1 50%
+      +xs
+         flex: 0 1 100%
+         
+      &:hover #{$parent}-text
+         opacity: 1
+         pointer-events: auto
+         border-color: transparent
+      
+      &:nth-child(3) ~ &
+         margin-top: 30px
+         
+      &:nth-child(2) ~ &
+         +sm
+            margin-top: 30px
+            
+      &:nth-child(1) ~ &
+         +xs
+            margin-top: 30px
+         
+      &-img
+         height: 170px
+         +cover
+         
+      &-text
+         height: 230px
+         padding: 25px 20px 25px 25px
+         border: 2px solid #e6e6e6
+         border-top: 0
+         letter-spacing: 0.4px
+         +xs
+            padding: 20px 15px
+         &_more
+            position: absolute
+            top: 0
+            right: -2px
+            left: -2px
+            bottom: -2px
+            opacity: 0
+            height: auto
+            pointer-events: none
+            z-index: 2
+            +cover
+            color: #fff
+            transition: .35s ease-in-out
+            &::after
+               position: absolute
+               top: 0
+               right: -2px
+               left: -2px
+               bottom: -2px
+               content: ''
+               background: rgba(#e4a13a, .85)
+               
+            .projects__item-descr
+               color: #fff
+               p
+                  max-height: 230px
+            
+      &-title
+         margin-bottom: 6px
+         +f('cal-700', 18, 21)
+         letter-spacing: 0.45px
+         text-transform: uppercase
+   
+      &-descr
+         color: #61656b
+         font-size: 16px
+         line-height: 22px
+         p
+            max-height: 132px
+         
+      &-link
+         margin-top: auto
+         font-size: 15px
+         line-height: 21px
+         letter-spacing: 0.07em
+         color: #fff
+         +f('cal-400')
+   
+      &-inner
+         position: relative
+         z-index: 1
+         height: 100%
+         display: flex
+         flex-direction: column
+         align-items: flex-start

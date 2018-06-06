@@ -49,41 +49,25 @@ class GeoWorkMap {
 
         marker.setMap(map);
 
-        // This event expects a click on a marker
         google.maps.event.addListener(marker, 'click', function () {
-          // hideAllInfoWindows(map);
 
           _this.$block.addClass('is-active');
           geoInfoWindow.open(map, marker);
 
-          const setCenter = marker.getPosition(); // returns LatLng object
+          const setCenter = marker.getPosition();
           map.setCenter(setCenter);
           map.panTo(setCenter);
-          // this.infowindow.open(map, this);
         });
 
-        // Event that closes the Info Window with a click on the map
         google.maps.event.addListener(map, 'click', function () {
           geoInfoWindow.close();
         });
-
-        function hideAllInfoWindows(map) {
-          markers.forEach(function (marker) {
-            marker.infowindow.close(map, marker);
-          });
-        }
-
       });
     });
 
     google.maps.event.addListener(map, 'click', () => {
       _this.$block.addClass('is-active');
     });
-
-    // $('body').on('click', (e) => {
-    //   console.log(e.currentTarget);
-    //   if (e.target !== this.$block) _this.$block.removeClass('is-active');
-    // });
   }
 }
 
