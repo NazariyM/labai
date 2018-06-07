@@ -1,4 +1,4 @@
-import { css, Resp } from '../modules/dev/_helpers';
+import { css } from '../modules/dev/_helpers';
 
 class HoverTabs {
   constructor (el) {

@@ -1,5 +1,3 @@
-import { css, Resp } from '../modules/dev/_helpers';
-
 import objectFitImages from 'object-fit-images';
 import 'jquery-parallax.js';
 import fancybox from '@fancyapps/fancybox';
@@ -23,6 +21,7 @@ import './scrolls';
 import './initChangeText';
 import './Steps';
 import './Popup';
+import './Projects';
 
 export class Common {
   /**

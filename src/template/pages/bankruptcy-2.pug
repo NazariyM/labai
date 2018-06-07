@@ -124,7 +124,7 @@ block main
 
 				+e.UL.list
 					for linksText, i in listBlock
-						li(data-anim='fade-y' data-stagger-delay= `${i * 0.2}`): a(href='#!')
+						li(data-anim='fade-y' data-stagger-delay= `${i * 0.2}`): a(href='#!' data-popup-target='call-popup')
 							svg(class='icon-plus' xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35', height='35', viewbox='0 0 35 35')
 								defs
 									path#vhfqa(d='M1319 7042a2 2 0 0 1-2 2h-3v3a2 2 0 0 1-4 0v-3h-3a2 2 0 0 1 0-4h3v-3a2 2 0 1 1 4 0v3h3a2 2 0 0 1 2 2zm9 0a16 16 0 1 1-32 0 16 16 0 0 1 32 0zm-3 0c0-7.17-5.83-13-13-13s-13 5.83-13 13 5.83 13 13 13 13-5.83 13-13z')
@@ -138,7 +138,7 @@ block main
 		+b.SECTION.stages._steps
 			+e.container.container
 				+e.title.title-lg
-					h2 ЭТАПЫ процедуры банкротства в пользу
+					h2 ЭТАПЫ процедуры банкротства для
 
 				+e.tabs.c-tabs.c-tabs_stages
 					.c-tabs__nav
@@ -249,6 +249,99 @@ block main
 
 		//end stages
 
+		//begin tariff
+		+b.SECTION.tariff
+			+e.container.container
+				+e.title.title-sm(data-anim='fade-y')
+					h2 Выберете подходящий вам тариф
+
+				+e.inner(data-anim-stagger='fade-y')
+
+					+e.item._top
+						+e.item-title.title-sm
+							h5 Устная консультация
+						+e.item-icon
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
+								defs
+									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
+									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-917 -4075)')
+										use(fill='#e5aa46', xlink:href='#xmvja')
+										use(fill='url(#xmvjb)', xlink:href='#xmvja')
+
+						+e.item-price.title-sm от 5 000 рублей
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
+							span ЗАКАЗАТЬ
+
+					+e.item
+						+e.item-title._top.title-sm
+							h5 Первичный анализ ситуации
+						+e.item-icon
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
+								defs
+									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
+									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-917 -4075)')
+										use(fill='#e5aa46', xlink:href='#xmvja')
+										use(fill='url(#xmvjb)', xlink:href='#xmvja')
+
+						+e.item-price.title-sm от 50 000 рублей
+						+e.item-descr
+							p анализ ситуации и подготовка пакета предложений
+							p выявление возможных рисков
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
+							span ЗАКАЗАТЬ
+
+					+e.item
+						+e.item-hit ХИТ
+						+e.item-title._top.title-sm
+							h5 Комплексный анализ ситуации
+						+e.item-icon
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
+								defs
+									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
+									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-917 -4075)')
+										use(fill='#e5aa46', xlink:href='#xmvja')
+										use(fill='url(#xmvjb)', xlink:href='#xmvja')
+
+						+e.item-price.title-sm договорная
+						+e.item-descr
+							p финансовый анализ
+							p анализ сделок должника ирекоменлацциии по снижению рисков
+
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
+							span ЗАКАЗАТЬ
+
+					+e.item._top
+						+e.item-title.title-sm
+							h5 Сопровождение банкростова и ликвидация
+						+e.item-icon
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
+								defs
+									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
+									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
+										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
+										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
+								g
+									g(transform='translate(-917 -4075)')
+										use(fill='#e5aa46', xlink:href='#xmvja')
+										use(fill='url(#xmvjb)', xlink:href='#xmvja')
+
+						+e.item-price.title-sm договорная
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
+							span ЗАКАЗАТЬ
+		//end tariff
+
 		//begin suggest
 		+b.SECTION.suggest
 			+e.container.container
@@ -300,7 +393,7 @@ block main
 													li - Списание штрафов, пеней, нустоек
 													li - Снятие запрета на выезд за границу
 
-								+e.BUTTON.content-btn.btn._grey(type='button')
+								+e.BUTTON.content-btn.btn._grey(type='button' data-popup-target='call-popup')
 									span Оставить заявку
 
 							-i++
@@ -330,7 +423,7 @@ block main
 										use(fill='url(#xmvjb)', xlink:href='#xmvja')
 
 						+e.item-price.title-sm от 5 000 рублей
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 
 					+e.item
@@ -352,7 +445,7 @@ block main
 						+e.item-descr
 							p анализ ситуации и подготовка пакета предложений
 							p выявление возможных рисков
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 
 					+e.item
@@ -376,7 +469,7 @@ block main
 							p финансовый анализ
 							p анализ сделок должника ирекоменлацциии по снижению рисков
 
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 
 					+e.item._top
@@ -395,195 +488,7 @@ block main
 										use(fill='url(#xmvjb)', xlink:href='#xmvja')
 
 						+e.item-price.title-sm договорная
-						+e.BUTTON.item-btn.btn._grey(type='button')
-							span ЗАКАЗАТЬ
-		//end tariff
-
-		//begin stages
-		+b.SECTION.stages._steps
-			+e.container.container
-				+e.title.title-lg
-					h2 ЭТАПЫ процедуры банкротства в пользу
-
-				+e.tabs.c-tabs.c-tabs_stages
-					.c-tabs__nav
-						button.c-tabs__btn(type='button') должника
-						button.c-tabs__btn.is-active(type='button') КРЕДИТОРА
-
-					.c-tabs__for(data-anim='fade-y' data-anim-delay='0.2')
-						.c-tabs__tab
-							//begin steps
-							+b.steps
-								+e.nav
-									+e.nav-item(class='is-active' onclick='')
-										i: span 1
-										p Сбор документов
-									+e.nav-item(onclick='')
-										i: span 2
-										p Подготовка заявления на банкротство
-									+e.nav-item(onclick='')
-										i: span 3
-										p Расмотрение заявления
-											br
-											| в суде
-									+e.nav-item(onclick='')
-										i: span 4
-										p Признание банкротства
-									+e.nav-item(onclick='')
-										i: span 5
-										p Проведение собрания кредиторов
-									+e.nav-item(onclick='')
-										i: span 6
-										p Сдача в суд отчета о процедуре
-									+e.nav-item(onclick='')
-										i: span 7
-										p Решение
-											br
-											| о списании долга
-
-								-n = 0
-								while n < 7
-									+e.box(class= n === 0 ? 'is-active' : '')
-										+e.box-top
-											+e.box-top-icon.
-												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="102" viewBox="0 0 84 102"><defs><path id="o1kxa" d="M448.26 1879.75h22.1v4.25h-22.1zm0 8.5h4.42v4.25h-4.42zm8.85 0h4.42v4.25h-4.42zm61.89-2.13v76.5a6.5 6.5 0 0 1-6.63 6.38h-70.74a6.5 6.5 0 0 1-6.63-6.38v-89.25a6.5 6.5 0 0 1 6.63-6.37h57.48c.58 0 1.14.22 1.56.62l17.68 17c.42.4.65.94.65 1.5zm-4.42.88l-13.26-12.75v7.62c0 1.18.99 2.13 2.2 2.13h4.43v4.25h-4.42a6.5 6.5 0 0 1-6.64-6.38v-10.62h-55.26c-1.22 0-2.2.95-2.2 2.12v89.25c0 1.18.98 2.13 2.2 2.13h70.74c1.22 0 2.2-.95 2.2-2.13zm-6.63 33.12c0 5.66-2.57 10.74-6.63 14.25v21.88c0 1.17-1 2.12-2.21 2.12-.5 0-1-.16-1.39-.46l-9.67-7.44-9.67 7.44c-.95.73-2.34.58-3.1-.33a2.08 2.08 0 0 1-.5-1.33v-21.87a18.77 18.77 0 0 1-6.62-14.26c0-10.56 8.9-19.12 19.9-19.12 10.98 0 19.89 8.56 19.89 19.12zm-19.9 19.13c-3.17 0-6.18-.72-8.84-1.99v14.57l7.46-5.74c.8-.62 1.96-.62 2.76 0l7.46 5.74v-14.58a20.5 20.5 0 0 1-8.84 2zm15.48-19.13c-.01-8.2-6.94-14.86-15.48-14.87-8.54 0-15.47 6.66-15.47 14.87 0 8.22 6.93 14.88 15.47 14.88 8.55 0 15.48-6.66 15.48-14.88zm-4.42 0c-.01 5.87-4.96 10.62-11.06 10.63-6.1 0-11.05-4.76-11.05-10.63 0-5.87 4.95-10.62 11.05-10.62 6.1 0 11.06 4.75 11.06 10.62zm-4.43 0a6.5 6.5 0 0 0-6.63-6.37 6.5 6.5 0 0 0-6.63 6.37 6.5 6.5 0 0 0 6.63 6.38 6.5 6.5 0 0 0 6.63-6.38zm-42-14.87v17h8.85v4.25h-11.06a2.17 2.17 0 0 1-2.2-2.13v-21.25c0-1.17.98-2.12 2.2-2.12h17.69v4.25zm-4.42 27.62h4.42v4.25h-4.42zm8.85 0h8.84v4.25h-8.84zm-8.85 8.5h19.9v4.25h-19.9zm0 8.5h19.9v4.25h-19.9z"/></defs><g><g transform="translate(-435 -1867)"><use fill="#f2d4a2" xlink:href="#o1kxa"/></g></g></svg>
-											+e.box-top-text
-												+e.box-title.title-sm
-													h3 Подготовка заявления на банкротство
-												p Оно может быть подано вашими кредиторами или Вами, если вы не можете расплатиться по обязательствам, независимо от размера задолженности.
-										-n++
-								//end steps
-						.c-tabs__tab
-							//begin steps
-							+b.steps
-								+e.nav
-									+e.nav-item(class='is-active' onclick='')
-										i: span 1
-										p Проведение анализа задолженности
-									+e.nav-item(onclick='')
-										i: span 2
-										p Уведомление должника и выяснение причин просрочек
-									+e.nav-item(onclick='')
-										i: span 3
-										p Направление должнику претензии по поводу неуплаты
-									+e.nav-item(onclick='')
-										i: span 4
-										p Привлечение коллекторов
-									+e.nav-item(onclick='')
-										i: span 5
-										p Направление уведомления о подготовке передачи дела в суд
-									+e.nav-item(onclick='')
-										i: span 6
-										p Подготовка документов должника для передачи в юридический отдел
-									+e.nav-item(onclick='')
-										i: span 7
-										p Судебное разбирательство
-
-								-n = 0
-								while n < 7
-									+e.box(class= n === 0 ? 'is-active' : '')
-										+e.box-top
-											+e.box-top-icon.
-												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="102" viewBox="0 0 84 102"><defs><path id="o1kxa" d="M448.26 1879.75h22.1v4.25h-22.1zm0 8.5h4.42v4.25h-4.42zm8.85 0h4.42v4.25h-4.42zm61.89-2.13v76.5a6.5 6.5 0 0 1-6.63 6.38h-70.74a6.5 6.5 0 0 1-6.63-6.38v-89.25a6.5 6.5 0 0 1 6.63-6.37h57.48c.58 0 1.14.22 1.56.62l17.68 17c.42.4.65.94.65 1.5zm-4.42.88l-13.26-12.75v7.62c0 1.18.99 2.13 2.2 2.13h4.43v4.25h-4.42a6.5 6.5 0 0 1-6.64-6.38v-10.62h-55.26c-1.22 0-2.2.95-2.2 2.12v89.25c0 1.18.98 2.13 2.2 2.13h70.74c1.22 0 2.2-.95 2.2-2.13zm-6.63 33.12c0 5.66-2.57 10.74-6.63 14.25v21.88c0 1.17-1 2.12-2.21 2.12-.5 0-1-.16-1.39-.46l-9.67-7.44-9.67 7.44c-.95.73-2.34.58-3.1-.33a2.08 2.08 0 0 1-.5-1.33v-21.87a18.77 18.77 0 0 1-6.62-14.26c0-10.56 8.9-19.12 19.9-19.12 10.98 0 19.89 8.56 19.89 19.12zm-19.9 19.13c-3.17 0-6.18-.72-8.84-1.99v14.57l7.46-5.74c.8-.62 1.96-.62 2.76 0l7.46 5.74v-14.58a20.5 20.5 0 0 1-8.84 2zm15.48-19.13c-.01-8.2-6.94-14.86-15.48-14.87-8.54 0-15.47 6.66-15.47 14.87 0 8.22 6.93 14.88 15.47 14.88 8.55 0 15.48-6.66 15.48-14.88zm-4.42 0c-.01 5.87-4.96 10.62-11.06 10.63-6.1 0-11.05-4.76-11.05-10.63 0-5.87 4.95-10.62 11.05-10.62 6.1 0 11.06 4.75 11.06 10.62zm-4.43 0a6.5 6.5 0 0 0-6.63-6.37 6.5 6.5 0 0 0-6.63 6.37 6.5 6.5 0 0 0 6.63 6.38 6.5 6.5 0 0 0 6.63-6.38zm-42-14.87v17h8.85v4.25h-11.06a2.17 2.17 0 0 1-2.2-2.13v-21.25c0-1.17.98-2.12 2.2-2.12h17.69v4.25zm-4.42 27.62h4.42v4.25h-4.42zm8.85 0h8.84v4.25h-8.84zm-8.85 8.5h19.9v4.25h-19.9zm0 8.5h19.9v4.25h-19.9z"/></defs><g><g transform="translate(-435 -1867)"><use fill="#f2d4a2" xlink:href="#o1kxa"/></g></g></svg>
-											+e.box-top-text
-												+e.box-title.title-sm
-													h3 Направление должнику претензии по поводу неуплаты
-												p Претензия составляется в свободной форме, но в ней обязательно должны быть указаны данные должника, сумма задолженности, даты и сроки. Если дело дойдёт до суда, этот документ нужно будет приложить к исковому заявлению о взыскании долга.
-
-									-n++
-								//end steps
-		//end stages
-
-		//begin tariff
-		+b.SECTION.tariff
-			+e.container.container
-				+e.title.title-sm(data-anim='fade-y')
-					h2 Выберете подходящий вам тариф
-
-				+e.inner(data-anim-stagger='fade-y')
-
-					+e.item._top
-						+e.item-title.title-sm
-							h5 Устная консультация
-						+e.item-icon
-							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
-								defs
-									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
-									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
-										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
-										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
-								g
-									g(transform='translate(-917 -4075)')
-										use(fill='#e5aa46', xlink:href='#xmvja')
-										use(fill='url(#xmvjb)', xlink:href='#xmvja')
-
-						+e.item-price.title-sm от 5 000 рублей
-						+e.BUTTON.item-btn.btn._grey(type='button')
-							span ЗАКАЗАТЬ
-
-					+e.item
-						+e.item-title._top.title-sm
-							h5 Первичный анализ ситуации
-						+e.item-icon
-							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
-								defs
-									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
-									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
-										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
-										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
-								g
-									g(transform='translate(-917 -4075)')
-										use(fill='#e5aa46', xlink:href='#xmvja')
-										use(fill='url(#xmvjb)', xlink:href='#xmvja')
-
-						+e.item-price.title-sm от 50 000 рублей
-						+e.item-descr
-							p анализ ситуации и подготовка пакета предложений
-							p выявление возможных рисков
-						+e.BUTTON.item-btn.btn._grey(type='button')
-							span ЗАКАЗАТЬ
-
-					+e.item
-						+e.item-hit ХИТ
-						+e.item-title._top.title-sm
-							h5 Комплексный анализ ситуации
-						+e.item-icon
-							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
-								defs
-									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
-									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
-										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
-										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
-								g
-									g(transform='translate(-917 -4075)')
-										use(fill='#e5aa46', xlink:href='#xmvja')
-										use(fill='url(#xmvjb)', xlink:href='#xmvja')
-
-						+e.item-price.title-sm договорная
-						+e.item-descr
-							p финансовый анализ
-							p анализ сделок должника ирекоменлацциии по снижению рисков
-
-						+e.BUTTON.item-btn.btn._grey(type='button')
-							span ЗАКАЗАТЬ
-
-					+e.item._top
-						+e.item-title.title-sm
-							h5 Сопровождение банкростова и ликвидация
-						+e.item-icon
-							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='50', height='53', viewbox='0 0 50 53')
-								defs
-									path#xmvja(d='M920.3 4095.96a2.5 2.5 0 0 1 .81-2.71l20.6-16.01a1.28 1.28 0 0 1 1.58 0l20.6 16a2.5 2.5 0 0 1 .82 2.72c-.32 1-1.2 1.67-2.2 1.67h-1.07l.01.18v21.9h.73c.73 0 1.33.63 1.33 1.4 0 .77-.6 1.4-1.33 1.4h-39.36c-.73 0-1.33-.63-1.33-1.4 0-.77.6-1.4 1.33-1.4h.73v-21.9-.18h-1.06c-1 0-1.88-.67-2.2-1.67zm23.4 23.76v-21.91-.18h-2.4v22.08zm-10.08-21.91l.01-.18h-2.4v22.08h2.39zm-5.04 21.9v-20.5h-2.38v20.5zm10.08 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.39v20.5zm10.07 0v-20.5h-2.38v20.5zm-5.02-22.08h-2.41l.01.18v21.9h2.38v-21.9c0-.06 0-.12.02-.18zm-30.25-2.79h37.94l-18.97-14.75zm42.47 30.73c0 .77-.6 1.4-1.33 1.4h-44.34c-.74 0-1.33-.63-1.33-1.4 0-.77.6-1.39 1.33-1.39h44.34c.74 0 1.33.62 1.33 1.4z')
-									lineargradient#xmvjb(x1='947', x2='938', y1='4126.97', y2='4076.96', gradientunits='userSpaceOnUse')
-										stop(offset='0', stop-color='#fcd369', stop-opacity='.73')
-										stop(offset='1', stop-color='#fcd369', stop-opacity='0')
-								g
-									g(transform='translate(-917 -4075)')
-										use(fill='#e5aa46', xlink:href='#xmvja')
-										use(fill='url(#xmvjb)', xlink:href='#xmvja')
-
-						+e.item-price.title-sm договорная
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 		//end tariff
 
@@ -659,7 +564,9 @@ block main
 		+b.SECTION.form-section
 			+e.container.container(data-anim-stagger='fade-x')
 				+e.title.title-md
-					h2  Банкротство юридического лица законный метод получить свое
+					h2 Банкротство юридических лиц
+						br
+						| на законных основаниях
 				+e.FORM.form(action='#!' method='POST')
 					+e.form-field
 						+e.INPUT.form-input.input(type='text' placeholder='Ваше имя' name='' required)

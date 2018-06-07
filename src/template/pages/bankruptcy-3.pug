@@ -19,7 +19,7 @@ block main
 
 				+e.inner(data-anim-stagger='fade-y' data-anim-delay='1')
 					+e.main-title
-						h1 Банкротство финансовых компаний в Москве и Московской области.
+						h1 Банкротство финансовых компаний в Москве и Московской области
 					+e.title
 						h2 Поможем быстро вернуть долг законным способом
 
@@ -33,7 +33,7 @@ block main
 
 								+e.form-field
 									+b.LABEL.btn._grey.screen__form-submit-btn
-										span связаться с юристом
+										span Списать долг
 										+e.INPUT(type='submit' value='')
 
 							+e.P Нажимая на кнопку "Списать долг", вы даете
@@ -297,7 +297,7 @@ block main
 										use(fill='url(#xmvjb)', xlink:href='#xmvja')
 
 						+e.item-price.title-sm от 5 000 рублей
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 
 					+e.item
@@ -319,7 +319,7 @@ block main
 						+e.item-descr
 							p анализ ситуации и подготовка пакета предложений
 							p выявление возможных рисков
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 
 					+e.item
@@ -343,7 +343,7 @@ block main
 							p финансовый анализ
 							p анализ сделок должника ирекоменлацциии по снижению рисков
 
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 
 					+e.item._top
@@ -362,7 +362,7 @@ block main
 										use(fill='url(#xmvjb)', xlink:href='#xmvja')
 
 						+e.item-price.title-sm договорная
-						+e.BUTTON.item-btn.btn._grey(type='button')
+						+e.BUTTON.item-btn.btn._grey(type='button' data-popup-target='call-popup')
 							span ЗАКАЗАТЬ
 		//end tariff
 
@@ -505,7 +505,9 @@ block main
 		+b.SECTION.form-section
 			+e.container.container(data-anim-stagger='fade-x')
 				+e.title.title-md
-					h2  Банкроство юридического лица законный метод получить свое
+					h2 Банкротство юридических лиц
+						br
+						| на законных основаниях
 				+e.FORM.form(action='#!' method='POST')
 					+e.form-field
 						+e.INPUT.form-input.input(type='text' placeholder='Ваше имя' name='' required)

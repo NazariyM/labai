@@ -139,10 +139,14 @@
          margin: 0 auto 30px
    
    &__title
+      opacity: 0
+      transform: translateY(-60px)
       margin-bottom: 20px
       
    &__descr
       &-title
+         opacity: 0
+         transform: translateY(-60px)
          max-width: 580px
          margin: 0 auto
          font-size: 30px
@@ -152,6 +156,8 @@
             font-size: 21px
             line-height: 24px
          &-count
+            opacity: 0
+            transform: rotate(180deg)
             display: flex
             align-items: center
             justify-content: center
@@ -161,10 +167,13 @@
             background: url('../img/other/green-circle.png') no-repeat center/cover
             +f('ms-black', 63, 60)
             span
+               opacity: 0
                margin-top: -27px
                margin-left: 10px
                
       &-text
+         opacity: 0
+         transform: translateY(-60px)
          +f('cal-400', 20, 25)
          margin-top: 12px
          +xs

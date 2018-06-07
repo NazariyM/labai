@@ -17,7 +17,7 @@ class Accordion {
   init() {
     this.countContentHeight();
     this.initToggle();
-    if (this.enableFix && Resp.isDesk) this.parallaxFix();
+    // if (this.enableFix && Resp.isDesk) this.parallaxFix();
   }
 
   initToggle() {

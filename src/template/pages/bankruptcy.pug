@@ -114,16 +114,12 @@ block main
 		+b.SECTION.stages
 			+e.container.container
 				+e.title.title-lg
-					h2 Этапы банкротства юридических лиц
+					h2 Этапы банкротства юридического лица
 
 				+e.tabs.c-tabs
 					.c-tabs__nav
-						button.c-tabs__btn(class='is-active' type='button') Взыскание долга
-							br
-							| в пользу должника
-						button.c-tabs__btn(type='button') Взыскание долга
-							br
-							| в пользу кредитора
+						button.c-tabs__btn(class='is-active' type='button') как должника
+						button.c-tabs__btn(type='button') как кредитора
 
 					.c-tabs__for
 						-n = 0
@@ -515,7 +511,7 @@ block main
 
 
 		//begin benefits
-		+b.SECTION.benefits
+		+b.SECTION.benefits._mod
 			+e.container.container
 				+e.title.title-md(data-anim='fade-y')
 					h2 Преимущества работы с нами
@@ -528,13 +524,13 @@ block main
 				+e.inner(data-anim-stagger='fade-y')
 					for benefitsText in benefitsList
 						+e.item
-							+e.item-img-wrap
-								+e.IMG(src='static/img/other/benefits_img.jpg' alt='image')
+							+e.item-img-wrap.
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><path id="ba7ka" d="M513 5151c0 13.79-11.22 25-25 25s-25-11.21-25-25 11.22-25 25-25 25 11.21 25 25zm-1.92 0a23.1 23.1 0 0 0-23.08-23.08 23.1 23.1 0 0 0-23.08 23.08 23.1 23.1 0 0 0 23.08 23.08 23.1 23.1 0 0 0 23.08-23.08zm-9.94-10.33c.4.35.43.96.08 1.35l-15.39 17.31a.96.96 0 0 1-1.32.11l-9.61-7.69a.96.96 0 0 1 1.2-1.5l8.9 7.12 14.78-16.62a.96.96 0 0 1 1.36-.08z"/></defs><g><g transform="translate(-463 -5126)"><use fill="#28b197" xlink:href="#ba7ka"/></g></g></svg>
 							p= benefitsText
 
 					+e.item
-						+e.item-img-wrap
-							+e.IMG(src='static/img/other/benefits_img.jpg' alt='image')
+						+e.item-img-wrap.
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50"><defs><path id="ba7ka" d="M513 5151c0 13.79-11.22 25-25 25s-25-11.21-25-25 11.22-25 25-25 25 11.21 25 25zm-1.92 0a23.1 23.1 0 0 0-23.08-23.08 23.1 23.1 0 0 0-23.08 23.08 23.1 23.1 0 0 0 23.08 23.08 23.1 23.1 0 0 0 23.08-23.08zm-9.94-10.33c.4.35.43.96.08 1.35l-15.39 17.31a.96.96 0 0 1-1.32.11l-9.61-7.69a.96.96 0 0 1 1.2-1.5l8.9 7.12 14.78-16.62a.96.96 0 0 1 1.36-.08z"/></defs><g><g transform="translate(-463 -5126)"><use fill="#28b197" xlink:href="#ba7ka"/></g></g></svg>
 
 						p Улучшение финансового положения путем выделения прибыльных
 							br
@@ -553,7 +549,7 @@ block main
 		+b.SECTION.form-section
 			+e.container.container(data-anim-stagger='fade-x')
 				+e.title.title-md
-					h2  Банкроство юридического лица законный метод получить свое
+					h2 Только процедура банкротства сделает ваши долги погашенными
 				+e.FORM.form(action='#!' method='POST')
 					+e.form-field
 						+e.INPUT.form-input.input(type='text' placeholder='Ваше имя' name='' required)
