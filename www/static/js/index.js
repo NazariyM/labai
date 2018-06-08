@@ -42879,7 +42879,7 @@ exports.default = Home;
 
 var _helpers = __webpack_require__(10);
 
-function changeImgOnHover() {
+function AboutSection() {
   var $block = $('.about__content');
 
   $block.each(function (i, el) {
@@ -42904,12 +42904,12 @@ function changeImgOnHover() {
   $navItem.on('click', function (e) {
     e.preventDefault();
     var el = $(this).attr('href');
-    $('html, body').animate({ scrollTop: $(el).offset().top - 60 }, 1000);
+    $('html, body').animate({ scrollTop: $(el).offset().top - headerH }, 1000);
     return false;
   });
 }
 
-changeImgOnHover();
+AboutSection();
 
 /***/ })
 /******/ ]);

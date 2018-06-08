@@ -1,6 +1,6 @@
 import { Resp } from '../modules/dev/_helpers';
 
-function changeImgOnHover() {
+function AboutSection() {
   const $block = $('.about__content');
 
   $block.each(function (i, el) {
@@ -25,9 +25,9 @@ function changeImgOnHover() {
   $navItem.on('click', function (e) {
     e.preventDefault();
     const el = $(this).attr('href');
-    $('html, body').animate({ scrollTop: $(el).offset().top - 60 }, 1000);
+    $('html, body').animate({ scrollTop: $(el).offset().top - headerH }, 1000);
     return false;
   });
 }
 
-changeImgOnHover();
+AboutSection();
