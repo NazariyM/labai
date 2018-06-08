@@ -5,6 +5,41 @@
    
    &__breadcrumb
       margin-bottom: 20px
+      
+   &__nav
+      display: flex
+      justify-content: center
+      margin-bottom: 40px
+      +xs
+         flex-direction: column
+         margin-bottom: 20px
+      &-btn
+         flex: 1 1 auto
+         position: relative
+         padding: 15px
+         +f('cal-700', 16, 16)
+         letter-spacing: 0.06em
+         text-transform: uppercase
+         text-align: center
+         cursor: pointer
+         border: 2px solid #c4c4c4
+         background-color: #fff
+         border-right: 0
+         +trs
+         +sm
+            padding: 11px 5px
+         +xs
+            border-bottom: 0
+            border-right: 2px solid #c4c4c4
+            
+         .no-touch &:hover
+            background-color: #e4a13a
+            border-color: transparent!important
+            color: #fff
+         &:last-child
+            border-right: 2px solid #c4c4c4
+            +xs
+               border-bottom: 2px solid #c4c4c4
    
    &__content
       display: flex
@@ -13,6 +48,7 @@
          flex-direction: column
          
       &-images
+         overflow: hidden
          flex: 0 0 31.53153%
          +sm
             align-self: center
@@ -130,6 +166,7 @@
 .history
    padding: 65px 0 85px
    background: #f6f6f6
+   overflow: hidden
    +xs
       padding: 50px 0
    &__title
